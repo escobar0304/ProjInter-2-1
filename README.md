@@ -1,6 +1,6 @@
 # ProjInter-2-1 — Plataforma de Literacia em Saúde para Jovens
 
-Projeto integrador da unidade curricular de **Sistemas Multimédia I (SMUL1)**, do 2.º ano da Licenciatura em Engenharia Informática do **ISTEC Porto**, no ano letivo 2026/2027.
+Projeto interdisciplinar do 1.º semestre do 2.º ano da Licenciatura em Engenharia Informática do **ISTEC Porto**, no ano letivo 2026/2027.
 
 ## Sobre o projeto
 
