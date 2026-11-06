@@ -43,3 +43,47 @@ jobs:
           "$RUNNER_TEMP/remark/node_modules/.bin/remark" \
             --use "$RUNNER_TEMP/remark/node_modules/remark-validate-links/index.js" \
             --frail --quiet --no-stdout .
+
+  schema-detect:
+    name: Procurar o schema da base de dados
+    runs-on: ubuntu-latest
+    outputs:
+      exists: ${{ steps.detect.outputs.exists }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Verificar se existe database/schema.sql
+        id: detect
+        run: |
+          if [ -f database/schema.sql ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Ainda não existe database/schema.sql: a validação do schema foi ignorada."
+          fi
+
+  schema:
+    name: Schema PostgreSQL
+    needs: schema-detect
+    if: needs.schema-detect.outputs.exists == 'true'
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18-alpine
+        env:
+          # Credenciais descartáveis: a base de dados só existe durante este job.
+          POSTGRES_USER: ci
+          POSTGRES_PASSWORD: ci
+          POSTGRES_DB: ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U ci -d ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Criar a base de dados a partir do schema
+        env:
+          PGPASSWORD: ci
+        run: psql -h localhost -U ci -d ci -v ON_ERROR_STOP=1 -f database/schema.sql
