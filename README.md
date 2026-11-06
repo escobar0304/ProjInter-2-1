@@ -98,3 +98,13 @@ O repositório é público. Por isso, não se commitam:
 
 - materiais fornecidos pelos docentes (enunciados, diagramas de partida);
 - credenciais, tokens e ficheiros `.env`.
+
+## Uso de IA generativa
+
+O uso de IA generativa segue o sistema de semáforos definido na especificação do projeto: uso livre (verde), permitido com justificação (amarelo) e proibido (vermelho).
+
+| Ferramenta | Utilização |
+|---|---|
+| Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore` e template de Pull Request). |
+
+Esta secção é atualizada à medida que o projeto avança.
