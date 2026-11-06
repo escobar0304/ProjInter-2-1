@@ -64,3 +64,37 @@ backend/               # API em Python/Flask
 database/              # scripts SQL (PostgreSQL) e dados de teste
 .github/               # template de Pull Request e workflows
 ```
+
+## Regras de trabalho
+
+### Branches
+
+- O `main` está protegido: nada entra sem um Pull Request aprovado.
+- Cada funcionalidade é desenvolvida numa branch com o nome `feature/<US>-<Descrição>`, por exemplo `feature/A006-Repo-Config`. Um ruleset do repositório recusa branches com outros nomes.
+
+### Commits
+
+- Commits regulares e pequenos, um por cada passo lógico. Nunca um único commit por branch.
+- Mensagens em português, curtas e descritivas, no formato `<âmbito>: <o que mudou>` (ex.: `README: regras de trabalho`).
+
+### Pull Requests
+
+- Cada Pull Request corresponde a uma User Story e leva `Closes #N` na descrição, para fechar a issue e atualizar o quadro.
+- Antes do merge, é revisto e aprovado por, pelo menos, outro elemento da equipa.
+- Segue o template em [`.github/pull_request_template.md`](.github/pull_request_template.md).
+
+### Documentação
+
+- Cada feature é documentada em `sprints/Sprint<X>/<nome-da-branch-sem-feature/>.md`, por exemplo [`sprints/SprintA/A006-Repo-Config.md`](sprints/SprintA/A006-Repo-Config.md).
+- Os diagramas ficam em `docs/`, sempre com a fonte editável (`.drawio`) e uma imagem exportada.
+
+### Entregas
+
+- Em cada entrega, cria-se uma tag no `main` (`sprint-a`, `sprint-b`, `sprint-c`), que identifica exatamente o que foi entregue.
+
+### O que não entra no repositório
+
+O repositório é público. Por isso, não se commitam:
+
+- materiais fornecidos pelos docentes (enunciados, diagramas de partida);
+- credenciais, tokens e ficheiros `.env`.
