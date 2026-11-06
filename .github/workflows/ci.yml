@@ -27,3 +27,19 @@ jobs:
           node-version: 22
       - name: Verificar os ficheiros .md
         run: npx --yes markdownlint-cli2@0.24.0
+
+  links:
+    name: Links internos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Instalar o remark
+        run: npm install --prefix "$RUNNER_TEMP/remark" --no-save --no-audit --no-fund remark-cli@12.0.1 remark-validate-links@13.1.0
+      - name: Verificar links entre ficheiros e para secções
+        run: |
+          "$RUNNER_TEMP/remark/node_modules/.bin/remark" \
+            --use "$RUNNER_TEMP/remark/node_modules/remark-validate-links/index.js" \
+            --frail --quiet --no-stdout .
