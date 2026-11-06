@@ -1,0 +1,21 @@
+// Configuração do lint de Markdown (markdownlint-cli2), usada pelo CI.
+// Regras tolerantes: só se desativam as que obrigam a detalhes de formatação.
+{
+  "config": {
+    "default": true,
+    // Comprimento das linhas: os parágrafos escrevem-se numa só linha.
+    "MD013": false,
+    // Primeira linha tem de ser um título "#": não se aplica a templates.
+    "MD041": false,
+    // Linguagem obrigatória nos blocos de código (ex.: árvores de pastas).
+    "MD040": false,
+    // Alinhamento das colunas nas tabelas.
+    "MD060": false,
+    // HTML dentro do Markdown (ex.: <br> em tabelas).
+    "MD033": false,
+    // Títulos repetidos só são erro se forem irmãos (ex.: "Objetivo" em várias secções).
+    "MD024": { "siblings_only": true }
+  },
+  "globs": ["**/*.md"],
+  "ignores": ["**/node_modules/**"]
+}
