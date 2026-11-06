@@ -20,3 +20,17 @@ Cada recurso formativo é acompanhado por um questionário de diagnóstico, resp
 | Backend | Python com Flask |
 | Base de dados | PostgreSQL |
 | Contentores | Docker e Docker Compose (a partir da Sprint B) |
+
+## Equipa
+
+| Nome | GitHub | Papel |
+|---|---|---|
+| Diogo Escobar | [escobar0304](https://github.com/escobar0304) | Team leader |
+| João Crasto | [crastoo](https://github.com/crastoo) | Membro da equipa |
+| Pedro Vale | [QuakeXIV](https://github.com/QuakeXIV) | Membro da equipa |
+
+## Orientação
+
+| Nome | GitHub | Papel |
+|---|---|---|
+| Helder Rodrigo Pinto | [helderspinto](https://github.com/helderspinto) | Docente |
