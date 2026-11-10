@@ -1,5 +1,7 @@
 # ProjInter-2-1 — Plataforma de Literacia em Saúde para Jovens
 
+[![CI](https://github.com/escobar0304/ProjInter-2-1/actions/workflows/ci.yml/badge.svg)](https://github.com/escobar0304/ProjInter-2-1/actions/workflows/ci.yml)
+
 Projeto interdisciplinar do 1.º semestre do 2.º ano da Licenciatura em Engenharia Informática do **ISTEC Porto**, no ano letivo 2026/2027.
 
 ## Sobre o projeto
@@ -99,12 +101,30 @@ O repositório é público. Por isso, não se commitam:
 - materiais fornecidos pelos docentes (enunciados, diagramas de partida);
 - credenciais, tokens e ficheiros `.env`.
 
+## Integração contínua (CI)
+
+Cada Pull Request para o `main` é verificado automaticamente pelo workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml):
+
+| Job | O que verifica |
+|---|---|
+| Lint de Markdown | A formatação dos ficheiros `.md`, com a configuração em [`.markdownlint-cli2.jsonc`](.markdownlint-cli2.jsonc) |
+| Links internos | Os links entre ficheiros e para secções |
+| Schema PostgreSQL | Que o `database/schema.sql` cria a base de dados sem erros (só corre quando o ficheiro existir) |
+
+Para correr o lint localmente, na raiz do repositório:
+
+```bash
+npx markdownlint-cli2@0.24.0
+```
+
+Os detalhes e as decisões estão em [`sprints/SprintA/A012-CI.md`](sprints/SprintA/A012-CI.md).
+
 ## Uso de IA generativa
 
 O uso de IA generativa segue o sistema de semáforos definido na especificação do projeto: uso livre (verde), permitido com justificação (amarelo) e proibido (vermelho).
 
 | Ferramenta | Utilização |
 |---|---|
-| Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore` e template de Pull Request). |
+| Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore`, template de Pull Request e pipeline de CI). |
 
 Esta secção é atualizada à medida que o projeto avança.

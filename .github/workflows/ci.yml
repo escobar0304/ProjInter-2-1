@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permissões mínimas: o CI só precisa de ler o repositório.
+permissions:
+  contents: read
+
+# Um novo push para o mesmo PR cancela a execução anterior.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  markdown:
+    name: Lint de Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Verificar os ficheiros .md
+        run: npx --yes markdownlint-cli2@0.24.0
+
+  links:
+    name: Links internos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Instalar o remark
+        run: npm install --prefix "$RUNNER_TEMP/remark" --no-save --no-audit --no-fund remark-cli@12.0.1 remark-validate-links@13.1.0
+      - name: Verificar links entre ficheiros e para secções
+        run: |
+          "$RUNNER_TEMP/remark/node_modules/.bin/remark" \
+            --use "$RUNNER_TEMP/remark/node_modules/remark-validate-links/index.js" \
+            --frail --quiet --no-stdout .
+
+  schema-detect:
+    name: Procurar o schema da base de dados
+    runs-on: ubuntu-latest
+    outputs:
+      exists: ${{ steps.detect.outputs.exists }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Verificar se existe database/schema.sql
+        id: detect
+        run: |
+          if [ -f database/schema.sql ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Ainda não existe database/schema.sql: a validação do schema foi ignorada."
+          fi
+
+  schema:
+    name: Schema PostgreSQL
+    needs: schema-detect
+    if: needs.schema-detect.outputs.exists == 'true'
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18-alpine
+        env:
+          # Credenciais descartáveis: a base de dados só existe durante este job.
+          POSTGRES_USER: ci
+          POSTGRES_PASSWORD: ci
+          POSTGRES_DB: ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U ci -d ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Criar a base de dados a partir do schema
+        env:
+          PGPASSWORD: ci
+        run: psql -h localhost -U ci -d ci -v ON_ERROR_STOP=1 -f database/schema.sql
