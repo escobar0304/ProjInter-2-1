@@ -125,6 +125,6 @@ O uso de IA generativa segue o sistema de semáforos definido na especificação
 
 | Ferramenta | Utilização |
 |---|---|
-| Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore` e template de Pull Request). |
+| Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore`, template de Pull Request e pipeline de CI). |
 
 Esta secção é atualizada à medida que o projeto avança.
