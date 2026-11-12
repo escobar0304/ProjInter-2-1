@@ -160,3 +160,37 @@ Este documento organiza pelo método FURPS+ os requisitos da Plataforma de Liter
 | W01 | Transmissão de webinars em direto dentro da plataforma. Os recursos são disponibilizados em vídeo (§D.1). | Equipa |
 | W02 | Aplicação móvel nativa. A plataforma é web e responsiva (RNF01). | Equipa |
 | W03 | Pagamentos ou conteúdos pagos. | Equipa |
+
+## 6. Dúvidas para esclarecer com o cliente
+
+| ID | Dúvida | Requisitos afetados |
+|---|---|---|
+| D01 | A 2.ª oportunidade no diagnóstico é dada sempre ou por decisão do Manager? Que tentativa conta como "pré" no cálculo do ganho? | RF19, RF37 |
+| D02 | A idade-limite para pedir consentimento é 18 anos ("menor de idade") ou outra? | RF03 |
+| D03 | Os professores e os profissionais de saúde que dinamizam as atividades são Utilizadores Registados, Managers ou um perfil próprio? | §2, RF33 |
+| D04 | Quem fica abaixo dos 85% no questionário final pode repeti-lo? Quantas vezes? | RF20, RF23 |
+| D05 | O certificado é gerado pela plataforma? Que dados contém (nome, recurso, data, classificação)? | RF25 |
+| D06 | O que conta como utilizador "ativo" (ex.: sessão iniciada nos últimos 30 dias)? | RF36 |
+| D07 | Como se trata o ganho normalizado quando a classificação pré já é a máxima (divisão por zero)? | RF37 |
+| D08 | O inglês aplica-se só à interface ou também aos recursos e aos questionários? | RF31, RNF05 |
+| D09 | Há só um badge por recurso, ou também outros (ex.: por área de saúde)? | RF23 |
+| D10 | Os destaques da semana são escolhidos pelo Manager ou calculados automaticamente? | RF10, RF28 |
+| D11 | O encarregado de educação precisa de conta própria, ou basta responder pelo link do email? | §2, RF04, RF45 |
+
+## 7. Alterações face ao levantamento fornecido (§C)
+
+- Os requisitos genéricos foram reescritos de forma verificável (ex.: "UI clara, intuitiva e responsiva" deu origem a RNF01 a RNF03).
+- Os requisitos compostos foram divididos (ex.: "inscrição em workshops e webinars e acesso às gravações" deu origem a RF14 e RF16).
+- As funcionalidades por ator (§C.1) e as do diagrama de use cases v1.0 passaram a requisitos (ex.: RF05 a RF07, RF15, RF17).
+- O percurso de aprendizagem, as métricas e os resultados (§D.1 a §D.3) passaram a requisitos (RF18 a RF25 e RF36 a RF44).
+- O SGBD passou a ser o PostgreSQL, em vez de MySQL ou SQL Server (RNF20), com validação do orientador.
+- Foram acrescentados requisitos da equipa: Docker (RNF21), segurança e RGPD (RF45, RF46, RNF24, RNF25), acessibilidade (RNF04), fiabilidade (RNF08, RNF09), desempenho (RNF10 a RNF12) e qualidade (RNF15, RNF16).
+- Ficaram explícitos os limites de âmbito (W01 a W03).
+
+## 8. Ligação às US extra
+
+| US extra | Requisitos relacionados |
+|---|---|
+| US_A014: decisões de arquitetura (ADR) e modelo C4 | RNF17 a RNF21 |
+| US_A015: privacidade e segurança | RF03, RF04, RF45, RF46, RNF22 a RNF25 |
+| US_A016: dados sintéticos e protótipo das métricas | RF36 a RF44, RNF14 |
