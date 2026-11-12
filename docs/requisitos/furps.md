@@ -97,3 +97,66 @@ Este documento organiza pelo método FURPS+ os requisitos da Plataforma de Liter
 | RF44 | EST | O Manager e o Administrador exportam os registos de respostas e classificações em CSV. | M | §D.3 |
 | RF45 | AUT | O encarregado de educação pode revogar o consentimento; nesse caso, a conta do menor fica suspensa. | S | Equipa (US_A015) |
 | RF46 | AUT | O utilizador pode pedir a exportação e a eliminação dos seus dados pessoais. | C | Equipa (US_A015, RGPD) |
+
+## 4. Requisitos não funcionais
+
+### Usabilidade (U)
+
+| ID | Descrição | Prioridade | Origem |
+|---|---|---|---|
+| RNF01 | A interface adapta-se a ecrãs entre 360 px e 1920 px de largura, sem scroll horizontal. | M | §C |
+| RNF02 | As funcionalidades principais (pesquisar recursos, responder a questionários, ver badges e certificados) ficam a, no máximo, 3 cliques da página inicial. | S | §C (critério proposto pela equipa) |
+| RNF03 | Os textos da interface usam linguagem simples, adequada a jovens dos 12 aos 18 anos, e são revistos por outro elemento da equipa antes de publicados. | S | §C |
+| RNF04 | A interface cumpre o nível AA das WCAG 2.1 nos pontos essenciais: contraste, texto alternativo nas imagens e navegação por teclado. | S | Equipa |
+| RNF05 | O utilizador escolhe o idioma da interface (português ou inglês). | S | §C |
+
+### Fiabilidade (R)
+
+| ID | Descrição | Prioridade | Origem |
+|---|---|---|---|
+| RNF06 | Todos os dados introduzidos são validados no frontend e no backend. Um dado inválido é rejeitado com uma mensagem que indica o campo e o que corrigir. | M | §C |
+| RNF07 | Se a base de dados falhar, o utilizador vê uma mensagem de erro compreensível, sem detalhes técnicos, e o erro fica registado no log do servidor. | M | §C |
+| RNF08 | A submissão de um questionário é gravada por inteiro ou não é gravada: nunca fica registada só em parte. | S | Equipa (§D.1) |
+| RNF09 | Em produção, é feita uma cópia de segurança diária da base de dados. | C | Equipa |
+
+### Desempenho (P)
+
+| ID | Descrição | Prioridade | Origem |
+|---|---|---|---|
+| RNF10 | As páginas principais carregam em menos de 3 segundos numa ligação de 10 Mbit/s. | S | Equipa |
+| RNF11 | Os indicadores estatísticos são calculados em menos de 5 segundos com até 10 000 respostas registadas. | S | Equipa (§D.2) |
+| RNF12 | O sistema suporta pelo menos 50 utilizadores em simultâneo sem degradação visível. | C | Equipa |
+
+### Suportabilidade (S)
+
+| ID | Descrição | Prioridade | Origem |
+|---|---|---|---|
+| RNF13 | A estrutura de conteúdos suporta mais do que um idioma: acrescentar um idioma não obriga a alterar o código. | M | §C |
+| RNF14 | Os indicadores são sempre calculados a partir da base de dados, nunca a partir de valores fixos no código. | M | §D.2 |
+| RNF15 | Cada Pull Request é validado automaticamente pelo CI antes de entrar no `main`. | S | Equipa (US_A012) |
+| RNF16 | As regras de negócio principais (ex.: consentimento antes da ativação, regra dos 85%) têm testes automáticos no backend. | S | Equipa |
+
+### Restrições (+)
+
+| ID | Tipo | Descrição | Prioridade | Origem |
+|---|---|---|---|---|
+| RNF17 | Design | A arquitetura separa a apresentação (React), a lógica de negócio e controlo (Python com Flask) e os dados, seguindo a programação orientada a objetos. | M | §C, §E |
+| RNF18 | Implementação | O frontend é desenvolvido em React. | M | §C, §E |
+| RNF19 | Implementação | O backend é desenvolvido em Python com Flask. | M | §C, §E |
+| RNF20 | Implementação | O SGBD é o PostgreSQL. A especificação indica MySQL ou SQL Server; a mudança foi validada pelo orientador. | M | Equipa (§E) |
+| RNF21 | Implementação | A aplicação e a base de dados correm em contentores Docker, com Docker Compose (a partir da Sprint B). | S | Equipa |
+| RNF22 | Legal | O sistema cumpre o RGPD, com particular atenção aos dados de menores: recolhe só os dados necessários, exige o consentimento do encarregado de educação e tem a política de privacidade pública. | M | §C |
+| RNF23 | Segurança | As palavras-passe são guardadas com uma função de hash adequada (ex.: bcrypt ou Argon2), nunca em claro. | M | §C |
+| RNF24 | Segurança | As permissões de cada perfil são verificadas no backend em todos os pedidos, e não só na interface. | M | §C.1, Equipa (US_A015) |
+| RNF25 | Segurança | Em produção, a comunicação entre o browser e o servidor usa HTTPS. | S | Equipa |
+| RNF26 | Interface | Os emails de confirmação, de consentimento e de recuperação da palavra-passe são enviados através de um serviço de email externo (SMTP). | M | UC v1.0 |
+| RNF27 | Interface | O CSV exportado usa a codificação UTF-8 e tem na primeira linha o nome de cada coluna. | S | §D.3 |
+| RNF28 | Física | A aplicação funciona nas versões atuais do Chrome, Firefox, Edge e Safari, sem instalação. | S | Equipa |
+
+## 5. Fora de âmbito nesta versão (W)
+
+| ID | Descrição | Origem |
+|---|---|---|
+| W01 | Transmissão de webinars em direto dentro da plataforma. Os recursos são disponibilizados em vídeo (§D.1). | Equipa |
+| W02 | Aplicação móvel nativa. A plataforma é web e responsiva (RNF01). | Equipa |
+| W03 | Pagamentos ou conteúdos pagos. | Equipa |
