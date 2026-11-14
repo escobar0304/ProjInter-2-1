@@ -113,3 +113,47 @@ Este glossário define a linguagem ubíqua da Plataforma de Literacia em Saúde 
 | **Language** (idioma) | Português ou inglês. Aplica-se à interface e aos textos dos conteúdos (pressuposto D08). | Locale | §C; RF31; RNF05, RNF13; D08 |
 | **Translation** (tradução) | Texto de um conteúdo (ex.: título, descrição, enunciado de uma Question) num Language. O português é obrigatório; o inglês é opcional. | Version, Locale | §C; RF31; RNF13; D08 |
 | **Indicator** (indicador) | Valor calculado a partir da base de dados. De utilização: Users registados e ativos (sessão iniciada nos últimos 30 dias, pressuposto D06), Training Resources publicados, Enrollments e taxa de Completion. De aprendizagem: Learning Gain médio, distribuição dos Scores e evolução ao longo do tempo. | KPI, Metric | §D.2, §D.3; RF36, RF38, RF43; RNF14; D06 |
+
+## 3. Pressupostos
+
+Enquanto as dúvidas do [levantamento de requisitos](../requisitos/furps.md) não tiverem resposta, o glossário usa as opções seguintes.
+
+| Dúvida | Pressuposto | Termos afetados |
+|---|---|---|
+| D01 | O Diagnostic Questionnaire tem, por omissão, até 2 Attempts; o máximo é configurável no Questionnaire. O "pré" do Learning Gain é o Score da 1.ª Attempt, que mede o conhecimento antes de qualquer contacto com as Questions. | Questionnaire, Diagnostic Questionnaire, Learning Gain |
+| D02 | A idade-limite para pedir o Parental Consent é 18 anos. | Minor |
+| D04 | O Final Questionnaire pode ser repetido, até ao máximo configurado no Questionnaire. O Badge e o Certificate são atribuídos na primeira Attempt com 85% ou mais. O "pós" do Learning Gain é o Score da 1.ª Attempt, para comparar nas mesmas condições do "pré". | Questionnaire, Final Questionnaire, Learning Gain |
+| D05 | O Certificate é gerado pela plataforma e contém o nome do User, o Training Resource, a data e o Score. | Certificate |
+| D06 | Um User ativo é um User com sessão iniciada nos últimos 30 dias. | Indicator |
+| D07 | Quando o "pré" é 100%, o Learning Gain normalizado não é calculado (fica sem valor). | Learning Gain |
+| D08 | O inglês aplica-se à interface e também aos textos dos conteúdos (Training Resources, Questionnaires e Virtual Library). | Language, Translation |
+| D09 | Há um só Badge por Training Resource. | Badge |
+| D10 | Os Weekly Highlights são escolhidos pelo Manager. | Weekly Highlight |
+| D11 | O Guardian responde pelo link do email e não tem conta. | Guardian, Parental Consent |
+
+Pressupostos da equipa sem dúvida associada:
+
+- **Category** é o tipo de Publication, por corresponder à tabela `contenttypes` do MR v1.0; a especificação (§C.1) não a define.
+- **Completion** acontece com a submissão do Final Questionnaire, seja qual for o Score; a regra dos 85% aplica-se só ao Badge e ao Certificate.
+- **School Year** vai do 7.º ao 12.º ano (público-alvo da §C).
+- **Score** é uma percentagem (0 a 100%), coerente com a regra dos 85% da §D.1.
+
+## 4. Correspondência com os nomes da v1.0
+
+| Nome na v1.0 | Termo do glossário | Motivo |
+|---|---|---|
+| User (UC v1.0) | Registered User | Distingue o ator do conceito User, que abrange todos os Roles. |
+| Admin (UC v1.0) | Administrator | Nome completo, igual ao da §C.1. |
+| Virtual Library com os workshops e webinars (UC v1.0) | Virtual Library sem os Training Resources | A §C descreve a biblioteca como publicações, notícias, agenda e destaques. |
+| Forms, Quizzes (UC v1.0); `quizzes` (MR v1.0) | Questionnaire | Termo da especificação ("questionário") e do UC «Answer Final Questionnaire» (US_A005). |
+| `grade` (MR v1.0); Get final grade (UC v1.0) | Score | Em inglês, *grade* também quer dizer ano de escolaridade. |
+| `answers` (MR v1.0) | Answer Option | A tabela guarda as alternativas; Answer fica para a opção escolhida pelo User. |
+| `quiz_user` (MR v1.0) | Attempt | Cada submissão é uma tentativa, com número, data, Score e Answers (RF19, RF21). |
+| `resources` (MR v1.0) | Training Resource | "Recurso" sozinho confunde-se com os "recursos" da biblioteca (§B). |
+| `resource_user` (MR v1.0); Register for the Workshop / Webinar (UC v1.0) | Enrollment | Separa a inscrição num recurso (Enrollment) do registo na plataforma (Registration). |
+| `roles` (MR v1.0) | Role | Separa o perfil de acesso (Role) da página de perfil (User Profile). |
+| `userstates` (MR v1.0) | Account Status | O estado é da conta, não da pessoa. |
+| `resourcestates`, `qastates` (MR v1.0) | Content Status | Um só estado de publicação para todos os conteúdos (RF30). |
+| `contents` (MR v1.0); Publications / Articles (UC v1.0) | Publication | Termo da especificação ("publicações"). |
+| `contenttypes` (MR v1.0) | Category | Termo da especificação ("categorias", §C.1). |
+| `news` (MR v1.0) | News Item | *News* não tem singular em inglês. |
