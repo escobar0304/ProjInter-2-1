@@ -89,3 +89,27 @@ Este glossário define a linguagem ubíqua da Plataforma de Literacia em Saúde 
 |---|---|---|---|
 | **Badge** | Distintivo atribuído a um User por um Training Resource, com a data de atribuição, quando o User obtém 85% ou mais no Final Questionnaire. Aparece no User Profile. Há um Badge por Training Resource (pressuposto D09). | Medal, Achievement | §C, §D.1; RF23, RF24; D09 |
 | **Certificate** (certificado) | Documento em PDF emitido a um User por um Training Resource, com a data de emissão, que comprova a conclusão com 85% ou mais. Contém o nome do User, o Training Resource, a data e o Score (pressuposto D05). | Diploma | §C.1, §D.1; RF23, RF25; D05 |
+
+### F. Biblioteca e conteúdos
+
+| Termo | Definição | Evitar | Fonte |
+|---|---|---|---|
+| **Virtual Library** (biblioteca virtual) | Área pública de conteúdos informativos: Publications, News Items, Agenda e Weekly Highlights. Não inclui os Training Resources. | Library (para os Training Resources) | §B, §C |
+| **Publication** (publicação) | Documento informativo (ex.: artigo, guia), com autor, link, Health Area e Category. | Article, Content, Post | §C, §C.1; RF09; MR v1.0 (`contents`) |
+| **Category** (categoria) | Tipo de Publication (ex.: artigo, guia, infografia). | Health Area, Content Type | §C.1; RF27; MR v1.0 (`contenttypes`) |
+| **News Item** (notícia) | Texto informativo datado, com autor e imagem, opcionalmente associado a uma Health Area. | News (no singular), Post | §C.1; RF09; MR v1.0 (`news`) |
+| **Activity** (atividade) | Acontecimento com data e hora (e, opcionalmente, um link) que aparece na Agenda. | Event | §C.1; RF09, RF28; MR v1.0 (`activities`) |
+| **Agenda** | Lista cronológica das próximas Activities. | Calendar, Schedule | §B, §C.1; RF09 |
+| **Weekly Highlight** (destaque da semana) | Conteúdo escolhido pelo Manager para aparecer em destaque na página inicial durante um período (pressuposto D10). | Featured, Spotlight | §B, §C; RF10, RF28; D10 |
+| **Content Status** (estado de publicação) | Draft, Published ou Archived. Só os conteúdos Published aparecem no Frontoffice. | Resource State, Publication Status | RF30; MR v1.0 (`resourcestates`, `qastates`) |
+| **Restricted Content** (conteúdo reservado) | Training Resources, Questionnaires, Badges e Certificates: só são acessíveis com sessão iniciada. O restante conteúdo é público. | Private Content, Premium | §C; RF12 |
+
+### G. Plataforma e estatística
+
+| Termo | Definição | Evitar | Fonte |
+|---|---|---|---|
+| **Frontoffice** | Área pública e do Registered User. | Site, Portal | §C.2 |
+| **Backoffice** | Área de administração, usada pelo Manager e pelo Administrator. | Admin Panel, Dashboard | §C, §C.2 |
+| **Language** (idioma) | Português ou inglês. Aplica-se à interface e aos textos dos conteúdos (pressuposto D08). | Locale | §C; RF31; RNF05, RNF13; D08 |
+| **Translation** (tradução) | Texto de um conteúdo (ex.: título, descrição, enunciado de uma Question) num Language. O português é obrigatório; o inglês é opcional. | Version, Locale | §C; RF31; RNF13; D08 |
+| **Indicator** (indicador) | Valor calculado a partir da base de dados. De utilização: Users registados e ativos (sessão iniciada nos últimos 30 dias, pressuposto D06), Training Resources publicados, Enrollments e taxa de Completion. De aprendizagem: Learning Gain médio, distribuição dos Scores e evolução ao longo do tempo. | KPI, Metric | §D.2, §D.3; RF36, RF38, RF43; RNF14; D06 |
