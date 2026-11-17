@@ -19,6 +19,7 @@ Analisar e atualizar o levantamento de requisitos fornecido pelo cliente (especi
   - 28 requisitos não funcionais (usabilidade, fiabilidade, desempenho, suportabilidade e restrições);
   - limites de âmbito, dúvidas para o cliente, alterações face à secção C e ligação às US extra.
 - Cada requisito tem ID, prioridade e origem (secção da especificação, diagrama v1.0 ou equipa).
+- Versão 1.1 (branch `feature/A001-Terminologia-Glossario`): atores com o termo do [glossário](../../docs/uml/glossario.md) (US_A004) e referência aos pressupostos adotados para as dúvidas D01 a D11, enquanto o cliente não responde.
 
 ## Decisões
 
@@ -36,5 +37,5 @@ Analisar e atualizar o levantamento de requisitos fornecido pelo cliente (especi
 
 ## Pendente
 
-- Levar as dúvidas D01 a D11 ao docente e atualizar os requisitos afetados.
+- Levar as dúvidas D01 a D11 ao docente e atualizar os requisitos afetados (e os pressupostos do glossário).
 - Rastreabilidade com os use cases (US_A002), feita depois do merge.
