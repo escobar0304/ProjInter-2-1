@@ -88,3 +88,89 @@ A ordem dos dois ramos não importa. Se o Guardian aceitar antes de o Guest veri
 | E9 | Link antigo (expirado ou já usado) | O Sistema mostra uma mensagem e não altera nada. | Fora do processo (anotação) |
 
 Os caminhos que voltam ao formulário ou à espera não ficam em aberto: o processo termina sempre num dos eventos de fim, porque os prazos de 30 dias (P3 e P5) acabam por ser atingidos. Se o Guest fechar o formulário antes de o submeter, não se grava nada.
+
+## 6. Rastreabilidade
+
+### Use cases
+
+| UC | Nome | Onde aparece no fluxograma |
+|---|---|---|
+| UC01 | Register User | Todo o fluxo da pool «Plataforma — Registration». |
+| UC02 | Send Confirmation Email («include» de UC01) | Tarefa «Enviar o email de confirmação», feita sempre. |
+| UC03 | Request Parental Consent («extend» de UC01, condição Minor) | Ramo do consentimento, que só segue quando o User é Minor. |
+| UC04 | Verify Email | Evento «Abre o link de verificação» e tarefa «Registar a Email Verification». |
+| UC05 | Decide Parental Consent | Raia Guardian: «Ler a informação e decidir» e o gateway «Decisão?». |
+| UC06 | Revoke Parental Consent | Fora do fluxo, numa anotação. O link de revogação é enviado quando o Guardian aceita. |
+
+### Requisitos
+
+| Requisito | Onde aparece no fluxograma |
+|---|---|
+| RF01 | Formulário de registo, preenchido pelo Guest. |
+| RF02 | Envio do email de confirmação e Email Verification só depois de o link ser aberto. |
+| RF03 | Gateway «Minor?», pedido do email do Guardian e envio do pedido de consentimento. |
+| RF04 | Registo da decisão com `decided_at`; a conta do Minor só é ativada com o consentimento `accepted`. |
+| RF45 | Token de revogação criado quando o Guardian aceita (UC06 fica fora do fluxo). |
+| RNF06 | Validação dos dados, com a mensagem que indica o campo. |
+| RNF22 | Aceitação da política de privacidade, consentimento do Guardian e eliminação dos registos não concluídos ou recusados. |
+| RNF23 | Palavra-passe guardada só em hash (`password_hash`). |
+| RNF26 | Todos os emails são enviados pelo Email Service. |
+
+## 7. Estados e dados usados
+
+### Account Status (`account_statuses`)
+
+| Estado | Quando |
+|---|---|
+| `pending_verification` | A conta é criada. Fica assim até o Guest verificar o email. |
+| `pending_consent` | Só para um Minor: o email está verificado, mas o consentimento ainda não foi aceite. |
+| `active` | Email verificado e, se for Minor, consentimento `accepted`. Só uma conta `active` pode iniciar sessão. |
+| `deactivated` | O Guardian recusou o consentimento. Os dados são eliminados 30 dias depois. |
+| `suspended` | Não é usado neste fluxo. A conta fica `suspended` se o Guardian revogar o consentimento (UC06, RF45). |
+
+Cada mudança de estado atualiza `users.status_changed_at`. Os prazos de eliminação de 30 dias contam a partir desta data.
+
+### Estado do Parental Consent (`parental_consents.status`)
+
+| Estado | Quando |
+|---|---|
+| `pending` | O pedido é criado e enviado ao Guardian. |
+| `accepted` | O Guardian aceita. Grava-se `decided_at` e cria-se o `revocation_token_hash`. |
+| `refused` | O Guardian recusa. Grava-se `decided_at`. |
+| `expired` | Passam 7 dias sem resposta. Num reenvio, o pedido anterior passa a `expired` antes de se criar o novo, porque só pode haver um pedido aberto (`pending` ou `accepted`) por User. |
+| `revoked` | Não é usado neste fluxo (UC06). |
+
+### Outros dados
+
+| Dado | Uso |
+|---|---|
+| `users.birth_date` | Calcular se o User é Minor à data do registo (D02). |
+| `users.password_hash` | Palavra-passe em hash (RNF23). |
+| `users.privacy_accepted_at` | Data da aceitação da política de privacidade (RNF22). |
+| `users.email_verified_at` | Data da Email Verification. |
+| `user_tokens` (`purpose = 'email_verification'`) | Link de verificação: guarda-se o hash do token, com `expires_at` (24 h) e `used_at` (uso único). |
+| `parental_consents` | Pedido de consentimento: `guardian_email`, `token_hash`, `requested_at`, `expires_at` (7 dias), `decided_at` e `revocation_token_hash`. |
+
+Os reenvios contam-se pelas linhas de `user_tokens` e de `parental_consents` de cada User: não há uma coluna própria.
+
+## 8. Pressupostos
+
+Pressupostos das dúvidas do [levantamento de requisitos](../requisitos/furps.md), já registados no [glossário](../uml/glossario.md):
+
+| Dúvida | Pressuposto |
+|---|---|
+| D02 | Minor é um User com menos de 18 anos à data do registo. |
+| D11 | O Guardian não tem conta e responde pelo link do email. |
+
+Pressupostos da equipa sobre o que a especificação não define:
+
+| ID | Pressuposto |
+|---|---|
+| P1 | Prazos: o link de verificação vale 24 horas; o pedido de consentimento vale 7 dias; os registos não concluídos são eliminados ao fim de 30 dias. |
+| P2 | Se o email já estiver registado, o Sistema diz-o de forma explícita e mostra os links para iniciar sessão e recuperar a palavra-passe. |
+| P3 | Se o email nunca for verificado, a conta e os dados são eliminados ao fim de 30 dias (RNF22, minimização dos dados). |
+| P4 | Se o Guardian recusar, a conta passa a `deactivated` e não pode iniciar sessão. O registo da recusa fica guardado e os dados pessoais são eliminados ao fim de 30 dias. |
+| P5 | Se o pedido de consentimento expirar, o Guest pode reenviá-lo, para o mesmo email ou para outro, até 2 vezes. Sem novo pedido, ou com os reenvios esgotados, a conta e os dados são eliminados ao fim de 30 dias. |
+| P6 | Se o envio de um email falhar, a conta mantém-se. O Sistema tenta enviar mais 3 vezes, e o Guest pode pedir o reenvio. Se o email nunca for verificado, aplica-se P3. |
+| P7 | Validações extra: o email do Guardian tem de ser diferente do email do Minor; a data de nascimento não pode ser no futuro; a aceitação da política de privacidade é obrigatória. |
+| P8 | Não há idade mínima: o Parental Consent cobre todos os Minors, e o público-alvo vai do 7.º ao 12.º ano. |
