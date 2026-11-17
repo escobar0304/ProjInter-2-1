@@ -50,7 +50,7 @@ São 40 tabelas: 24 com os dados do domínio, 6 de referência e 10 de traduçõ
 | Biblioteca virtual | `categories`, `publications`, `news_items`, `activities`, `weekly_highlights` | Category, Publication, News Item, Activity, Weekly Highlight |
 | Traduções | `health_area_translations`, `training_resource_translations`, `level_translations`, `questionnaire_translations`, `question_translations`, `answer_option_translations`, `category_translations`, `publication_translations`, `news_item_translations`, `activity_translations` | Translation |
 
-O detalhe de cada coluna (tipo, obrigatoriedade, domínio e exemplo) fica no dicionário de dados (US_A007).
+O detalhe de cada coluna (tipo, obrigatoriedade, domínio e exemplo) está no [dicionário de dados](dicionario-dados.md) (US_A007).
 
 ## 4. Alterações face à v1.0
 
