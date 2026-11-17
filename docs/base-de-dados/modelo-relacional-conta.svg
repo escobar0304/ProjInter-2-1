@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1390" height="1016" viewBox="0 0 1390 1016" font-family="Helvetica, Arial, sans-serif" font-size="12">
+<title>Modelo relacional v1.1: Conta e acesso</title>
+<style>.h{font-weight:bold;text-anchor:middle}.k{font-weight:bold;font-size:11px;text-anchor:middle}.p{font-weight:bold;text-decoration:underline}.y{fill:#666}.s{fill:#999}</style>
+<rect width="1390" height="1016" fill="#ffffff"/>
+<g fill="none" stroke="#444444" stroke-width="1.2">
+<polyline points="940,723.0 926,723.0 926,649.0 820,649.0"/>
+<path d="M940,716.0L930,723.0L940,730.0"/><circle cx="925" cy="723.0" r="4" fill="#fff"/><path d="M828,642.0L828,656.0"/><path d="M833,642.0L833,656.0"/>
+<polyline points="940,749.0 917,749.0 917,801.0 820,801.0"/>
+<path d="M940,742.0L930,749.0L940,756.0"/><circle cx="925" cy="749.0" r="4" fill="#fff"/><path d="M828,794.0L828,808.0"/><path d="M833,794.0L833,808.0"/>
+<polyline points="490,263.0 476,263.0 476,259.0 370,259.0"/>
+<path d="M490,256.0L480,263.0L490,270.0"/><circle cx="475" cy="263.0" r="4" fill="#fff"/><path d="M378,252.0L378,266.0"/><circle cx="387" cy="259.0" r="4" fill="#fff"/>
+<polyline points="490,289.0 467,289.0 467,385.0 370,385.0"/>
+<path d="M490,282.0L480,289.0L490,296.0"/><circle cx="475" cy="289.0" r="4" fill="#fff"/><path d="M378,378.0L378,392.0"/><circle cx="387" cy="385.0" r="4" fill="#fff"/>
+<polyline points="490,341.0 458,341.0 458,133.0 370,133.0"/>
+<path d="M490,334.0L480,341.0L490,348.0"/><circle cx="475" cy="341.0" r="4" fill="#fff"/><path d="M378,126.0L378,140.0"/><path d="M383,126.0L383,140.0"/>
+<polyline points="820,367.0 852,367.0 852,649.0 820,649.0"/>
+<path d="M820,360.0L830,367.0L820,374.0"/><circle cx="835" cy="367.0" r="4" fill="#fff"/><path d="M828,642.0L828,656.0"/><path d="M833,642.0L833,656.0"/>
+<polyline points="490,393.0 449,393.0 449,511.0 370,511.0"/>
+<path d="M490,386.0L480,393.0L490,400.0"/><circle cx="475" cy="393.0" r="4" fill="#fff"/><path d="M378,504.0L378,518.0"/><path d="M383,504.0L383,518.0"/>
+<polyline points="940,159.0 899,159.0 899,133.0 820,133.0"/>
+<path d="M940,152.0L930,159.0L940,166.0"/><circle cx="925" cy="159.0" r="4" fill="#fff"/><path d="M828,126.0L828,140.0"/><path d="M833,126.0L833,140.0"/>
+<polyline points="940,415.0 890,415.0 890,133.0 820,133.0"/>
+<path d="M940,408.0L930,415.0L940,422.0"/><circle cx="925" cy="415.0" r="4" fill="#fff"/><path d="M828,126.0L828,140.0"/><path d="M833,126.0L833,140.0"/>
+</g>
+<rect x="40" y="90" width="330" height="82" fill="#ffffff" stroke="#666666"/>
+<rect x="40" y="90" width="330" height="30" fill="#f5f5f5" stroke="#666666"/>
+<text x="205.0" y="109" class="h">languages</text>
+<line x1="40" y1="146" x2="370" y2="146" stroke="#666666"/>
+<text x="62" y="137" class="k">PK</text>
+<text x="90" y="137" class="p">code</text>
+<text x="256" y="137" class="y">varchar(5)</text>
+<text x="62" y="163" class="k">UQ</text>
+<text x="90" y="163">name</text>
+<text x="256" y="163" class="y">varchar(50) NN</text>
+<rect x="40" y="216" width="330" height="82" fill="#ffffff" stroke="#666666"/>
+<rect x="40" y="216" width="330" height="30" fill="#f5f5f5" stroke="#666666"/>
+<text x="205.0" y="235" class="h">genders</text>
+<line x1="40" y1="272" x2="370" y2="272" stroke="#666666"/>
+<text x="62" y="263" class="k">PK</text>
+<text x="90" y="263" class="p">id</text>
+<text x="256" y="263" class="y">smallint</text>
+<text x="62" y="289" class="k">UQ</text>
+<text x="90" y="289">name</text>
+<text x="256" y="289" class="y">varchar(30) NN</text>
+<rect x="40" y="342" width="330" height="82" fill="#ffffff" stroke="#666666"/>
+<rect x="40" y="342" width="330" height="30" fill="#f5f5f5" stroke="#666666"/>
+<text x="205.0" y="361" class="h">school_years</text>
+<line x1="40" y1="398" x2="370" y2="398" stroke="#666666"/>
+<text x="62" y="389" class="k">PK</text>
+<text x="90" y="389" class="p">id</text>
+<text x="256" y="389" class="y">smallint</text>
+<text x="62" y="415" class="k">UQ</text>
+<text x="90" y="415">year</text>
+<text x="256" y="415" class="y">smallint NN</text>
+<rect x="40" y="468" width="330" height="82" fill="#ffffff" stroke="#666666"/>
+<rect x="40" y="468" width="330" height="30" fill="#f5f5f5" stroke="#666666"/>
+<text x="205.0" y="487" class="h">account_statuses</text>
+<line x1="40" y1="524" x2="370" y2="524" stroke="#666666"/>
+<text x="62" y="515" class="k">PK</text>
+<text x="90" y="515" class="p">id</text>
+<text x="256" y="515" class="y">smallint</text>
+<text x="62" y="541" class="k">UQ</text>
+<text x="90" y="541">code</text>
+<text x="256" y="541" class="y">varchar(30) NN</text>
+<rect x="490" y="90" width="330" height="472" fill="#ffffff" stroke="#82b366"/>
+<rect x="490" y="90" width="330" height="30" fill="#d5e8d4" stroke="#82b366"/>
+<text x="655.0" y="109" class="h">users</text>
+<line x1="490" y1="146" x2="820" y2="146" stroke="#82b366"/>
+<text x="512" y="137" class="k">PK</text>
+<text x="540" y="137" class="p">id</text>
+<text x="706" y="137" class="y">bigint</text>
+<text x="540" y="163">name</text>
+<text x="706" y="163" class="y">varchar(100) NN</text>
+<text x="512" y="189" class="k">UQ</text>
+<text x="540" y="189">email</text>
+<text x="706" y="189" class="y">varchar(254) NN</text>
+<text x="540" y="215">password_hash</text>
+<text x="706" y="215" class="y">varchar(255) NN</text>
+<text x="540" y="241">birth_date</text>
+<text x="706" y="241" class="y">date NN</text>
+<text x="512" y="267" class="k">FK</text>
+<text x="540" y="267">gender_id</text>
+<text x="706" y="267" class="y">smallint</text>
+<text x="512" y="293" class="k">FK</text>
+<text x="540" y="293">school_year_id</text>
+<text x="706" y="293" class="y">smallint</text>
+<text x="540" y="319">photo_url</text>
+<text x="706" y="319" class="y">varchar(500)</text>
+<text x="512" y="345" class="k">FK</text>
+<text x="540" y="345">preferred_language</text>
+<text x="706" y="345" class="y">varchar(5) NN</text>
+<text x="512" y="371" class="k">FK</text>
+<text x="540" y="371">role_id</text>
+<text x="706" y="371" class="y">smallint NN</text>
+<text x="512" y="397" class="k">FK</text>
+<text x="540" y="397">account_status_id</text>
+<text x="706" y="397" class="y">smallint NN</text>
+<text x="540" y="423">status_changed_at</text>
+<text x="706" y="423" class="y">timestamptz NN</text>
+<text x="540" y="449">privacy_accepted_at</text>
+<text x="706" y="449" class="y">timestamptz</text>
+<text x="540" y="475">email_verified_at</text>
+<text x="706" y="475" class="y">timestamptz</text>
+<text x="540" y="501">last_login_at</text>
+<text x="706" y="501" class="y">timestamptz</text>
+<text x="540" y="527">created_at</text>
+<text x="706" y="527" class="y">timestamptz NN</text>
+<text x="540" y="553">updated_at</text>
+<text x="706" y="553" class="y">timestamptz NN</text>
+<rect x="490" y="606" width="330" height="108" fill="#ffffff" stroke="#82b366"/>
+<rect x="490" y="606" width="330" height="30" fill="#d5e8d4" stroke="#82b366"/>
+<text x="655.0" y="625" class="h">roles</text>
+<line x1="490" y1="662" x2="820" y2="662" stroke="#82b366"/>
+<text x="512" y="653" class="k">PK</text>
+<text x="540" y="653" class="p">id</text>
+<text x="706" y="653" class="y">smallint</text>
+<text x="512" y="679" class="k">UQ</text>
+<text x="540" y="679">code</text>
+<text x="706" y="679" class="y">varchar(30) NN</text>
+<text x="540" y="705">name</text>
+<text x="706" y="705" class="y">varchar(50) NN</text>
+<rect x="490" y="758" width="330" height="108" fill="#ffffff" stroke="#82b366"/>
+<rect x="490" y="758" width="330" height="30" fill="#d5e8d4" stroke="#82b366"/>
+<text x="655.0" y="777" class="h">permissions</text>
+<line x1="490" y1="814" x2="820" y2="814" stroke="#82b366"/>
+<text x="512" y="805" class="k">PK</text>
+<text x="540" y="805" class="p">id</text>
+<text x="706" y="805" class="y">smallint</text>
+<text x="512" y="831" class="k">UQ</text>
+<text x="540" y="831">code</text>
+<text x="706" y="831" class="y">varchar(50) NN</text>
+<text x="540" y="857">description</text>
+<text x="706" y="857" class="y">varchar(255) NN</text>
+<rect x="940" y="90" width="330" height="212" fill="#ffffff" stroke="#82b366"/>
+<rect x="940" y="90" width="330" height="30" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1105.0" y="109" class="h">user_tokens</text>
+<line x1="940" y1="146" x2="1270" y2="146" stroke="#82b366"/>
+<text x="962" y="137" class="k">PK</text>
+<text x="990" y="137" class="p">id</text>
+<text x="1156" y="137" class="y">bigint</text>
+<text x="962" y="163" class="k">FK</text>
+<text x="990" y="163">user_id</text>
+<text x="1156" y="163" class="y">bigint NN</text>
+<text x="990" y="189">purpose</text>
+<text x="1156" y="189" class="y">varchar(30) NN</text>
+<text x="962" y="215" class="k">UQ</text>
+<text x="990" y="215">token_hash</text>
+<text x="1156" y="215" class="y">varchar(255) NN</text>
+<text x="990" y="241">created_at</text>
+<text x="1156" y="241" class="y">timestamptz NN</text>
+<text x="990" y="267">expires_at</text>
+<text x="1156" y="267" class="y">timestamptz NN</text>
+<text x="990" y="293">used_at</text>
+<text x="1156" y="293" class="y">timestamptz</text>
+<rect x="940" y="346" width="330" height="290" fill="#ffffff" stroke="#82b366"/>
+<rect x="940" y="346" width="330" height="30" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1105.0" y="365" class="h">parental_consents</text>
+<line x1="940" y1="402" x2="1270" y2="402" stroke="#82b366"/>
+<text x="962" y="393" class="k">PK</text>
+<text x="990" y="393" class="p">id</text>
+<text x="1156" y="393" class="y">bigint</text>
+<text x="962" y="419" class="k">FK</text>
+<text x="990" y="419">user_id</text>
+<text x="1156" y="419" class="y">bigint NN</text>
+<text x="990" y="445">guardian_email</text>
+<text x="1156" y="445" class="y">varchar(254) NN</text>
+<text x="962" y="471" class="k">UQ</text>
+<text x="990" y="471">token_hash</text>
+<text x="1156" y="471" class="y">varchar(255) NN</text>
+<text x="962" y="497" class="k">UQ</text>
+<text x="990" y="497">revocation_token_hash</text>
+<text x="1156" y="497" class="y">varchar(255)</text>
+<text x="990" y="523">status</text>
+<text x="1156" y="523" class="y">varchar(20) NN</text>
+<text x="990" y="549">requested_at</text>
+<text x="1156" y="549" class="y">timestamptz NN</text>
+<text x="990" y="575">expires_at</text>
+<text x="1156" y="575" class="y">timestamptz NN</text>
+<text x="990" y="601">decided_at</text>
+<text x="1156" y="601" class="y">timestamptz</text>
+<text x="990" y="627">revoked_at</text>
+<text x="1156" y="627" class="y">timestamptz</text>
+<rect x="940" y="680" width="330" height="82" fill="#ffffff" stroke="#82b366"/>
+<rect x="940" y="680" width="330" height="30" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1105.0" y="699" class="h">role_permissions</text>
+<text x="962" y="727" class="k">PK,FK</text>
+<text x="990" y="727" class="p">role_id</text>
+<text x="1156" y="727" class="y">smallint</text>
+<line x1="940" y1="762" x2="1270" y2="762" stroke="#82b366"/>
+<text x="962" y="753" class="k">PK,FK</text>
+<text x="990" y="753" class="p">permission_id</text>
+<text x="1156" y="753" class="y">smallint</text>
+<rect x="40" y="896" width="560" height="80" fill="#ffffff" stroke="#999999"/>
+<text x="48" y="916" font-weight="bold">Legenda</text>
+<text x="48" y="934">PK chave primária · FK chave estrangeira · UQ único · NN obrigatório</text>
+<text x="48" y="951">Tracejado: tabela de traduções · Cinzento: tabela de outra página</text>
+<text x="48" y="968">Ligações omitidas: language_code → languages e content_status_id → content_statuses</text>
+</svg>
