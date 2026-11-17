@@ -19,7 +19,7 @@
 | US | Descrição | Prioridade | Issue | Responsável | Documentação |
 |---|---|---|---|---|---|
 | US_A001 | Levantamento de requisitos (FURPS+) | P1 | [#1](https://github.com/escobar0304/ProjInter-2-1/issues/1) | Diogo Escobar | [A001-Requisitos-FURPS](A001-Requisitos-FURPS.md) |
-| US_A002 | Diagrama de use cases (frontoffice e backoffice) | P1 | [#2](https://github.com/escobar0304/ProjInter-2-1/issues/2) | a definir | — |
+| US_A002 | Diagrama de use cases (frontoffice e backoffice) | P1 | [#2](https://github.com/escobar0304/ProjInter-2-1/issues/2) | João Crasto | [A002-Use-Cases](A002-Use-Cases.md) |
 | US_A003 | Modelo relacional de dados | P1 | [#3](https://github.com/escobar0304/ProjInter-2-1/issues/3) | a definir | — |
 | US_A004 | Modelo de domínio (DDD) | P1 | [#4](https://github.com/escobar0304/ProjInter-2-1/issues/4) | a definir | — |
 | US_A005 | Descrição estruturada do UC «Responder a Questionário Final» | P4 | [#5](https://github.com/escobar0304/ProjInter-2-1/issues/5) | a definir | — |
