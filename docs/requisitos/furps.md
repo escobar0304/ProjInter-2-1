@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | User Story | US_A001 ([issue #1](https://github.com/escobar0304/ProjInter-2-1/issues/1)) |
-| Versão | 1.0 (Sprint A) |
+| Versão | 1.1 (Sprint A) |
 | Estado | Em revisão pela equipa |
 
 ## 1. Âmbito
@@ -22,6 +22,7 @@ Este documento organiza pelo método FURPS+ os requisitos da Plataforma de Liter
 ### Convenções
 
 - `RFnn` identifica um requisito funcional e `RNFnn` um requisito não funcional. Os IDs não mudam depois de publicados: um requisito novo recebe o número seguinte e um requisito removido fica marcado como "removido".
+- Terminologia: os conceitos do domínio têm o nome definido no [glossário](../uml/glossario.md) (US_A004). Este documento está em português; o termo do glossário (em inglês) aparece entre parênteses nos atores e é o que se usa nos diagramas, no modelo de dados e no código.
 - Prioridade (MoSCoW): **M** obrigatório, **S** importante, **C** desejável, **W** fora de âmbito nesta versão.
 - Os requisitos funcionais estão agrupados por área:
 
@@ -38,14 +39,14 @@ Este documento organiza pelo método FURPS+ os requisitos da Plataforma de Liter
 
 ## 2. Atores
 
-| Ator | Descrição | Herda de | Origem |
+| Ator (termo do glossário) | Descrição | Herda de | Origem |
 |---|---|---|---|
-| Convidado | Visitante sem sessão iniciada | — | §C.1 |
-| Utilizador Registado | Utilizador com conta ativa. O público-alvo principal são jovens do 3.º ciclo e do ensino secundário | Convidado | §C, §C.1 |
-| Manager (Gestor de Conteúdos) | Utilizador registado com acesso à área de administração (backoffice) | Utilizador Registado | §C.1 |
-| Administrador | Utilizador com acesso total ao sistema | Manager | §C.1 |
-| Encarregado de educação (ator secundário) | Aceita ou recusa, a partir do email recebido, o registo de um menor. Não tem conta na plataforma | — | §C (proposta da equipa) |
-| Serviço de email (sistema externo) | Envia os emails de confirmação, de consentimento e de recuperação da palavra-passe | — | UC v1.0 |
+| Convidado (Guest) | Visitante sem sessão iniciada | — | §C.1 |
+| Utilizador Registado (Registered User) | Utilizador com conta ativa. O público-alvo principal são jovens do 3.º ciclo e do ensino secundário | Convidado | §C, §C.1 |
+| Manager (Manager) | Gestor de conteúdos: utilizador registado com acesso à área de administração (backoffice) | Utilizador Registado | §C.1 |
+| Administrador (Administrator) | Utilizador com acesso total ao sistema | Manager | §C.1 |
+| Encarregado de educação (Guardian), ator secundário | Aceita ou recusa, a partir do email recebido, o registo de um menor. Não tem conta na plataforma | — | §C (proposta da equipa) |
+| Serviço de email (Email Service), sistema externo | Envia os emails de confirmação, de consentimento e de recuperação da palavra-passe | — | UC v1.0 |
 
 ## 3. Requisitos funcionais (F)
 
