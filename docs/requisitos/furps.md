@@ -164,6 +164,8 @@ Este documento organiza pelo método FURPS+ os requisitos da Plataforma de Liter
 
 ## 6. Dúvidas para esclarecer com o cliente
 
+Enquanto não houver resposta do cliente, a equipa usa os pressupostos registados no [glossário](../uml/glossario.md) (secção 3).
+
 | ID | Dúvida | Requisitos afetados |
 |---|---|---|
 | D01 | A 2.ª oportunidade no diagnóstico é dada sempre ou por decisão do Manager? Que tentativa conta como "pré" no cálculo do ganho? | RF19, RF37 |
