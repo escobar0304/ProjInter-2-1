@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| Período | 31/10/2026 – 21/11/2026 |
-| Entrega no Moodle | 20/11/2026, até às 23h59 (relatório em PDF e ZIP) |
-| Apresentação (sprint review) | 21/11/2026, pitch de 10 minutos |
+| Período | 31/10/2026 – 28/11/2026 |
+| Entrega no Moodle | 28/11/2026 (relatório em PDF e ZIP) |
+| Apresentação (sprint review) | Data a confirmar, pitch de 10 minutos |
 | Peso na avaliação | 25% |
 
 ## Objetivos
@@ -20,7 +20,7 @@
 |---|---|---|---|---|---|
 | US_A001 | Levantamento de requisitos (FURPS+) | P1 | [#1](https://github.com/escobar0304/ProjInter-2-1/issues/1) | Diogo Escobar | [A001-Requisitos-FURPS](A001-Requisitos-FURPS.md) |
 | US_A002 | Diagrama de use cases (frontoffice e backoffice) | P1 | [#2](https://github.com/escobar0304/ProjInter-2-1/issues/2) | João Crasto | [A002-Use-Cases](A002-Use-Cases.md) |
-| US_A003 | Modelo relacional de dados | P1 | [#3](https://github.com/escobar0304/ProjInter-2-1/issues/3) | a definir | — |
+| US_A003 | Modelo relacional de dados | P1 | [#3](https://github.com/escobar0304/ProjInter-2-1/issues/3) | Diogo Escobar | [A003-Modelo-Relacional](A003-Modelo-Relacional.md) |
 | US_A004 | Modelo de domínio (DDD) | P1 | [#4](https://github.com/escobar0304/ProjInter-2-1/issues/4) | a definir | — |
 | US_A005 | Descrição estruturada do UC «Responder a Questionário Final» | P4 | [#5](https://github.com/escobar0304/ProjInter-2-1/issues/5) | a definir | — |
 | US_A006 | Configuração do repositório | P2 | [#6](https://github.com/escobar0304/ProjInter-2-1/issues/6) | Diogo Escobar | [A006-Repo-Config](A006-Repo-Config.md) |
