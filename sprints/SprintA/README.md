@@ -25,7 +25,7 @@
 | US_A005 | Descrição estruturada do UC «Responder a Questionário Final» | P4 | [#5](https://github.com/escobar0304/ProjInter-2-1/issues/5) | a definir | — |
 | US_A006 | Configuração do repositório | P2 | [#6](https://github.com/escobar0304/ProjInter-2-1/issues/6) | Diogo Escobar | [A006-Repo-Config](A006-Repo-Config.md) |
 | US_A007 | Dicionário de dados | P3 | [#7](https://github.com/escobar0304/ProjInter-2-1/issues/7) | a definir | — |
-| US_A008 | Fluxograma do UC «Registar Utilizador» | P4 | [#8](https://github.com/escobar0304/ProjInter-2-1/issues/8) | a definir | — |
+| US_A008 | Fluxograma do UC «Registar Utilizador» | P4 | [#8](https://github.com/escobar0304/ProjInter-2-1/issues/8) | João Crasto | [A008-Fluxograma-Registo](A008-Fluxograma-Registo.md) |
 | US_A009 | Métricas do progresso de aprendizagem | P3 | [#9](https://github.com/escobar0304/ProjInter-2-1/issues/9) | a definir | — |
 | US_A010 | Sprint review (pitch de 10 minutos) | P2 | [#10](https://github.com/escobar0304/ProjInter-2-1/issues/10) | a definir | — |
 | US_A011 | GitHub Projects, User Stories e issues | P1 | [#11](https://github.com/escobar0304/ProjInter-2-1/issues/11) | Diogo Escobar | — |
