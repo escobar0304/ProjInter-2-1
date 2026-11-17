@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| Período | 31/10/2026 – 21/11/2026 |
-| Entrega no Moodle | 20/11/2026, até às 23h59 (relatório em PDF e ZIP) |
-| Apresentação (sprint review) | 21/11/2026, pitch de 10 minutos |
+| Período | 31/10/2026 – 28/11/2026 |
+| Entrega no Moodle | 28/11/2026 (relatório em PDF e ZIP) |
+| Apresentação (sprint review) | Data a confirmar, pitch de 10 minutos |
 | Peso na avaliação | 25% |
 
 ## Objetivos

@@ -21,6 +21,13 @@ Reformular o modelo relacional v1.0 fornecido, para que suporte os requisitos (U
   - as regras de negócio garantidas pela base de dados e as que ficam para o backend;
   - os pressupostos e a forma de validar o script.
 
+### Correções fora do âmbito da US
+
+Aproveitando esta branch:
+
+- o [README da Sprint A](README.md) passa a indicar a entrega a 28/11/2026, com a data da apresentação a confirmar;
+- foram removidos os `.gitkeep` de `database/` e de `docs/base-de-dados/`, que já têm ficheiros.
+
 ## Decisões
 
 - **O `schema.sql` é a fonte de verdade.** O CI cria a base de dados a partir dele em cada Pull Request; o diagrama foi gerado a partir da mesma estrutura.
