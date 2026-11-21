@@ -126,5 +126,6 @@ O uso de IA generativa segue o sistema de semáforos definido na especificação
 | Ferramenta | Utilização |
 |---|---|
 | Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore`, template de Pull Request e pipeline de CI). |
+| Codex (OpenAI) | Apoio à descrição estruturada de UC27 na US_A005, atribuída a Pedro Vale, com revisão e validação pela equipa. |
 
 Esta secção é atualizada à medida que o projeto avança.
