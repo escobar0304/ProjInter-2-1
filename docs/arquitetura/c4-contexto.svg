@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="760" viewBox="0 0 1220 760" font-family="Helvetica, Arial, sans-serif" font-size="13">
+<title>C4 nível 1: contexto</title>
+<defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#555555"/></marker></defs>
+<rect width="1220" height="760" fill="#ffffff"/>
+<line x1="238" y1="160" x2="486" y2="340" stroke="#555555" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<rect x="265" y="213" width="144" height="38" fill="#ffffff" opacity="0.92"/>
+<text x="337" y="229" text-anchor="middle" font-size="12" fill="#333333">Consulta o conteúdo</text>
+<text x="337" y="245" text-anchor="middle" font-size="12" fill="#333333">público e regista-se</text>
+<line x1="473" y1="160" x2="555" y2="340" stroke="#555555" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<rect x="421" y="205" width="170" height="54" fill="#ffffff" opacity="0.92"/>
+<text x="506" y="221" text-anchor="middle" font-size="12" fill="#333333">Inscreve-se, vê recursos</text>
+<text x="506" y="237" text-anchor="middle" font-size="12" fill="#333333">e responde a</text>
+<text x="506" y="253" text-anchor="middle" font-size="12" fill="#333333">questionários</text>
+<line x1="707" y1="160" x2="625" y2="340" stroke="#555555" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<rect x="602" y="213" width="144" height="38" fill="#ffffff" opacity="0.92"/>
+<text x="674" y="229" text-anchor="middle" font-size="12" fill="#333333">Gere conteúdos e</text>
+<text x="674" y="245" text-anchor="middle" font-size="12" fill="#333333">consulta indicadores</text>
+<line x1="942" y1="160" x2="694" y2="340" stroke="#555555" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<rect x="767" y="213" width="151" height="38" fill="#ffffff" opacity="0.92"/>
+<text x="843" y="229" text-anchor="middle" font-size="12" fill="#333333">Gere contas, perfis e</text>
+<text x="843" y="245" text-anchor="middle" font-size="12" fill="#333333">permissões</text>
+<line x1="287" y1="570" x2="443" y2="490" stroke="#555555" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<rect x="280" y="511" width="170" height="38" fill="#ffffff" opacity="0.92"/>
+<text x="365" y="527" text-anchor="middle" font-size="12" fill="#333333">Aceita, recusa ou revoga</text>
+<text x="365" y="543" text-anchor="middle" font-size="12" fill="#333333">o consentimento (link)</text>
+<line x1="740" y1="490" x2="900" y2="570" stroke="#555555" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<rect x="764" y="495" width="111" height="70" fill="#ffffff" opacity="0.92"/>
+<text x="820" y="511" text-anchor="middle" font-size="12" fill="#333333">Envia emails de</text>
+<text x="820" y="527" text-anchor="middle" font-size="12" fill="#333333">confirmação,</text>
+<text x="820" y="543" text-anchor="middle" font-size="12" fill="#333333">consentimento e</text>
+<text x="820" y="559" text-anchor="middle" font-size="12" fill="#333333">recuperação</text>
+<line x1="880" y1="630" x2="300" y2="630" stroke="#555555" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<rect x="521" y="611" width="137" height="38" fill="#ffffff" opacity="0.92"/>
+<text x="590" y="627" text-anchor="middle" font-size="12" fill="#333333">Entrega o pedido de</text>
+<text x="590" y="643" text-anchor="middle" font-size="12" fill="#333333">consentimento</text>
+<rect x="40" y="40" width="230" height="120" rx="18" fill="#08427b" stroke="#073b6f"/>
+<text x="155.0" y="70" text-anchor="middle" font-weight="bold" font-size="15" fill="#ffffff">Guest</text>
+<text x="155.0" y="88" text-anchor="middle" font-size="11" fill="#ffffff">[Pessoa]</text>
+<text x="155.0" y="110" text-anchor="middle" font-size="12" fill="#ffffff">Visitante sem sessão iniciada.</text>
+<rect x="330" y="40" width="230" height="120" rx="18" fill="#08427b" stroke="#073b6f"/>
+<text x="445.0" y="70" text-anchor="middle" font-weight="bold" font-size="15" fill="#ffffff">Registered User</text>
+<text x="445.0" y="88" text-anchor="middle" font-size="11" fill="#ffffff">[Pessoa]</text>
+<text x="445.0" y="110" text-anchor="middle" font-size="12" fill="#ffffff">Jovem do 3.º ciclo ou do</text>
+<text x="445.0" y="126" text-anchor="middle" font-size="12" fill="#ffffff">secundário, com conta.</text>
+<rect x="620" y="40" width="230" height="120" rx="18" fill="#08427b" stroke="#073b6f"/>
+<text x="735.0" y="70" text-anchor="middle" font-weight="bold" font-size="15" fill="#ffffff">Manager</text>
+<text x="735.0" y="88" text-anchor="middle" font-size="11" fill="#ffffff">[Pessoa]</text>
+<text x="735.0" y="110" text-anchor="middle" font-size="12" fill="#ffffff">Gestor de conteúdos</text>
+<text x="735.0" y="126" text-anchor="middle" font-size="12" fill="#ffffff">(backoffice).</text>
+<rect x="910" y="40" width="230" height="120" rx="18" fill="#08427b" stroke="#073b6f"/>
+<text x="1025.0" y="70" text-anchor="middle" font-weight="bold" font-size="15" fill="#ffffff">Administrator</text>
+<text x="1025.0" y="88" text-anchor="middle" font-size="11" fill="#ffffff">[Pessoa]</text>
+<text x="1025.0" y="110" text-anchor="middle" font-size="12" fill="#ffffff">Acesso total ao sistema.</text>
+<rect x="380" y="340" width="420" height="150" rx="8" fill="#1168bd" stroke="#0b4884"/>
+<text x="590.0" y="370" text-anchor="middle" font-weight="bold" font-size="15" fill="#ffffff">Plataforma de Literacia em Saúde</text>
+<text x="590.0" y="388" text-anchor="middle" font-size="11" fill="#ffffff">[Sistema de software]</text>
+<text x="590.0" y="410" text-anchor="middle" font-size="12" fill="#ffffff">Recursos formativos, questionários, badges, certificados,</text>
+<text x="590.0" y="426" text-anchor="middle" font-size="12" fill="#ffffff">biblioteca virtual e indicadores.</text>
+<rect x="40" y="570" width="260" height="120" rx="18" fill="#08427b" stroke="#073b6f"/>
+<text x="170.0" y="600" text-anchor="middle" font-weight="bold" font-size="15" fill="#ffffff">Guardian</text>
+<text x="170.0" y="618" text-anchor="middle" font-size="11" fill="#ffffff">[Pessoa]</text>
+<text x="170.0" y="640" text-anchor="middle" font-size="12" fill="#ffffff">Encarregado de educação de um menor.</text>
+<text x="170.0" y="656" text-anchor="middle" font-size="12" fill="#ffffff">Não tem conta.</text>
+<rect x="880" y="570" width="280" height="120" rx="8" fill="#999999" stroke="#8a8a8a"/>
+<text x="1020.0" y="600" text-anchor="middle" font-weight="bold" font-size="15" fill="#ffffff">Email Service</text>
+<text x="1020.0" y="618" text-anchor="middle" font-size="11" fill="#ffffff">[Sistema externo: SMTP]</text>
+<text x="1020.0" y="640" text-anchor="middle" font-size="12" fill="#ffffff">Entrega os emails enviados pela</text>
+<text x="1020.0" y="656" text-anchor="middle" font-size="12" fill="#ffffff">plataforma.</text>
+</svg>
