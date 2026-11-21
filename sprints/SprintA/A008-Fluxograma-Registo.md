@@ -48,7 +48,7 @@ Os pressupostos estão na secção 8 de [`docs/bpmn/registo-utilizador.md`](../.
 - Todos os caminhos terminam num evento de fim ou voltam a um ponto anterior do processo (formulário ou espera), sem pontas soltas.
 - Todos os gateways de decisão têm as saídas identificadas.
 - O consentimento parental é pedido e registado antes da Account Activation.
-- Os nomes dos use cases, dos estados e das colunas coincidem com o [diagrama de use cases](../../docs/uml/casos-de-uso.md), o [glossário](../../docs/uml/glossario.md) e o [modelo relacional v1.1](../../docs/base-de-dados/modelo-relacional.md).
+- Os nomes dos use cases, dos estados e das colunas coincidem com o [diagrama de use cases](../../docs/uml/casos-de-uso.md), o [glossário](../../docs/uml/glossario.md), o [modelo relacional v1.1](../../docs/base-de-dados/modelo-relacional.md) e o [dicionário de dados](../../docs/base-de-dados/dicionario-dados.md).
 - O CI (lint de Markdown e links internos) passa no Pull Request.
 
 ## Pendente

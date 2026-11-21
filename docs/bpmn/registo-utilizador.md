@@ -11,7 +11,7 @@
 
 Este documento acompanha o fluxograma do processo de Registration: desde o momento em que o Guest abre o formulário de registo até a conta ficar Active ou o registo terminar sem sucesso. Inclui o pedido de Parental Consent quando o User é Minor.
 
-O fluxograma detalha os use cases UC01 a UC05 do [diagrama de use cases v1.1](../uml/casos-de-uso.md) e usa os termos do [glossário](../uml/glossario.md). Os nomes das tabelas, das colunas e dos estados são os do [modelo relacional v1.1](../base-de-dados/modelo-relacional.md) (US_A003).
+O fluxograma detalha os use cases UC01 a UC05 do [diagrama de use cases v1.1](../uml/casos-de-uso.md) e usa os termos do [glossário](../uml/glossario.md). Os nomes das tabelas, das colunas e dos estados são os do [modelo relacional v1.1](../base-de-dados/modelo-relacional.md) (US_A003) e do [dicionário de dados](../base-de-dados/dicionario-dados.md) (US_A007).
 
 ## 2. Diagrama
 
@@ -52,7 +52,7 @@ O diagrama segue o BPMN 2.0, desenhado no draw.io.
 
 ### Caminho principal (adulto)
 
-1. O Guest abre o formulário de registo e preenche o nome, o email, a palavra-passe, a data de nascimento, o género e o ano de escolaridade, e aceita a política de privacidade (RF01, RNF22).
+1. O Guest abre o formulário de registo e preenche o nome, o email, a palavra-passe, a data de nascimento, o género (opcional) e o ano de escolaridade, e aceita a política de privacidade (RF01, RNF22).
 2. O Sistema valida os dados (RNF06), incluindo as validações do pressuposto P7.
 3. O Sistema confirma que o email ainda não está registado.
 4. O Sistema calcula a idade a partir de `birth_date`. O User não é Minor (D02).
@@ -151,7 +151,7 @@ Cada mudança de estado atualiza `users.status_changed_at`. Os prazos de elimina
 | `user_tokens` (`purpose = 'email_verification'`) | Link de verificação: guarda-se o hash do token, com `expires_at` (24 h) e `used_at` (uso único). |
 | `parental_consents` | Pedido de consentimento: `guardian_email`, `token_hash`, `requested_at`, `expires_at` (7 dias), `decided_at` e `revocation_token_hash`. |
 
-Os reenvios contam-se pelas linhas de `user_tokens` e de `parental_consents` de cada User: não há uma coluna própria.
+Os reenvios contam-se pelas linhas de `user_tokens` e de `parental_consents` de cada User: não há uma coluna própria. O tipo, a obrigatoriedade e as restrições de cada coluna estão no [dicionário de dados](../base-de-dados/dicionario-dados.md).
 
 ## 8. Pressupostos
 
