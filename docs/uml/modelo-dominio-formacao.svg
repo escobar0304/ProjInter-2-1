@@ -1,0 +1,277 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1764" height="1001" viewBox="42 30 1764 1001" font-family="Helvetica, Arial, sans-serif">
+<rect x="42" y="30" width="1764" height="1001" fill="#ffffff"/>
+<rect x="62" y="50" width="256" height="215" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="72.0" y="68.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado HealthArea</text>
+<rect x="410" y="50" width="696" height="342" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="420.0" y="68.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado TrainingResource</text>
+<rect x="62" y="482" width="506" height="519" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="72.0" y="500.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado Questionnaire</text>
+<rect x="620" y="482" width="636" height="529" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="630.0" y="500.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado Enrollment</text>
+<rect x="1488" y="50" width="236" height="640" fill="#fafafa" stroke="#cccccc"/>
+<text x="1498.0" y="68.0" font-size="12" font-weight="bold" text-anchor="start" fill="#666666">Value objects partilhados</text>
+<rect x="1486" y="824" width="300" height="180" fill="#fafafa" stroke="#cccccc"/>
+<text x="1496.0" y="842.0" font-size="12" font-weight="bold" text-anchor="start" fill="#666666">Legenda</text>
+<rect x="80" y="80" width="220" height="167" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
+<text x="190.0" y="95.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«aggregate root»</text>
+<text x="190.0" y="110.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">HealthArea</text>
+<line x1="80" y1="118" x2="300" y2="118" stroke="#6c8ebf" stroke-width="1"/>
+<text x="86.0" y="133.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: HealthAreaId</text>
+<text x="86.0" y="148.0" font-size="11" text-anchor="start" fill="#1a1a1a">title: Translation [1..*]</text>
+<text x="86.0" y="163.0" font-size="11" text-anchor="start" fill="#1a1a1a">subtitle: Translation [0..*]</text>
+<text x="86.0" y="178.0" font-size="11" text-anchor="start" fill="#1a1a1a">description: Translation [0..*]</text>
+<text x="86.0" y="193.0" font-size="11" text-anchor="start" fill="#1a1a1a">icon: URL [0..1]</text>
+<text x="86.0" y="208.0" font-size="11" text-anchor="start" fill="#1a1a1a">image: URL [0..1]</text>
+<text x="86.0" y="223.0" font-size="11" text-anchor="start" fill="#1a1a1a">video: URL [0..1]</text>
+<text x="86.0" y="238.0" font-size="11" text-anchor="start" fill="#1a1a1a">status: ContentStatus</text>
+<rect x="428" y="80" width="220" height="182" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
+<text x="538.0" y="95.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«aggregate root»</text>
+<text x="538.0" y="110.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">TrainingResource</text>
+<line x1="428" y1="118" x2="648" y2="118" stroke="#6c8ebf" stroke-width="1"/>
+<text x="434.0" y="133.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: TrainingResourceId</text>
+<text x="434.0" y="148.0" font-size="11" text-anchor="start" fill="#1a1a1a">healthAreaId: HealthAreaId</text>
+<text x="434.0" y="163.0" font-size="11" text-anchor="start" fill="#1a1a1a">type: ResourceType</text>
+<text x="434.0" y="178.0" font-size="11" text-anchor="start" fill="#1a1a1a">name: Translation [1..*]</text>
+<text x="434.0" y="193.0" font-size="11" text-anchor="start" fill="#1a1a1a">description: Translation [0..*]</text>
+<text x="434.0" y="208.0" font-size="11" text-anchor="start" fill="#1a1a1a">recording: Recording [0..1]</text>
+<text x="434.0" y="223.0" font-size="11" text-anchor="start" fill="#1a1a1a">image: URL [0..1]</text>
+<text x="434.0" y="238.0" font-size="11" text-anchor="start" fill="#1a1a1a">badgeImage: URL [0..1]</text>
+<text x="434.0" y="253.0" font-size="11" text-anchor="start" fill="#1a1a1a">status: ContentStatus</text>
+<rect x="718" y="80" width="220" height="137" rx="0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.2"/>
+<text x="828.0" y="95.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«entity»</text>
+<text x="828.0" y="110.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Level</text>
+<line x1="718" y1="118" x2="938" y2="118" stroke="#d6b656" stroke-width="1"/>
+<text x="724.0" y="133.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: LevelId</text>
+<text x="724.0" y="148.0" font-size="11" text-anchor="start" fill="#1a1a1a">position: Integer {≥ 1, único}</text>
+<text x="724.0" y="163.0" font-size="11" text-anchor="start" fill="#1a1a1a">title: Translation [1..*]</text>
+<text x="724.0" y="178.0" font-size="11" text-anchor="start" fill="#1a1a1a">description: Translation [0..*]</text>
+<text x="724.0" y="193.0" font-size="11" text-anchor="start" fill="#1a1a1a">recording: Recording [0..1]</text>
+<text x="724.0" y="208.0" font-size="11" text-anchor="start" fill="#1a1a1a">status: ContentStatus</text>
+<rect x="718" y="267" width="160" height="107" rx="0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.2"/>
+<text x="798.0" y="282.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«entity»</text>
+<text x="798.0" y="297.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">SupportMaterial</text>
+<line x1="718" y1="305" x2="878" y2="305" stroke="#d6b656" stroke-width="1"/>
+<text x="724.0" y="320.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: SupportMaterialId</text>
+<text x="724.0" y="335.0" font-size="11" text-anchor="start" fill="#1a1a1a">title: Text</text>
+<text x="724.0" y="350.0" font-size="11" text-anchor="start" fill="#1a1a1a">file: URL</text>
+<text x="724.0" y="365.0" font-size="11" text-anchor="start" fill="#1a1a1a">language: Language</text>
+<rect x="978" y="80" width="110" height="62" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
+<text x="1033.0" y="95.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
+<text x="1033.0" y="110.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Recording</text>
+<line x1="978" y1="118" x2="1088" y2="118" stroke="#82b366" stroke-width="1"/>
+<text x="984.0" y="133.0" font-size="11" text-anchor="start" fill="#1a1a1a">videoUrl: URL</text>
+<rect x="80" y="512" width="270" height="152" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
+<text x="215.0" y="527.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«aggregate root»</text>
+<text x="215.0" y="542.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Questionnaire</text>
+<line x1="80" y1="550" x2="350" y2="550" stroke="#6c8ebf" stroke-width="1"/>
+<text x="86.0" y="565.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: QuestionnaireId</text>
+<text x="86.0" y="580.0" font-size="11" text-anchor="start" fill="#1a1a1a">trainingResourceId: TrainingResourceId</text>
+<text x="86.0" y="595.0" font-size="11" text-anchor="start" fill="#1a1a1a">type: QuestionnaireType</text>
+<text x="86.0" y="610.0" font-size="11" text-anchor="start" fill="#1a1a1a">title: Translation [1..*]</text>
+<text x="86.0" y="625.0" font-size="11" text-anchor="start" fill="#1a1a1a">description: Translation [0..*]</text>
+<text x="86.0" y="640.0" font-size="11" text-anchor="start" fill="#1a1a1a">maxAttempts: Integer {≥ 1} = 2</text>
+<text x="86.0" y="655.0" font-size="11" text-anchor="start" fill="#1a1a1a">status: ContentStatus</text>
+<rect x="80" y="724" width="210" height="92" rx="0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.2"/>
+<text x="185.0" y="739.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«entity»</text>
+<text x="185.0" y="754.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Question</text>
+<line x1="80" y1="762" x2="290" y2="762" stroke="#d6b656" stroke-width="1"/>
+<text x="86.0" y="777.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: QuestionId</text>
+<text x="86.0" y="792.0" font-size="11" text-anchor="start" fill="#1a1a1a">position: Integer {≥ 1, único}</text>
+<text x="86.0" y="807.0" font-size="11" text-anchor="start" fill="#1a1a1a">statement: Translation [1..*]</text>
+<rect x="80" y="876" width="210" height="107" rx="0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.2"/>
+<text x="185.0" y="891.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«entity»</text>
+<text x="185.0" y="906.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">AnswerOption</text>
+<line x1="80" y1="914" x2="290" y2="914" stroke="#d6b656" stroke-width="1"/>
+<text x="86.0" y="929.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: AnswerOptionId</text>
+<text x="86.0" y="944.0" font-size="11" text-anchor="start" fill="#1a1a1a">position: Integer {≥ 1, único}</text>
+<text x="86.0" y="959.0" font-size="11" text-anchor="start" fill="#1a1a1a">text: Translation [1..*]</text>
+<text x="86.0" y="974.0" font-size="11" text-anchor="start" fill="#1a1a1a">correct: Boolean</text>
+<rect x="638" y="512" width="270" height="152" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
+<text x="773.0" y="527.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«aggregate root»</text>
+<text x="773.0" y="542.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Enrollment</text>
+<line x1="638" y1="550" x2="908" y2="550" stroke="#6c8ebf" stroke-width="1"/>
+<text x="644.0" y="565.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: EnrollmentId</text>
+<text x="644.0" y="580.0" font-size="11" text-anchor="start" fill="#1a1a1a">userId: UserId</text>
+<text x="644.0" y="595.0" font-size="11" text-anchor="start" fill="#1a1a1a">trainingResourceId: TrainingResourceId</text>
+<text x="644.0" y="610.0" font-size="11" text-anchor="start" fill="#1a1a1a">status: EnrollmentStatus</text>
+<text x="644.0" y="625.0" font-size="11" text-anchor="start" fill="#1a1a1a">favorite: Boolean</text>
+<text x="644.0" y="640.0" font-size="11" text-anchor="start" fill="#1a1a1a">enrolledAt: DateTime</text>
+<text x="644.0" y="655.0" font-size="11" text-anchor="start" fill="#1a1a1a">completedAt: DateTime [0..1]</text>
+<rect x="638" y="734" width="230" height="122" rx="0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.2"/>
+<text x="753.0" y="749.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«entity»</text>
+<text x="753.0" y="764.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Attempt</text>
+<line x1="638" y1="772" x2="868" y2="772" stroke="#d6b656" stroke-width="1"/>
+<text x="644.0" y="787.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: AttemptId</text>
+<text x="644.0" y="802.0" font-size="11" text-anchor="start" fill="#1a1a1a">questionnaireId: QuestionnaireId</text>
+<text x="644.0" y="817.0" font-size="11" text-anchor="start" fill="#1a1a1a">number: Integer {≥ 1}</text>
+<text x="644.0" y="832.0" font-size="11" text-anchor="start" fill="#1a1a1a">score: Score</text>
+<text x="644.0" y="847.0" font-size="11" text-anchor="start" fill="#1a1a1a">submittedAt: DateTime</text>
+<rect x="638" y="916" width="210" height="77" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
+<text x="743.0" y="931.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
+<text x="743.0" y="946.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Answer</text>
+<line x1="638" y1="954" x2="848" y2="954" stroke="#82b366" stroke-width="1"/>
+<text x="644.0" y="969.0" font-size="11" text-anchor="start" fill="#1a1a1a">questionId: QuestionId</text>
+<text x="644.0" y="984.0" font-size="11" text-anchor="start" fill="#1a1a1a">answerOptionId: AnswerOptionId</text>
+<rect x="998" y="512" width="190" height="92" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
+<text x="1093.0" y="527.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
+<text x="1093.0" y="542.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">LevelProgress</text>
+<line x1="998" y1="550" x2="1188" y2="550" stroke="#82b366" stroke-width="1"/>
+<text x="1004.0" y="565.0" font-size="11" text-anchor="start" fill="#1a1a1a">levelId: LevelId</text>
+<text x="1004.0" y="580.0" font-size="11" text-anchor="start" fill="#1a1a1a">progress: Integer {0..100}</text>
+<text x="1004.0" y="595.0" font-size="11" text-anchor="start" fill="#1a1a1a">updatedAt: DateTime</text>
+<rect x="998" y="634" width="140" height="77" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
+<text x="1068.0" y="649.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
+<text x="1068.0" y="664.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Badge</text>
+<line x1="998" y1="672" x2="1138" y2="672" stroke="#82b366" stroke-width="1"/>
+<text x="1004.0" y="687.0" font-size="11" text-anchor="start" fill="#1a1a1a">awardedAt: DateTime</text>
+<text x="1004.0" y="702.0" font-size="11" text-anchor="start" fill="#1a1a1a">attempt: AttemptId</text>
+<rect x="998" y="741" width="210" height="107" rx="0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.2"/>
+<text x="1103.0" y="756.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«entity»</text>
+<text x="1103.0" y="771.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Certificate</text>
+<line x1="998" y1="779" x2="1208" y2="779" stroke="#d6b656" stroke-width="1"/>
+<text x="1004.0" y="794.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: CertificateId</text>
+<text x="1004.0" y="809.0" font-size="11" text-anchor="start" fill="#1a1a1a">verificationCode: Text {único}</text>
+<text x="1004.0" y="824.0" font-size="11" text-anchor="start" fill="#1a1a1a">attempt: AttemptId</text>
+<text x="1004.0" y="839.0" font-size="11" text-anchor="start" fill="#1a1a1a">issuedAt: DateTime</text>
+<rect x="998" y="878" width="240" height="77" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
+<text x="1118.0" y="893.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
+<text x="1118.0" y="908.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Score</text>
+<line x1="998" y1="916" x2="1238" y2="916" stroke="#82b366" stroke-width="1"/>
+<text x="1004.0" y="931.0" font-size="11" text-anchor="start" fill="#1a1a1a">value: Decimal {0..100}</text>
+<text x="1004.0" y="946.0" font-size="11" text-anchor="start" fill="#1a1a1a">/qualifiesForBadge: Boolean {≥ 85}</text>
+<rect x="1316" y="512" width="150" height="54" rx="0" fill="#ffffff" stroke="#b3b3b3" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="1391.0" y="527.0" font-size="11" font-style="italic" text-anchor="middle" fill="#808080">«aggregate root»</text>
+<text x="1391.0" y="542.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#808080">User</text>
+<text x="1391.0" y="556.0" font-size="10" text-anchor="middle" fill="#808080">(página Conta e acesso)</text>
+<rect x="1506" y="80" width="200" height="77" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
+<text x="1606.0" y="95.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
+<text x="1606.0" y="110.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Translation</text>
+<line x1="1506" y1="118" x2="1706" y2="118" stroke="#82b366" stroke-width="1"/>
+<text x="1512.0" y="133.0" font-size="11" text-anchor="start" fill="#1a1a1a">language: Language</text>
+<text x="1512.0" y="148.0" font-size="11" text-anchor="start" fill="#1a1a1a">text: Text</text>
+<rect x="1506" y="177" width="200" height="92" rx="0" fill="#f5f5f5" stroke="#666666" stroke-width="1.2"/>
+<text x="1606.0" y="192.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«enumeration»</text>
+<text x="1606.0" y="207.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">ContentStatus</text>
+<line x1="1506" y1="215" x2="1706" y2="215" stroke="#666666" stroke-width="1"/>
+<text x="1512.0" y="230.0" font-size="11" text-anchor="start" fill="#1a1a1a">Draft</text>
+<text x="1512.0" y="245.0" font-size="11" text-anchor="start" fill="#1a1a1a">Published</text>
+<text x="1512.0" y="260.0" font-size="11" text-anchor="start" fill="#1a1a1a">Archived</text>
+<rect x="1506" y="289" width="200" height="77" rx="0" fill="#f5f5f5" stroke="#666666" stroke-width="1.2"/>
+<text x="1606.0" y="304.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«enumeration»</text>
+<text x="1606.0" y="319.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">ResourceType</text>
+<line x1="1506" y1="327" x2="1706" y2="327" stroke="#666666" stroke-width="1"/>
+<text x="1512.0" y="342.0" font-size="11" text-anchor="start" fill="#1a1a1a">Workshop</text>
+<text x="1512.0" y="357.0" font-size="11" text-anchor="start" fill="#1a1a1a">Webinar</text>
+<rect x="1506" y="386" width="200" height="77" rx="0" fill="#f5f5f5" stroke="#666666" stroke-width="1.2"/>
+<text x="1606.0" y="401.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«enumeration»</text>
+<text x="1606.0" y="416.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">QuestionnaireType</text>
+<line x1="1506" y1="424" x2="1706" y2="424" stroke="#666666" stroke-width="1"/>
+<text x="1512.0" y="439.0" font-size="11" text-anchor="start" fill="#1a1a1a">Diagnostic</text>
+<text x="1512.0" y="454.0" font-size="11" text-anchor="start" fill="#1a1a1a">Final</text>
+<rect x="1506" y="483" width="200" height="92" rx="0" fill="#f5f5f5" stroke="#666666" stroke-width="1.2"/>
+<text x="1606.0" y="498.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«enumeration»</text>
+<text x="1606.0" y="513.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">EnrollmentStatus</text>
+<line x1="1506" y1="521" x2="1706" y2="521" stroke="#666666" stroke-width="1"/>
+<text x="1512.0" y="536.0" font-size="11" text-anchor="start" fill="#1a1a1a">NotStarted</text>
+<text x="1512.0" y="551.0" font-size="11" text-anchor="start" fill="#1a1a1a">InProgress</text>
+<text x="1512.0" y="566.0" font-size="11" text-anchor="start" fill="#1a1a1a">Completed</text>
+<rect x="1506" y="595" width="200" height="77" rx="0" fill="#f5f5f5" stroke="#666666" stroke-width="1.2"/>
+<text x="1606.0" y="610.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«enumeration»</text>
+<text x="1606.0" y="625.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Language</text>
+<line x1="1506" y1="633" x2="1706" y2="633" stroke="#666666" stroke-width="1"/>
+<text x="1512.0" y="648.0" font-size="11" text-anchor="start" fill="#1a1a1a">PT {obrigatório}</text>
+<text x="1512.0" y="663.0" font-size="11" text-anchor="start" fill="#1a1a1a">EN</text>
+<polygon points="310,734 488,734 500,746 500,806 310,806" fill="#ffffff" stroke="#999999"/>
+<polyline points="488,734 488,746 500,746" fill="none" stroke="#999999"/>
+<text x="316.0" y="750.0" font-size="11" text-anchor="start" fill="#1a1a1a">{para publicar: pelo menos</text>
+<text x="316.0" y="765.0" font-size="11" text-anchor="start" fill="#1a1a1a">1 Question; cada Question</text>
+<text x="316.0" y="780.0" font-size="11" text-anchor="start" fill="#1a1a1a">com 2 ou mais AnswerOptions</text>
+<text x="316.0" y="795.0" font-size="11" text-anchor="start" fill="#1a1a1a">e exatamente uma correct}</text>
+<polygon points="1486,722 1714,722 1726,734 1726,794 1486,794" fill="#ffffff" stroke="#999999"/>
+<polyline points="1714,722 1714,734 1726,734" fill="none" stroke="#999999"/>
+<text x="1492.0" y="738.0" font-size="11" text-anchor="start" fill="#1a1a1a">Translation [1..*]: um texto por</text>
+<text x="1492.0" y="753.0" font-size="11" text-anchor="start" fill="#1a1a1a">Language; o PT é obrigatório.</text>
+<text x="1492.0" y="768.0" font-size="11" text-anchor="start" fill="#1a1a1a">Score, Answer, LevelProgress e</text>
+<text x="1492.0" y="783.0" font-size="11" text-anchor="start" fill="#1a1a1a">Badge pertencem ao Enrollment.</text>
+<polyline points="648.0,116.4 718.0,116.4" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="648.0,116.4 655.0,120.9 662.0,116.4 655.0,111.9" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="664.8" y="100.4" width="10.4" height="14" fill="#ffffff"/><text x="670.0" y="110.4" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="687.2" y="100.4" width="29.6" height="14" fill="#ffffff"/><text x="702.0" y="110.4" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<polyline points="648.0,234.7 683.0,234.7 683.0,320.5 718.0,320.5" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="648.0,234.7 655.0,239.2 662.0,234.7 655.0,230.2" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="664.8" y="218.7" width="10.4" height="14" fill="#ffffff"/><text x="670.0" y="228.7" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="687.2" y="304.5" width="29.6" height="14" fill="#ffffff"/><text x="702.0" y="314.5" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<polyline points="778.0,267.0 778.0,217.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polyline points="773.0,227.0 778.0,217.0 783.0,227.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="753.2" y="249.0" width="29.6" height="14" fill="#ffffff"/><text x="768.0" y="259.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="753.2" y="227.0" width="29.6" height="14" fill="#ffffff"/><text x="768.0" y="237.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..1</text>
+<polyline points="428.0,101.8 300.0,101.8" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="310.0,106.8 300.0,101.8 310.0,96.8" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="401.2" y="105.8" width="29.6" height="14" fill="#ffffff"/><text x="416.0" y="115.8" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="310.8" y="105.8" width="10.4" height="14" fill="#ffffff"/><text x="316.0" y="115.8" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="323.6" y="85.8" width="80.8" height="14" fill="#ffffff"/><text x="364.0" y="95.8" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">healthAreaId</text>
+<polyline points="161.0,664.0 161.0,724.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="161.0,664.0 156.5,671.0 161.0,678.0 165.5,671.0" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="165.8" y="680.0" width="10.4" height="14" fill="#ffffff"/><text x="171.0" y="690.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="156.2" y="702.0" width="29.6" height="14" fill="#ffffff"/><text x="171.0" y="712.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<polyline points="143.0,816.0 143.0,876.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="143.0,816.0 138.5,823.0 143.0,830.0 147.5,823.0" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="147.8" y="832.0" width="10.4" height="14" fill="#ffffff"/><text x="153.0" y="842.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="138.2" y="854.0" width="29.6" height="14" fill="#ffffff"/><text x="153.0" y="864.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<polyline points="719.0,664.0 719.0,734.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="719.0,664.0 714.5,671.0 719.0,678.0 723.5,671.0" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="723.8" y="680.0" width="10.4" height="14" fill="#ffffff"/><text x="729.0" y="690.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="714.2" y="712.0" width="29.6" height="14" fill="#ffffff"/><text x="729.0" y="722.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<polyline points="707.0,856.0 707.0,916.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="707.0,856.0 702.5,863.0 707.0,870.0 711.5,863.0" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="711.8" y="872.0" width="10.4" height="14" fill="#ffffff"/><text x="717.0" y="882.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="702.2" y="894.0" width="29.6" height="14" fill="#ffffff"/><text x="717.0" y="904.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1..*</text>
+<polyline points="908.0,558.0 998.0,558.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="908.0,558.0 915.0,562.5 922.0,558.0 915.0,553.5" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="924.8" y="542.0" width="10.4" height="14" fill="#ffffff"/><text x="930.0" y="552.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="967.2" y="542.0" width="29.6" height="14" fill="#ffffff"/><text x="982.0" y="552.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<polyline points="908.0,621.4 963.0,621.4 963.0,672.5 998.0,672.5" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="908.0,621.4 915.0,625.9 922.0,621.4 915.0,616.9" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="924.8" y="605.4" width="10.4" height="14" fill="#ffffff"/><text x="930.0" y="615.4" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="967.2" y="656.5" width="29.6" height="14" fill="#ffffff"/><text x="982.0" y="666.5" font-size="11" text-anchor="middle" fill="#1a1a1a">0..1</text>
+<polyline points="908.0,642.7 938.0,642.7 938.0,794.5 998.0,794.5" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="908.0,642.7 915.0,647.2 922.0,642.7 915.0,638.2" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="924.8" y="646.7" width="10.4" height="14" fill="#ffffff"/><text x="930.0" y="656.7" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="967.2" y="778.5" width="29.6" height="14" fill="#ffffff"/><text x="982.0" y="788.5" font-size="11" text-anchor="middle" fill="#1a1a1a">0..1</text>
+<polyline points="309.5,512.0 309.5,467.0 483.0,467.0 483.0,262.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="478.0,272.0 483.0,262.0 488.0,272.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="284.7" y="494.0" width="29.6" height="14" fill="#ffffff"/><text x="299.5" y="504.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..2</text>
+<rect x="467.8" y="272.0" width="10.4" height="14" fill="#ffffff"/><text x="473.0" y="282.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="416.6" y="451.0" width="119.2" height="14" fill="#ffffff"/><text x="476.2" y="461.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">trainingResourceId</text>
+<polyline points="759.5,512.0 759.5,442.0 604.0,442.0 604.0,262.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="599.0,272.0 604.0,262.0 609.0,272.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="754.7" y="494.0" width="29.6" height="14" fill="#ffffff"/><text x="769.5" y="504.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="588.8" y="272.0" width="10.4" height="14" fill="#ffffff"/><text x="594.0" y="282.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="567.1" y="446.0" width="119.2" height="14" fill="#ffffff"/><text x="626.8" y="456.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">trainingResourceId</text>
+<polyline points="638.0,754.0 598.0,754.0 598.0,588.0 350.0,588.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="360.0,593.0 350.0,588.0 360.0,583.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="611.2" y="758.0" width="29.6" height="14" fill="#ffffff"/><text x="626.0" y="768.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="360.8" y="572.0" width="10.4" height="14" fill="#ffffff"/><text x="366.0" y="582.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="527.0" y="572.0" width="100.0" height="14" fill="#ffffff"/><text x="577.0" y="582.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">questionnaireId</text>
+<polyline points="886.4,512.0 886.4,467.0 1286.0,467.0 1286.0,539.0 1316.0,539.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="1306.0,534.0 1316.0,539.0 1306.0,544.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="861.6" y="494.0" width="29.6" height="14" fill="#ffffff"/><text x="876.4" y="504.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="1294.8" y="523.0" width="10.4" height="14" fill="#ffffff"/><text x="1300.0" y="533.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="1093.5" y="451.0" width="42.4" height="14" fill="#ffffff"/><text x="1114.7" y="461.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">userId</text>
+<polyline points="1498.0,962.0 1532.0,962.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="1498.0,962.0 1505.0,966.5 1512.0,962.0 1505.0,957.5" fill="#4d4d4d" stroke="#4d4d4d"/>
+<polyline points="1498.0,982.0 1532.0,982.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="1522.0,977.0 1532.0,982.0 1522.0,987.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="1498" y="853" width="34" height="14" rx="0" fill="#dae8fc" stroke="#6c8ebf"/>
+<rect x="1498" y="873" width="34" height="14" rx="0" fill="#fff2cc" stroke="#d6b656"/>
+<rect x="1498" y="893" width="34" height="14" rx="0" fill="#d5e8d4" stroke="#82b366"/>
+<rect x="1498" y="913" width="34" height="14" rx="0" fill="#f5f5f5" stroke="#666666"/>
+<rect x="1498" y="933" width="34" height="14" rx="4" fill="none" stroke="#7f7f7f" stroke-dasharray="8 4"/>
+<text x="1542.0" y="864.0" font-size="11" text-anchor="start" fill="#1a1a1a">raiz do agregado (aggregate root)</text>
+<text x="1542.0" y="884.0" font-size="11" text-anchor="start" fill="#1a1a1a">entidade (entity)</text>
+<text x="1542.0" y="904.0" font-size="11" text-anchor="start" fill="#1a1a1a">value object</text>
+<text x="1542.0" y="924.0" font-size="11" text-anchor="start" fill="#1a1a1a">enumeração (value object)</text>
+<text x="1542.0" y="944.0" font-size="11" text-anchor="start" fill="#1a1a1a">fronteira do agregado</text>
+<text x="1542.0" y="966.0" font-size="11" text-anchor="start" fill="#1a1a1a">composição (dentro do agregado)</text>
+<text x="1542.0" y="986.0" font-size="11" text-anchor="start" fill="#1a1a1a">referência por ID (entre agregados)</text>
+</svg>
