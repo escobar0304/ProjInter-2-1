@@ -84,12 +84,15 @@ O detalhe de cada coluna (tipo, obrigatoriedade, domínio e exemplo) está no [d
 | — | `users.last_login_at`, `users.preferred_language` | Novas. Contar os Users ativos (RF36, D06) e escolher o idioma da interface (RNF05). |
 | — | `users.status_changed_at`, `users.privacy_accepted_at` | Novas. Contar os prazos de eliminação de registos não concluídos ou recusados e registar a aceitação da política de privacidade (RNF22). Vêm do fluxograma do registo (US_A008). |
 | Colunas de texto (`title`, `description`, ...) nas tabelas de conteúdos | Nas tabelas `*_translations` | Os textos traduzíveis saem da tabela principal. |
+| — | `enrollments.content_accessed_at` | Nova. Num recurso sem Levels, regista quando o User viu o conteúdo, que é condição para responder ao Final (RF20). Nos recursos com Levels, essa informação vem de `level_progress`. |
+| — | `attempts.training_resource_id` | Nova. Permite as chaves estrangeiras compostas que garantem que o Questionnaire de uma Attempt é do mesmo recurso da Enrollment. |
 
 ## 5. Decisões de modelação
 
 - **Traduções numa tabela por entidade.** Cada tabela de traduções tem chaves estrangeiras reais para a entidade e para o idioma, o que não acontece com uma tabela genérica de traduções. Acrescentar um idioma é só uma linha em `languages` (RNF13).
 - **Tabelas de referência em vez de `CHECK`** quando os valores aparecem na interface ou podem crescer (estados de conta e de conteúdo, géneros, anos, tipos de recurso). **`CHECK`** quando os valores são fixos pela especificação e só o código os usa (tipo de questionário, estado da inscrição, estado do consentimento, finalidade do token).
 - **Attempts ligadas à Enrollment.** Garante que só responde a um questionário quem está inscrito no recurso (RF16, RF18).
+- **`attempts.training_resource_id` repetido de propósito.** É a única exceção à 3.ª forma normal: o recurso já se obtém pela Enrollment e pelo Questionnaire. A coluna existe para as chaves estrangeiras compostas `(enrollment_id, training_resource_id)` e `(questionnaire_id, training_resource_id)`, que impedem uma Attempt com um Questionnaire de outro recurso. Como as duas chaves apontam para o mesmo valor, a repetição não pode ficar incoerente.
 - **Badge e Certificate ligados à Enrollment e à Attempt.** A chave da Enrollment impede dois badges para o mesmo recurso; a Attempt guarda o Score que deu origem à atribuição.
 - **Weekly Highlight aponta para um só conteúdo**, através de colunas opcionais e de um `CHECK` com `num_nonnulls(...) = 1`. Mantém as chaves estrangeiras, ao contrário de um par genérico tipo/id.
 - **Tokens guardados como hash.** Uma fuga da base de dados não permite usar os links enviados por email.
@@ -106,6 +109,7 @@ O detalhe de cada coluna (tipo, obrigatoriedade, domínio e exemplo) está no [d
 | Um Diagnostic e um Final por recurso | `UNIQUE (questionnaires.training_resource_id, type)` |
 | No máximo uma opção correta por pergunta | Índice único parcial `answer_options_one_correct` |
 | A opção escolhida pertence à pergunta respondida | Chave estrangeira composta `(answer_option_id, question_id)` em `attempt_answers` |
+| O Questionnaire de uma Attempt é do recurso em que o User está inscrito | Chaves estrangeiras compostas `(enrollment_id, training_resource_id)` e `(questionnaire_id, training_resource_id)` em `attempts` |
 | Uma resposta por pergunta em cada Attempt | Chave primária `(attempt_id, question_id)` |
 | Números de tentativa sem repetição | `UNIQUE (attempts.enrollment_id, questionnaire_id, attempt_number)` |
 | Score entre 0 e 100 | `CHECK` em `attempts.score` |
@@ -124,9 +128,10 @@ O detalhe de cada coluna (tipo, obrigatoriedade, domínio e exemplo) está no [d
 | O token de revogação é criado quando o Guardian aceita, e é enviado no email de confirmação da decisão | RF45 |
 | Os registos não concluídos e as contas com consentimento recusado são eliminados ao fim do prazo, contado a partir de `status_changed_at` | RNF22 |
 | O conteúdo de um recurso só é acessível depois da 1.ª Attempt do Diagnostic | RF16, RF18 |
-| O Final só pode ser respondido depois do Diagnostic | RF20 |
+| O Final só pode ser respondido depois do Diagnostic e depois de o User ver o conteúdo (`level_progress` ou, num recurso sem Levels, `enrollments.content_accessed_at`) | RF20 |
 | O número de Attempts não ultrapassa `max_attempts` | RF19, D01, D04 |
-| Cada pergunta tem exatamente uma opção correta antes de o questionário ser publicado | RF29 |
+| Cada pergunta tem pelo menos 2 opções e exatamente uma correta antes de o questionário ser publicado | RF29 |
+| As perguntas, as opções e a opção correta não podem ser alteradas depois da primeira Attempt do questionário, para os Scores e o Learning Gain continuarem comparáveis | RF29, RF40 |
 | O Score é calculado no servidor e a Attempt é gravada numa só transação, com as respostas | RF21, RNF08 |
 | O Badge e o Certificate são atribuídos na primeira Attempt do Final com 85% ou mais | RF23, D04 |
 | O texto em português existe sempre; o inglês é opcional | RF31, D08 |
