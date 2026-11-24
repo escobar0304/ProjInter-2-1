@@ -20,7 +20,7 @@ Os tempos previstos totalizam dez minutos. Isto não substitui um ensaio com a e
 
 O [modelo de domínio](../../uml/modelo-dominio.md) define os agregados e o serviço Questionnaire Submission. O modelo relacional inclui o acesso ao conteúdo sem Levels e a integridade entre recursos e tentativas. A #16 não tem resultados apresentados como concluídos. As métricas e UC27 são referenciados pelos respetivos entregáveis, sem os duplicar nesta pasta.
 
-O [README da Sprint A](../../../../sprints/SprintA/README.md) indica entrega em 28/11/2026 e apresentação a confirmar; as datas antigas nas issues e no README principal divergem. Confirmar o calendário com o docente antes de fechar a versão para apresentação.
+O [README da Sprint A](../../../sprints/SprintA/README.md) indica entrega em 28/11/2026 e apresentação a confirmar; as datas antigas nas issues e no README principal divergem. Confirmar o calendário com o docente antes de fechar a versão para apresentação.
 
 ## Edição
 
