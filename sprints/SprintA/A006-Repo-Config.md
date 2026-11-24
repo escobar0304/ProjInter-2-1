@@ -15,7 +15,7 @@ Preparar o repositório GitHub do projeto para o trabalho em equipa: estrutura i
 - Criação do `main`, com o README e o `.gitignore` iniciais.
 - Ruleset de proteção do `main`.
 - Ruleset de nomes de branches: só são aceites `main` e `feature/**`.
-- README com a descrição do projeto, stack, equipa, orientação, sprints, estrutura do repositório, regras de trabalho e uso de IA generativa.
+- README com a descrição do projeto, stack, equipa, orientação, sprints, estrutura do repositório e regras de trabalho.
 - `.gitignore` para Python/Flask, Node/React, ficheiros de ambiente, sistema operativo, IDE e cópias de segurança do draw.io.
 - Estrutura de pastas inicial: `docs/` (por tipo de artefacto), `sprints/`, `frontend/`, `backend/`, `database/` e `.github/`.
 - Template de Pull Request.
