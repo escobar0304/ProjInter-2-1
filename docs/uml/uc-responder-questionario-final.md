@@ -5,7 +5,6 @@
 | User Story | US_A005 ([#5](https://github.com/escobar0304/ProjInter-2-1/issues/5)) |
 | Responsável | Pedro Vale (`QuakeXIV`) |
 | Versão | 1.0 — Sprint A |
-| Estado | Proposta para revisão da equipa |
 | Nível | Objetivo do utilizador, descrição estruturada fully dressed |
 | Sistema | Plataforma de Literacia em Saúde para Jovens, Frontoffice |
 | Ator principal | Registered User |
@@ -17,7 +16,7 @@ Detalha o UC27 do [diagrama atualizado v1.1](casos-de-uso.md), usando o [glossá
 
 No diagrama atualizado, UC27 tem associação direta ao Registered User. UC28 Award Badge and Certificate é uma extensão de UC27 com condição `{Score ≥ 85%}`. Não se conserva a relação desatualizada com Access Workshop / Webinars da v1.0 referida na issue.
 
-A issue #4 está fechada e publicou o glossário. Na verificação de 21/11/2026, `main` ainda não contém o diagrama de domínio nem a tabela de agregados pedida nessa US. Esta descrição usa os conceitos disponíveis, mas o alinhamento com fronteiras de agregados aguarda esse artefacto; não o dá como validado.
+O [modelo de domínio](modelo-dominio.md) define os agregados Enrollment e Questionnaire e o serviço de domínio Questionnaire Submission. Enrollment contém as entidades Attempt e Certificate e o Value Object Badge. Questionnaire contém as entidades Question e AnswerOption. As referências entre agregados são feitas por identificadores.
 
 ## 2. Interessados e interesses
 
@@ -34,8 +33,8 @@ A issue #4 está fechada e publicou o glossário. Na verificação de 21/11/2026
 1. O Registered User tem sessão iniciada e conta `active`. Se é Minor, a ativação exigiu verificação do email e Parental Consent aceite.
 2. Existe uma Enrollment do User no Training Resource.
 3. O Training Resource e o Final Questionnaire estão `published` e disponíveis ao User.
-4. O User já submeteu pelo menos uma Attempt do Diagnostic Questionnaire do mesmo recurso e acedeu ao conteúdo (RF18, RF20). A questão de como comprovar esse acesso está na secção 10.
-5. O Final Questionnaire contém pelo menos uma Question, cada uma com exatamente uma Answer Option correta, e tem os textos obrigatórios em português.
+4. O User já submeteu pelo menos uma Attempt do Diagnostic Questionnaire do mesmo recurso e acedeu ao conteúdo (RF18, RF20). Nos recursos sem Levels, esse acesso é registado em `enrollments.content_accessed_at`; nos restantes, usa-se o progresso dos Levels.
+5. O Final Questionnaire contém pelo menos uma Question, cada uma com pelo menos duas AnswerOptions e exatamente uma correta, e tem os textos obrigatórios em português.
 6. O número de Attempts finais submetidas pelo User nessa Enrollment é inferior a `max_attempts`.
 
 As pré-condições não substituem a validação: o sistema volta a verificá-las ao abrir e ao submeter, porque o estado da conta, o conteúdo e a concorrência podem mudar entretanto.
@@ -68,7 +67,7 @@ O cenário assume uma submissão válida. O Score resultante pode ficar acima ou
 5. **Registered User:** pede para rever as respostas antes de submeter.
 6. **Sistema:** mostra o resumo das escolhas e indica que a confirmação grava uma Attempt.
 7. **Registered User:** confirma a submissão das respostas.
-8. **Sistema:** volta a validar a sessão, a conta, o acesso, o limite e as respostas; calcula o Score e grava atomicamente a Attempt e as Answers, atualizando a conclusão e executando UC28 quando se aplica.
+8. **Sistema:** volta a validar a sessão, a conta e o acesso. O serviço Questionnaire Submission consulta Questionnaire, valida Questions e AnswerOptions e calcula o Score; regista a Attempt através de Enrollment, que aplica o limite, a gravação atómica das Answers, a conclusão e a atribuição de Badge e Certificate de UC28 quando se aplica.
 9. **Registered User:** escolhe consultar o resultado da submissão.
 10. **Sistema:** apresenta o Score, a data, o número da tentativa, as tentativas restantes e a comparação das primeiras Attempts Diagnostic/Final, com as recompensas disponíveis quando existirem.
 
@@ -108,6 +107,8 @@ Cada passo pertence a um só interveniente. A revisão e confirmação dos passo
 | Comparação das primeiras tentativas | RF22, RF37, D01, D04, D07 | Learning Gain, Diagnostic Questionnaire, Final Questionnaire |
 | Traduções de conteúdos | RF31, RNF13, D08 | Language, Translation |
 
+No domínio, Questionnaire preserva as regras das perguntas e opções; Enrollment preserva a consistência de Attempt, Answer, Score, Badge e Certificate. Questionnaire Submission coordena a submissão entre os dois agregados, respeitando as suas fronteiras.
+
 Correspondência física: `attempts`, `attempt_answers`, `questionnaires`, `questions`, `answer_options`, `enrollments`, `badges` e `certificates`. Os tipos e as restrições mantêm-se no modelo e no dicionário, não se duplicam como atributos de um diagrama de domínio neste documento.
 
 ## 8. Requisitos especiais e frequência
@@ -137,14 +138,11 @@ Correspondência física: `attempts`, `attempt_answers`, `questionnaires`, `ques
 
 - D04, D05 e D07 continuam como pressupostos do glossário até validação com o cliente.
 - A exigência de responder a todas as perguntas, a revisão antes da confirmação e o fallback para português são propostas explícitas da descrição, não respostas já obtidas do cliente.
-- O modelo atual não tem um registo genérico de acesso ao conteúdo para recursos sem Levels. É necessário acordar com o responsável do backend como comprovar a pré-condição de RF20 antes da implementação.
+- O acesso ao conteúdo sem Levels é registado em `enrollments.content_accessed_at`, conforme o modelo relacional; o backend usa esse registo para validar RF20. Com Levels, mantém-se a validação do progresso.
 - O schema garante unicidade do número de tentativa, mas não define por si só idempotência de reenvios nem o controlo de concorrência de `max_attempts`. A organização interna do backend deve definir esses mecanismos; esta US não acrescenta tabelas nem promete uma implementação existente.
-- A reprodução histórica da correção por pergunta exige preservar a chave de respostas usada na submissão. Alterações a perguntas já respondidas precisam de uma política de imutabilidade ou versionamento a discutir com os responsáveis do modelo.
+- O modelo relacional estabelece que o backend bloqueia alterações às perguntas e opções de um Questionnaire após a sua primeira Attempt. Esta regra preserva a correção por pergunta; não existe versionamento histórico no schema.
 - A geração/descarregamento do PDF do Certificate fica em UC30. A extensão UC28 regista a atribuição; uma falha de download não anula a Attempt.
-- A revisão em PR e o alinhamento com o diagrama de domínio continuam pendentes.
 
-## 11. Dependências e uso de IA
+## 11. Dependências
 
-Em 21/11/2026, o Projects confirma #5 em **In progress**, atribuída a `QuakeXIV`. #2 e #4 estão fechadas; o diagrama de use cases e o glossário existem, com a limitação de #4 indicada na secção 1.
-
-Codex (OpenAI) apoiou a redação e a revisão de coerência. A equipa deve validar o conteúdo, confirmar o enquadramento no sistema de semáforos e defender o cenário na review.
+O cenário usa o [diagrama de use cases](casos-de-uso.md) da US_A002, o [glossário](glossario.md) e o [modelo de domínio](modelo-dominio.md) da US_A004. A correspondência física segue o [modelo relacional](../base-de-dados/modelo-relacional.md) e o [dicionário de dados](../base-de-dados/dicionario-dados.md), incluindo os ajustes de integridade e acesso ao conteúdo.
