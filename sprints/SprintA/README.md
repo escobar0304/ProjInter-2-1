@@ -21,7 +21,7 @@
 | US_A001 | Levantamento de requisitos (FURPS+) | P1 | [#1](https://github.com/escobar0304/ProjInter-2-1/issues/1) | Diogo Escobar | [A001-Requisitos-FURPS](A001-Requisitos-FURPS.md) |
 | US_A002 | Diagrama de use cases (frontoffice e backoffice) | P1 | [#2](https://github.com/escobar0304/ProjInter-2-1/issues/2) | João Crasto | [A002-Use-Cases](A002-Use-Cases.md) |
 | US_A003 | Modelo relacional de dados | P1 | [#3](https://github.com/escobar0304/ProjInter-2-1/issues/3) | Diogo Escobar | [A003-Modelo-Relacional](A003-Modelo-Relacional.md) |
-| US_A004 | Modelo de domínio (DDD) | P1 | [#4](https://github.com/escobar0304/ProjInter-2-1/issues/4) | a definir | — |
+| US_A004 | Glossário e modelo de domínio (DDD) | P1 | [#4](https://github.com/escobar0304/ProjInter-2-1/issues/4) | João Crasto | [A004-Glossario](A004-Glossario.md), [A004-Modelo-Dominio](A004-Modelo-Dominio.md) |
 | US_A005 | Descrição estruturada do UC «Responder a Questionário Final» | P4 | [#5](https://github.com/escobar0304/ProjInter-2-1/issues/5) | a definir | — |
 | US_A006 | Configuração do repositório | P2 | [#6](https://github.com/escobar0304/ProjInter-2-1/issues/6) | Diogo Escobar | [A006-Repo-Config](A006-Repo-Config.md) |
 | US_A007 | Dicionário de dados | P3 | [#7](https://github.com/escobar0304/ProjInter-2-1/issues/7) | Diogo Escobar | [A007-Dicionario-Dados](A007-Dicionario-Dados.md) |

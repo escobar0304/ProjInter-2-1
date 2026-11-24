@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1216" height="881" viewBox="42 30 1216 881" font-family="Helvetica, Arial, sans-serif">
+<rect x="42" y="30" width="1216" height="881" fill="#ffffff"/>
+<rect x="62" y="50" width="216" height="140" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="72.0" y="68.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado Category</text>
+<rect x="370" y="50" width="256" height="215" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="380.0" y="68.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado Publication</text>
+<rect x="658" y="50" width="266" height="215" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="668.0" y="68.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado NewsItem</text>
+<rect x="956" y="50" width="266" height="200" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="966.0" y="68.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado Activity</text>
+<rect x="402" y="439" width="476" height="222" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="412.0" y="457.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado WeeklyHighlight</text>
+<rect x="422" y="711" width="746" height="155" fill="#fafafa" stroke="#cccccc"/>
+<text x="432.0" y="729.0" font-size="12" font-weight="bold" text-anchor="start" fill="#666666">Value objects partilhados</text>
+<rect x="80" y="711" width="300" height="180" fill="#fafafa" stroke="#cccccc"/>
+<text x="90.0" y="729.0" font-size="12" font-weight="bold" text-anchor="start" fill="#666666">Legenda</text>
+<rect x="80" y="80" width="180" height="92" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
+<text x="170.0" y="95.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«aggregate root»</text>
+<text x="170.0" y="110.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Category</text>
+<line x1="80" y1="118" x2="260" y2="118" stroke="#6c8ebf" stroke-width="1"/>
+<text x="86.0" y="133.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: CategoryId</text>
+<text x="86.0" y="148.0" font-size="11" text-anchor="start" fill="#1a1a1a">name: Translation [1..*]</text>
+<text x="86.0" y="163.0" font-size="11" text-anchor="start" fill="#1a1a1a">status: ContentStatus</text>
+<rect x="388" y="80" width="220" height="167" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
+<text x="498.0" y="95.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«aggregate root»</text>
+<text x="498.0" y="110.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Publication</text>
+<line x1="388" y1="118" x2="608" y2="118" stroke="#6c8ebf" stroke-width="1"/>
+<text x="394.0" y="133.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: PublicationId</text>
+<text x="394.0" y="148.0" font-size="11" text-anchor="start" fill="#1a1a1a">healthAreaId: HealthAreaId</text>
+<text x="394.0" y="163.0" font-size="11" text-anchor="start" fill="#1a1a1a">categoryId: CategoryId</text>
+<text x="394.0" y="178.0" font-size="11" text-anchor="start" fill="#1a1a1a">title: Translation [1..*]</text>
+<text x="394.0" y="193.0" font-size="11" text-anchor="start" fill="#1a1a1a">description: Translation [0..*]</text>
+<text x="394.0" y="208.0" font-size="11" text-anchor="start" fill="#1a1a1a">author: Text</text>
+<text x="394.0" y="223.0" font-size="11" text-anchor="start" fill="#1a1a1a">url: URL</text>
+<text x="394.0" y="238.0" font-size="11" text-anchor="start" fill="#1a1a1a">status: ContentStatus</text>
+<rect x="676" y="80" width="230" height="167" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
+<text x="791.0" y="95.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«aggregate root»</text>
+<text x="791.0" y="110.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">NewsItem</text>
+<line x1="676" y1="118" x2="906" y2="118" stroke="#6c8ebf" stroke-width="1"/>
+<text x="682.0" y="133.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: NewsItemId</text>
+<text x="682.0" y="148.0" font-size="11" text-anchor="start" fill="#1a1a1a">healthAreaId: HealthAreaId [0..1]</text>
+<text x="682.0" y="163.0" font-size="11" text-anchor="start" fill="#1a1a1a">title: Translation [1..*]</text>
+<text x="682.0" y="178.0" font-size="11" text-anchor="start" fill="#1a1a1a">body: Translation [1..*]</text>
+<text x="682.0" y="193.0" font-size="11" text-anchor="start" fill="#1a1a1a">author: Text</text>
+<text x="682.0" y="208.0" font-size="11" text-anchor="start" fill="#1a1a1a">newsDate: Date</text>
+<text x="682.0" y="223.0" font-size="11" text-anchor="start" fill="#1a1a1a">image: URL [0..1]</text>
+<text x="682.0" y="238.0" font-size="11" text-anchor="start" fill="#1a1a1a">status: ContentStatus</text>
+<rect x="974" y="80" width="230" height="152" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
+<text x="1089.0" y="95.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«aggregate root»</text>
+<text x="1089.0" y="110.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Activity</text>
+<line x1="974" y1="118" x2="1204" y2="118" stroke="#6c8ebf" stroke-width="1"/>
+<text x="980.0" y="133.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: ActivityId</text>
+<text x="980.0" y="148.0" font-size="11" text-anchor="start" fill="#1a1a1a">healthAreaId: HealthAreaId [0..1]</text>
+<text x="980.0" y="163.0" font-size="11" text-anchor="start" fill="#1a1a1a">title: Translation [1..*]</text>
+<text x="980.0" y="178.0" font-size="11" text-anchor="start" fill="#1a1a1a">description: Translation [0..*]</text>
+<text x="980.0" y="193.0" font-size="11" text-anchor="start" fill="#1a1a1a">startsAt: DateTime</text>
+<text x="980.0" y="208.0" font-size="11" text-anchor="start" fill="#1a1a1a">url: URL [0..1]</text>
+<text x="980.0" y="223.0" font-size="11" text-anchor="start" fill="#1a1a1a">status: ContentStatus</text>
+<rect x="706" y="325" width="170" height="54" rx="0" fill="#ffffff" stroke="#b3b3b3" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="791.0" y="340.0" font-size="11" font-style="italic" text-anchor="middle" fill="#808080">«aggregate root»</text>
+<text x="791.0" y="355.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#808080">HealthArea</text>
+<text x="791.0" y="369.0" font-size="10" text-anchor="middle" fill="#808080">(página Formação e questionários)</text>
+<rect x="420" y="469" width="200" height="137" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
+<text x="520.0" y="484.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«aggregate root»</text>
+<text x="520.0" y="499.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">WeeklyHighlight</text>
+<line x1="420" y1="507" x2="620" y2="507" stroke="#6c8ebf" stroke-width="1"/>
+<text x="426.0" y="522.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: WeeklyHighlightId</text>
+<text x="426.0" y="537.0" font-size="11" text-anchor="start" fill="#1a1a1a">period: Period</text>
+<text x="426.0" y="552.0" font-size="11" text-anchor="start" fill="#1a1a1a">position: Integer {≥ 1}</text>
+<text x="426.0" y="567.0" font-size="11" text-anchor="start" fill="#1a1a1a">content: HighlightedContent</text>
+<text x="426.0" y="582.0" font-size="11" text-anchor="start" fill="#1a1a1a">createdBy: UserId [0..1]</text>
+<text x="426.0" y="597.0" font-size="11" text-anchor="start" fill="#1a1a1a">createdAt: DateTime</text>
+<rect x="660" y="469" width="200" height="77" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
+<text x="760.0" y="484.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
+<text x="760.0" y="499.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Period</text>
+<line x1="660" y1="507" x2="860" y2="507" stroke="#82b366" stroke-width="1"/>
+<text x="666.0" y="522.0" font-size="11" text-anchor="start" fill="#1a1a1a">startDate: Date</text>
+<text x="666.0" y="537.0" font-size="11" text-anchor="start" fill="#1a1a1a">endDate: Date {≥ startDate}</text>
+<rect x="660" y="566" width="160" height="77" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
+<text x="740.0" y="581.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
+<text x="740.0" y="596.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">HighlightedContent</text>
+<line x1="660" y1="604" x2="820" y2="604" stroke="#82b366" stroke-width="1"/>
+<text x="666.0" y="619.0" font-size="11" text-anchor="start" fill="#1a1a1a">kind: HighlightKind</text>
+<text x="666.0" y="634.0" font-size="11" text-anchor="start" fill="#1a1a1a">contentId: Id</text>
+<rect x="80" y="489" width="170" height="54" rx="0" fill="#ffffff" stroke="#b3b3b3" stroke-width="1.2" stroke-dasharray="8 4"/>
+<text x="165.0" y="504.0" font-size="11" font-style="italic" text-anchor="middle" fill="#808080">«aggregate root»</text>
+<text x="165.0" y="519.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#808080">User</text>
+<text x="165.0" y="533.0" font-size="10" text-anchor="middle" fill="#808080">(página Conta e acesso)</text>
+<rect x="440" y="741" width="180" height="107" rx="0" fill="#f5f5f5" stroke="#666666" stroke-width="1.2"/>
+<text x="530.0" y="756.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«enumeration»</text>
+<text x="530.0" y="771.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">HighlightKind</text>
+<line x1="440" y1="779" x2="620" y2="779" stroke="#666666" stroke-width="1"/>
+<text x="446.0" y="794.0" font-size="11" text-anchor="start" fill="#1a1a1a">TrainingResource</text>
+<text x="446.0" y="809.0" font-size="11" text-anchor="start" fill="#1a1a1a">Publication</text>
+<text x="446.0" y="824.0" font-size="11" text-anchor="start" fill="#1a1a1a">NewsItem</text>
+<text x="446.0" y="839.0" font-size="11" text-anchor="start" fill="#1a1a1a">Activity</text>
+<rect x="640" y="741" width="150" height="92" rx="0" fill="#f5f5f5" stroke="#666666" stroke-width="1.2"/>
+<text x="715.0" y="756.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«enumeration»</text>
+<text x="715.0" y="771.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">ContentStatus</text>
+<line x1="640" y1="779" x2="790" y2="779" stroke="#666666" stroke-width="1"/>
+<text x="646.0" y="794.0" font-size="11" text-anchor="start" fill="#1a1a1a">Draft</text>
+<text x="646.0" y="809.0" font-size="11" text-anchor="start" fill="#1a1a1a">Published</text>
+<text x="646.0" y="824.0" font-size="11" text-anchor="start" fill="#1a1a1a">Archived</text>
+<rect x="810" y="741" width="170" height="77" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
+<text x="895.0" y="756.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
+<text x="895.0" y="771.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Translation</text>
+<line x1="810" y1="779" x2="980" y2="779" stroke="#82b366" stroke-width="1"/>
+<text x="816.0" y="794.0" font-size="11" text-anchor="start" fill="#1a1a1a">language: Language</text>
+<text x="816.0" y="809.0" font-size="11" text-anchor="start" fill="#1a1a1a">text: Text</text>
+<rect x="1000" y="741" width="150" height="77" rx="0" fill="#f5f5f5" stroke="#666666" stroke-width="1.2"/>
+<text x="1075.0" y="756.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«enumeration»</text>
+<text x="1075.0" y="771.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Language</text>
+<line x1="1000" y1="779" x2="1150" y2="779" stroke="#666666" stroke-width="1"/>
+<text x="1006.0" y="794.0" font-size="11" text-anchor="start" fill="#1a1a1a">PT {obrigatório}</text>
+<text x="1006.0" y="809.0" font-size="11" text-anchor="start" fill="#1a1a1a">EN</text>
+<polygon points="908,439 1226,439 1238,451 1238,511 908,511" fill="#ffffff" stroke="#999999"/>
+<polyline points="1226,439 1226,451 1238,451" fill="none" stroke="#999999"/>
+<text x="914.0" y="455.0" font-size="11" text-anchor="start" fill="#1a1a1a">HighlightedContent é uma referência por ID para</text>
+<text x="914.0" y="470.0" font-size="11" text-anchor="start" fill="#1a1a1a">exatamente um conteúdo {xor}: TrainingResource,</text>
+<text x="914.0" y="485.0" font-size="11" text-anchor="start" fill="#1a1a1a">Publication, NewsItem ou Activity. O tipo diz</text>
+<text x="914.0" y="500.0" font-size="11" text-anchor="start" fill="#1a1a1a">em que agregado procurar o contentId.</text>
+<polyline points="388.0,126.0 260.0,126.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="270.0,131.0 260.0,126.0 270.0,121.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="361.2" y="110.0" width="29.6" height="14" fill="#ffffff"/><text x="376.0" y="120.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="270.8" y="110.0" width="10.4" height="14" fill="#ffffff"/><text x="276.0" y="120.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="290.0" y="110.0" width="68.0" height="14" fill="#ffffff"/><text x="324.0" y="120.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">categoryId</text>
+<polyline points="791.0,247.0 791.0,325.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="796.0,315.0 791.0,325.0 786.0,315.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="786.2" y="253.0" width="29.6" height="14" fill="#ffffff"/><text x="801.0" y="263.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="786.2" y="303.0" width="29.6" height="14" fill="#ffffff"/><text x="801.0" y="313.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..1</text>
+<rect x="760.6" y="280.0" width="80.8" height="14" fill="#ffffff"/><text x="801.0" y="290.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">healthAreaId</text>
+<polyline points="1043.0,232.0 1043.0,352.0 876.0,352.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="886.0,357.0 876.0,352.0 886.0,347.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="1038.2" y="238.0" width="29.6" height="14" fill="#ffffff"/><text x="1053.0" y="248.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="877.2" y="356.0" width="29.6" height="14" fill="#ffffff"/><text x="892.0" y="366.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..1</text>
+<rect x="979.1" y="336.0" width="80.8" height="14" fill="#ffffff"/><text x="1019.5" y="346.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">healthAreaId</text>
+<polyline points="542.0,247.0 542.0,352.0 706.0,352.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="696.0,347.0 706.0,352.0 696.0,357.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="517.2" y="253.0" width="29.6" height="14" fill="#ffffff"/><text x="532.0" y="263.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="684.8" y="336.0" width="10.4" height="14" fill="#ffffff"/><text x="690.0" y="346.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="531.1" y="336.0" width="80.8" height="14" fill="#ffffff"/><text x="571.5" y="346.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">healthAreaId</text>
+<polyline points="420.0,516.0 250.0,516.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="260.0,521.0 250.0,516.0 260.0,511.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="393.2" y="500.0" width="29.6" height="14" fill="#ffffff"/><text x="408.0" y="510.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="251.2" y="500.0" width="29.6" height="14" fill="#ffffff"/><text x="266.0" y="510.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..1</text>
+<rect x="304.2" y="500.0" width="61.6" height="14" fill="#ffffff"/><text x="335.0" y="510.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">createdBy</text>
+<polyline points="92.0,849.0 126.0,849.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="92.0,849.0 99.0,853.5 106.0,849.0 99.0,844.5" fill="#4d4d4d" stroke="#4d4d4d"/>
+<polyline points="92.0,869.0 126.0,869.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="116.0,864.0 126.0,869.0 116.0,874.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<rect x="92" y="740" width="34" height="14" rx="0" fill="#dae8fc" stroke="#6c8ebf"/>
+<rect x="92" y="760" width="34" height="14" rx="0" fill="#fff2cc" stroke="#d6b656"/>
+<rect x="92" y="780" width="34" height="14" rx="0" fill="#d5e8d4" stroke="#82b366"/>
+<rect x="92" y="800" width="34" height="14" rx="0" fill="#f5f5f5" stroke="#666666"/>
+<rect x="92" y="820" width="34" height="14" rx="4" fill="none" stroke="#7f7f7f" stroke-dasharray="8 4"/>
+<text x="136.0" y="751.0" font-size="11" text-anchor="start" fill="#1a1a1a">raiz do agregado (aggregate root)</text>
+<text x="136.0" y="771.0" font-size="11" text-anchor="start" fill="#1a1a1a">entidade (entity)</text>
+<text x="136.0" y="791.0" font-size="11" text-anchor="start" fill="#1a1a1a">value object</text>
+<text x="136.0" y="811.0" font-size="11" text-anchor="start" fill="#1a1a1a">enumeração (value object)</text>
+<text x="136.0" y="831.0" font-size="11" text-anchor="start" fill="#1a1a1a">fronteira do agregado</text>
+<text x="136.0" y="853.0" font-size="11" text-anchor="start" fill="#1a1a1a">composição (dentro do agregado)</text>
+<text x="136.0" y="873.0" font-size="11" text-anchor="start" fill="#1a1a1a">referência por ID (entre agregados)</text>
+</svg>
