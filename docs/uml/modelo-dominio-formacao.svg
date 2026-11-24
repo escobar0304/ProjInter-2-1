@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1764" height="1001" viewBox="42 30 1764 1001" font-family="Helvetica, Arial, sans-serif">
-<rect x="42" y="30" width="1764" height="1001" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1764" height="1016" viewBox="42 30 1764 1016" font-family="Helvetica, Arial, sans-serif">
+<rect x="42" y="30" width="1764" height="1016" fill="#ffffff"/>
 <rect x="62" y="50" width="256" height="215" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
 <text x="72.0" y="68.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado HealthArea</text>
 <rect x="410" y="50" width="696" height="342" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
 <text x="420.0" y="68.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado TrainingResource</text>
 <rect x="62" y="482" width="506" height="519" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
 <text x="72.0" y="500.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado Questionnaire</text>
-<rect x="620" y="482" width="636" height="529" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
+<rect x="620" y="482" width="636" height="544" rx="8" fill="none" stroke="#7f7f7f" stroke-width="1.2" stroke-dasharray="8 4"/>
 <text x="630.0" y="500.0" font-size="12" font-weight="bold" text-anchor="start" fill="#1a1a1a">Agregado Enrollment</text>
 <rect x="1488" y="50" width="236" height="640" fill="#fafafa" stroke="#cccccc"/>
 <text x="1498.0" y="68.0" font-size="12" font-weight="bold" text-anchor="start" fill="#666666">Value objects partilhados</text>
@@ -86,7 +86,7 @@
 <text x="86.0" y="944.0" font-size="11" text-anchor="start" fill="#1a1a1a">position: Integer {≥ 1, único}</text>
 <text x="86.0" y="959.0" font-size="11" text-anchor="start" fill="#1a1a1a">text: Translation [1..*]</text>
 <text x="86.0" y="974.0" font-size="11" text-anchor="start" fill="#1a1a1a">correct: Boolean</text>
-<rect x="638" y="512" width="270" height="152" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
+<rect x="638" y="512" width="270" height="167" rx="0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.2"/>
 <text x="773.0" y="527.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«aggregate root»</text>
 <text x="773.0" y="542.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Enrollment</text>
 <line x1="638" y1="550" x2="908" y2="550" stroke="#6c8ebf" stroke-width="1"/>
@@ -96,22 +96,23 @@
 <text x="644.0" y="610.0" font-size="11" text-anchor="start" fill="#1a1a1a">status: EnrollmentStatus</text>
 <text x="644.0" y="625.0" font-size="11" text-anchor="start" fill="#1a1a1a">favorite: Boolean</text>
 <text x="644.0" y="640.0" font-size="11" text-anchor="start" fill="#1a1a1a">enrolledAt: DateTime</text>
-<text x="644.0" y="655.0" font-size="11" text-anchor="start" fill="#1a1a1a">completedAt: DateTime [0..1]</text>
-<rect x="638" y="734" width="230" height="122" rx="0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.2"/>
-<text x="753.0" y="749.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«entity»</text>
-<text x="753.0" y="764.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Attempt</text>
-<line x1="638" y1="772" x2="868" y2="772" stroke="#d6b656" stroke-width="1"/>
-<text x="644.0" y="787.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: AttemptId</text>
-<text x="644.0" y="802.0" font-size="11" text-anchor="start" fill="#1a1a1a">questionnaireId: QuestionnaireId</text>
-<text x="644.0" y="817.0" font-size="11" text-anchor="start" fill="#1a1a1a">number: Integer {≥ 1}</text>
-<text x="644.0" y="832.0" font-size="11" text-anchor="start" fill="#1a1a1a">score: Score</text>
-<text x="644.0" y="847.0" font-size="11" text-anchor="start" fill="#1a1a1a">submittedAt: DateTime</text>
-<rect x="638" y="916" width="210" height="77" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
-<text x="743.0" y="931.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
-<text x="743.0" y="946.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Answer</text>
-<line x1="638" y1="954" x2="848" y2="954" stroke="#82b366" stroke-width="1"/>
-<text x="644.0" y="969.0" font-size="11" text-anchor="start" fill="#1a1a1a">questionId: QuestionId</text>
-<text x="644.0" y="984.0" font-size="11" text-anchor="start" fill="#1a1a1a">answerOptionId: AnswerOptionId</text>
+<text x="644.0" y="655.0" font-size="11" text-anchor="start" fill="#1a1a1a">contentAccessedAt: DateTime [0..1]</text>
+<text x="644.0" y="670.0" font-size="11" text-anchor="start" fill="#1a1a1a">completedAt: DateTime [0..1]</text>
+<rect x="638" y="749" width="230" height="122" rx="0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.2"/>
+<text x="753.0" y="764.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«entity»</text>
+<text x="753.0" y="779.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Attempt</text>
+<line x1="638" y1="787" x2="868" y2="787" stroke="#d6b656" stroke-width="1"/>
+<text x="644.0" y="802.0" font-size="11" text-anchor="start" fill="#1a1a1a">id: AttemptId</text>
+<text x="644.0" y="817.0" font-size="11" text-anchor="start" fill="#1a1a1a">questionnaireId: QuestionnaireId</text>
+<text x="644.0" y="832.0" font-size="11" text-anchor="start" fill="#1a1a1a">number: Integer {≥ 1}</text>
+<text x="644.0" y="847.0" font-size="11" text-anchor="start" fill="#1a1a1a">score: Score</text>
+<text x="644.0" y="862.0" font-size="11" text-anchor="start" fill="#1a1a1a">submittedAt: DateTime</text>
+<rect x="638" y="931" width="210" height="77" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
+<text x="743.0" y="946.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
+<text x="743.0" y="961.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Answer</text>
+<line x1="638" y1="969" x2="848" y2="969" stroke="#82b366" stroke-width="1"/>
+<text x="644.0" y="984.0" font-size="11" text-anchor="start" fill="#1a1a1a">questionId: QuestionId</text>
+<text x="644.0" y="999.0" font-size="11" text-anchor="start" fill="#1a1a1a">answerOptionId: AnswerOptionId</text>
 <rect x="998" y="512" width="190" height="92" rx="0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.2"/>
 <text x="1093.0" y="527.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">«value object»</text>
 <text x="1093.0" y="542.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">LevelProgress</text>
@@ -181,12 +182,15 @@
 <line x1="1506" y1="633" x2="1706" y2="633" stroke="#666666" stroke-width="1"/>
 <text x="1512.0" y="648.0" font-size="11" text-anchor="start" fill="#1a1a1a">PT {obrigatório}</text>
 <text x="1512.0" y="663.0" font-size="11" text-anchor="start" fill="#1a1a1a">EN</text>
-<polygon points="310,734 488,734 500,746 500,806 310,806" fill="#ffffff" stroke="#999999"/>
-<polyline points="488,734 488,746 500,746" fill="none" stroke="#999999"/>
-<text x="316.0" y="750.0" font-size="11" text-anchor="start" fill="#1a1a1a">{para publicar: pelo menos</text>
-<text x="316.0" y="765.0" font-size="11" text-anchor="start" fill="#1a1a1a">1 Question; cada Question</text>
-<text x="316.0" y="780.0" font-size="11" text-anchor="start" fill="#1a1a1a">com 2 ou mais AnswerOptions</text>
-<text x="316.0" y="795.0" font-size="11" text-anchor="start" fill="#1a1a1a">e exatamente uma correct}</text>
+<polygon points="310,734 498,734 510,746 510,851 310,851" fill="#ffffff" stroke="#999999"/>
+<polyline points="498,734 498,746 510,746" fill="none" stroke="#999999"/>
+<text x="316.0" y="750.0" font-size="11" text-anchor="start" fill="#1a1a1a">{exatamente uma correct</text>
+<text x="316.0" y="765.0" font-size="11" text-anchor="start" fill="#1a1a1a">por Question}</text>
+<text x="316.0" y="780.0" font-size="11" text-anchor="start" fill="#1a1a1a">{para publicar: pelo</text>
+<text x="316.0" y="795.0" font-size="11" text-anchor="start" fill="#1a1a1a">menos 1 Question}</text>
+<text x="316.0" y="810.0" font-size="11" text-anchor="start" fill="#1a1a1a">{Questions e respostas</text>
+<text x="316.0" y="825.0" font-size="11" text-anchor="start" fill="#1a1a1a">corretas não mudam depois</text>
+<text x="316.0" y="840.0" font-size="11" text-anchor="start" fill="#1a1a1a">da 1.ª Attempt}</text>
 <polygon points="1486,722 1714,722 1726,734 1726,794 1486,794" fill="#ffffff" stroke="#999999"/>
 <polyline points="1714,722 1714,734 1726,734" fill="none" stroke="#999999"/>
 <text x="1492.0" y="738.0" font-size="11" text-anchor="start" fill="#1a1a1a">Translation [1..*]: um texto por</text>
@@ -217,26 +221,26 @@
 <polyline points="143.0,816.0 143.0,876.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
 <polygon points="143.0,816.0 138.5,823.0 143.0,830.0 147.5,823.0" fill="#4d4d4d" stroke="#4d4d4d"/>
 <rect x="147.8" y="832.0" width="10.4" height="14" fill="#ffffff"/><text x="153.0" y="842.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
-<rect x="138.2" y="854.0" width="29.6" height="14" fill="#ffffff"/><text x="153.0" y="864.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
-<polyline points="719.0,664.0 719.0,734.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
-<polygon points="719.0,664.0 714.5,671.0 719.0,678.0 723.5,671.0" fill="#4d4d4d" stroke="#4d4d4d"/>
-<rect x="723.8" y="680.0" width="10.4" height="14" fill="#ffffff"/><text x="729.0" y="690.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
-<rect x="714.2" y="712.0" width="29.6" height="14" fill="#ffffff"/><text x="729.0" y="722.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
-<polyline points="707.0,856.0 707.0,916.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
-<polygon points="707.0,856.0 702.5,863.0 707.0,870.0 711.5,863.0" fill="#4d4d4d" stroke="#4d4d4d"/>
-<rect x="711.8" y="872.0" width="10.4" height="14" fill="#ffffff"/><text x="717.0" y="882.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
-<rect x="702.2" y="894.0" width="29.6" height="14" fill="#ffffff"/><text x="717.0" y="904.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1..*</text>
+<rect x="138.2" y="854.0" width="29.6" height="14" fill="#ffffff"/><text x="153.0" y="864.0" font-size="11" text-anchor="middle" fill="#1a1a1a">2..*</text>
+<polyline points="719.0,679.0 719.0,749.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="719.0,679.0 714.5,686.0 719.0,693.0 723.5,686.0" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="723.8" y="695.0" width="10.4" height="14" fill="#ffffff"/><text x="729.0" y="705.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="714.2" y="727.0" width="29.6" height="14" fill="#ffffff"/><text x="729.0" y="737.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<polyline points="707.0,871.0 707.0,931.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="707.0,871.0 702.5,878.0 707.0,885.0 711.5,878.0" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="711.8" y="887.0" width="10.4" height="14" fill="#ffffff"/><text x="717.0" y="897.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<rect x="702.2" y="909.0" width="29.6" height="14" fill="#ffffff"/><text x="717.0" y="919.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1..*</text>
 <polyline points="908.0,558.0 998.0,558.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
 <polygon points="908.0,558.0 915.0,562.5 922.0,558.0 915.0,553.5" fill="#4d4d4d" stroke="#4d4d4d"/>
 <rect x="924.8" y="542.0" width="10.4" height="14" fill="#ffffff"/><text x="930.0" y="552.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
 <rect x="967.2" y="542.0" width="29.6" height="14" fill="#ffffff"/><text x="982.0" y="552.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
-<polyline points="908.0,621.4 963.0,621.4 963.0,672.5 998.0,672.5" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
-<polygon points="908.0,621.4 915.0,625.9 922.0,621.4 915.0,616.9" fill="#4d4d4d" stroke="#4d4d4d"/>
-<rect x="924.8" y="605.4" width="10.4" height="14" fill="#ffffff"/><text x="930.0" y="615.4" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<polyline points="908.0,632.2 963.0,632.2 963.0,672.5 998.0,672.5" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="908.0,632.2 915.0,636.7 922.0,632.2 915.0,627.7" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="924.8" y="616.2" width="10.4" height="14" fill="#ffffff"/><text x="930.0" y="626.2" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
 <rect x="967.2" y="656.5" width="29.6" height="14" fill="#ffffff"/><text x="982.0" y="666.5" font-size="11" text-anchor="middle" fill="#1a1a1a">0..1</text>
-<polyline points="908.0,642.7 938.0,642.7 938.0,794.5 998.0,794.5" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
-<polygon points="908.0,642.7 915.0,647.2 922.0,642.7 915.0,638.2" fill="#4d4d4d" stroke="#4d4d4d"/>
-<rect x="924.8" y="646.7" width="10.4" height="14" fill="#ffffff"/><text x="930.0" y="656.7" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
+<polyline points="908.0,655.6 938.0,655.6 938.0,794.5 998.0,794.5" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
+<polygon points="908.0,655.6 915.0,660.1 922.0,655.6 915.0,651.1" fill="#4d4d4d" stroke="#4d4d4d"/>
+<rect x="924.8" y="659.6" width="10.4" height="14" fill="#ffffff"/><text x="930.0" y="669.6" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
 <rect x="967.2" y="778.5" width="29.6" height="14" fill="#ffffff"/><text x="982.0" y="788.5" font-size="11" text-anchor="middle" fill="#1a1a1a">0..1</text>
 <polyline points="309.5,512.0 309.5,467.0 483.0,467.0 483.0,262.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
 <polyline points="478.0,272.0 483.0,262.0 488.0,272.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
@@ -248,11 +252,11 @@
 <rect x="754.7" y="494.0" width="29.6" height="14" fill="#ffffff"/><text x="769.5" y="504.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
 <rect x="588.8" y="272.0" width="10.4" height="14" fill="#ffffff"/><text x="594.0" y="282.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
 <rect x="567.1" y="446.0" width="119.2" height="14" fill="#ffffff"/><text x="626.8" y="456.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">trainingResourceId</text>
-<polyline points="638.0,754.0 598.0,754.0 598.0,588.0 350.0,588.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polyline points="638.0,769.0 598.0,769.0 598.0,588.0 350.0,588.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
 <polyline points="360.0,593.0 350.0,588.0 360.0,583.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
-<rect x="611.2" y="758.0" width="29.6" height="14" fill="#ffffff"/><text x="626.0" y="768.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
+<rect x="611.2" y="773.0" width="29.6" height="14" fill="#ffffff"/><text x="626.0" y="783.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
 <rect x="360.8" y="572.0" width="10.4" height="14" fill="#ffffff"/><text x="366.0" y="582.0" font-size="11" text-anchor="middle" fill="#1a1a1a">1</text>
-<rect x="527.0" y="572.0" width="100.0" height="14" fill="#ffffff"/><text x="577.0" y="582.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">questionnaireId</text>
+<rect x="534.5" y="572.0" width="100.0" height="14" fill="#ffffff"/><text x="584.5" y="582.0" font-size="11" font-style="italic" text-anchor="middle" fill="#1a1a1a">questionnaireId</text>
 <polyline points="886.4,512.0 886.4,467.0 1286.0,467.0 1286.0,539.0 1316.0,539.0" fill="none" stroke="#4d4d4d" stroke-width="1.2" stroke-dasharray="6 4"/>
 <polyline points="1306.0,534.0 1316.0,539.0 1306.0,544.0" fill="none" stroke="#4d4d4d" stroke-width="1.2"/>
 <rect x="861.6" y="494.0" width="29.6" height="14" fill="#ffffff"/><text x="876.4" y="504.0" font-size="11" text-anchor="middle" fill="#1a1a1a">0..*</text>
