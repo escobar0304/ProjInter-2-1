@@ -37,7 +37,7 @@ Desenhar o modelo de domínio em DDD: os agregados, com a raiz e a fronteira jus
 - **Badge como value object e Certificate como entidade.** O Badge é um facto imutável; o Certificate tem identidade própria (código de verificação) e é verificado depois de emitido.
 - **Enumerações e Translation como value objects partilhados**, repetidos nas páginas onde são usados.
 - **Atributos com os nomes das colunas** do `schema.sql` em `camelCase`, para a comparação com o modelo relacional ser direta.
-- **Diagrama gerado em draw.io sem compressão** e imagens em SVG, como no modelo relacional (US_A003): o `.drawio` e as imagens têm diferenças legíveis no Git.
+- **Diagrama em draw.io sem compressão** e imagens em SVG, como no modelo relacional (US_A003): o `.drawio` e as imagens têm diferenças legíveis no Git.
 
 ## Pressupostos
 
