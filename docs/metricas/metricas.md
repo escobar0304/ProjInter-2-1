@@ -88,12 +88,12 @@ O ficheiro [consultas-metricas.sql](consultas-metricas.sql) contém consultas ap
 
 ## 6. Adequação e limites do modelo
 
-Todas as variáveis do catálogo existem no schema v1.1. Não foi necessária uma nova coluna para calcular os indicadores **atuais** definidos aqui. Registam-se os seguintes limites para revisão com os responsáveis de #3 e #7, sem alterar os seus entregáveis nesta US:
+As variáveis do catálogo existem no schema atual. Os ajustes ao modelo relacional reforçam a integridade entre recursos e tentativas e registam o acesso a conteúdos sem Levels. Mantêm-se os seguintes limites:
 
-- **Histórico das perguntas:** `attempt_answers` aponta para `answer_options.is_correct`, que não tem versões. O Score persistido preserva a classificação, mas editar a chave correta ou apagar perguntas depois de haver respostas destrói a reprodutibilidade da análise por item. Proposta: bloquear essas alterações após a primeira Attempt e criar um novo recurso/questionário para uma versão diferente. Versionamento histórico é uma decisão futura, não uma capacidade atual do schema.
+- **Histórico das perguntas:** `attempt_answers` aponta para `answer_options.is_correct`, sem versões. O [modelo relacional](../base-de-dados/modelo-relacional.md) estabelece como regra do backend o bloqueio de alterações às perguntas e opções após a primeira Attempt do Questionnaire. O Score persistido preserva a classificação; a análise por item depende do cumprimento dessa regra. Versionamento histórico continua a ser uma decisão futura.
 - **Grupo escolar histórico:** o ano de escolaridade é o atual do User. Análise pelo ano à data da resposta exigiria um snapshot adicional; não prometer esse resultado com o modelo atual.
-- **Acesso ao conteúdo:** `level_progress` só existe para recursos com Levels. Não há um registo genérico de primeiro acesso/visualização para recursos sem Levels. O backend deve definir como valida o acesso prévio antes do Final (RF20); este documento não inventa uma coluna existente.
-- **Coerência entre tabelas:** as FKs não garantem, por si, que uma Attempt e a Enrollment apontam para o mesmo recurso, nem que todas as perguntas respondidas pertencem ao Questionnaire. O backend e o gerador devem validar essas regras antes da transação, além das restrições da BD.
+- **Acesso ao conteúdo:** `level_progress` regista o progresso nos recursos com Levels. Para recursos sem Levels, `enrollments.content_accessed_at` regista o primeiro acesso ao conteúdo e permite ao backend validar a pré-condição do Final (RF20). Esse acesso não mede tempo de leitura nem comprova aprendizagem.
+- **Coerência entre tabelas:** as chaves compostas em `attempts`, com `training_resource_id`, garantem que a Attempt, a Enrollment e o Questionnaire pertencem ao mesmo Training Resource. A BD não garante que as perguntas respondidas pertencem ao Questionnaire da Attempt; o backend deve validar essa pertença antes da transação.
 - **Estado histórico:** `last_login_at` só permite atividade recente em relação ao estado observado; não reconstrói logins de meses anteriores. Publicação, Role e estado de conta também não têm histórico completo.
 - **População após eliminação:** as contagens refletem registos existentes; a eliminação em cascata remove também o desempenho. Não apresentar totais históricos imutáveis sem uma política própria de agregação e conservação.
 
@@ -107,6 +107,4 @@ Todas as variáveis do catálogo existem no schema v1.1. Não foi necessária um
 
 ## 8. Dependências e validação
 
-Verificado no GitHub e no Projects em 21/11/2026: #9 atribuída a `QuakeXIV` com estado **Ready**; #1, #3 e #7 fechadas e com artefactos no `main`. #9 fornece a definição necessária a #16, que não é desenvolvida nesta branch. Esta proposta ainda requer revisão em PR e confirmação dos pressupostos pelo cliente.
-
-Apoio de IA: Codex (OpenAI), na redação, rastreabilidade, consultas e revisão de coerência; validação e defesa pela equipa. A classificação no sistema de semáforos deve ser confirmada no enunciado fornecido pelo docente.
+A definição baseia-se nos [requisitos](../requisitos/furps.md), no [modelo relacional](../base-de-dados/modelo-relacional.md) e no [dicionário de dados](../base-de-dados/dicionario-dados.md). Fornece as convenções analíticas para o protótipo de dados sintéticos da US_A016. Os pressupostos analíticos permanecem sujeitos a confirmação pelo cliente.
