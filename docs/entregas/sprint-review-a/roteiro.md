@@ -10,7 +10,7 @@ Proposta de apresentação de dez minutos para revisão da equipa. Os tempos sã
 | 2 | Percurso de aprendizagem | 40 s | 1:00 | Diogo liga o público-alvo ao diagnóstico, conteúdo e Final. |
 | 3 | Requisitos e linguagem comum | 50 s | 1:50 | Diogo explica IDs, prioridades e origem; João distingue os termos ambíguos. |
 | 4 | Alterações nos use cases | 60 s | 2:50 | João explica herança, Guardian e relações; Pedro enquadra UC27 em revisão. |
-| 5 | Modelo relacional | 60 s | 3:50 | Diogo explica Enrollment, Attempt, respostas e traduções. |
+| 5 | Modelos de domínio e relacional | 60 s | 3:50 | Diogo explica Enrollment, Attempt, respostas e traduções. |
 | 6 | Arquitetura | 45 s | 4:35 | Diogo distingue decisões aceites e propostas. |
 | 7 | Registo e consentimento | 50 s | 5:25 | João descreve os dois ramos e a ativação da conta. |
 | 8 | Métricas | 65 s | 6:30 | Pedro apresenta as primeiras tentativas, o exemplo fictício e os casos-limite. |
@@ -39,7 +39,7 @@ Apresentar duas ou três alterações da v1.1 e o seu motivo: herança completa,
 
 ### 5. Dados
 
-Uma Attempt guarda classificação, número e data; `attempt_answers` regista a opção escolhida em cada pergunta. O consentimento precisa de estados, email do Guardian e datas, em vez de um booleano. As 40 tabelas incluem seis de referência e dez de traduções; não são 40 agregados de domínio. A equipa precisa de confirmar o diagrama de domínio de #4, ausente do `main` consultado.
+Uma Attempt guarda classificação, número e data; `attempt_answers` regista a opção escolhida em cada pergunta. O consentimento precisa de estados, email do Guardian e datas, em vez de um booleano. As 40 tabelas incluem seis de referência e dez de traduções; não são 40 agregados de domínio. O modelo de domínio define 11 agregados. Enrollment contém Attempt, Badge e Certificate; Questionnaire contém Question e AnswerOption. Questionnaire Submission coordena a submissão entre ambos. `enrollments.content_accessed_at` regista o acesso sem Levels e `attempts.training_resource_id` garante a coerência do recurso pelas chaves compostas.
 
 ### 6. Arquitetura
 
@@ -63,11 +63,11 @@ A014 permite justificar decisões e alterações futuras. A015 reduz o risco de 
 
 ### 11. Próximos passos
 
-A apresentação depende da consolidação do relatório #13. Rever os PR, confirmar os artefactos de domínio, percentagens e datas e só depois fechar a entrega. A Sprint B prevê UI/UX, frontend, BD e Docker, com organização interna do backend por decidir.
+A apresentação depende da consolidação do relatório #13. Consolidar o relatório com os modelos de domínio e relacional atualizados, confirmar percentagens e datas e só depois fechar a entrega. A Sprint B prevê UI/UX, frontend, BD e Docker, com organização interna do backend por decidir.
 
 ### 12. Avaliação
 
-A equipa deve acordar a autoavaliação e a contribuição de cada membro, com evidências. Há documentação rastreável e validação do schema em CI. Melhorias: alinhar estados e artefactos, confirmar pressupostos com o cliente e ensaiar a apresentação. A nota não foi preenchida por IA.
+A equipa deve acordar a autoavaliação e a contribuição de cada membro, com evidências. Há documentação rastreável e validação do schema em CI. Melhorias: alinhar estados e artefactos, confirmar pressupostos com o cliente e ensaiar a apresentação. A autoavaliação numérica será acordada pela equipa.
 
 ## Perguntas prováveis para a defesa
 
@@ -81,16 +81,16 @@ A equipa deve acordar a autoavaliação e a contribuição de cada membro, com e
 | A proporção correta mede discriminação? | Mede facilidade/dificuldade nessa amostra. A proposta de #9 distingue a correlação item-resto. |
 | O modelo suporta comparar anos no passado? | Guarda o ano atual do User, sem snapshot por Attempt. O limite está registado na proposta das métricas. |
 | As US extra já estão concluídas? | A014 está fechada. A015 continua pendente e A016 adiada. Explicar os respetivos benefícios e estados. |
-| O modelo de domínio está completo? | A issue #4 está fechada, mas o diagrama e a tabela de agregados não estão no `main` consultado. A equipa tem de confirmar esse artefacto antes de o apresentar. |
-| Que uso fizeram de IA? | O README e as notas de feature declaram Claude e Codex. Confirmar no enunciado a classificação e justificar o uso; cada membro deve conseguir explicar o seu trabalho. |
+| O modelo de domínio está completo? | O diagrama e a tabela de 11 agregados estão em docs/uml/modelo-dominio.md. Enrollment e Questionnaire são coordenados por Questionnaire Submission na submissão das respostas. |
+| Que uso fizeram de IA? | O README principal, na secção «Uso de IA generativa», declara Claude e Codex. A equipa revê e valida os resultados; cada membro deve conseguir explicar o seu trabalho. |
 
 ## Lista de fecho antes da apresentação
 
 - [ ] Integrar o relatório #13 e confirmar que a apresentação corresponde à versão entregue.
-- [ ] Confirmar os artefactos de domínio da #4 e o resultado da análise de privacidade #15.
+- [ ] Integrar o resultado da análise de privacidade #15 quando estiver disponível.
 - [ ] Atualizar o estado de cada US e obter da equipa as percentagens em falta.
 - [ ] Acordar e justificar a autoavaliação e os contributos individuais.
 - [ ] Confirmar as datas com o docente.
-- [ ] Rever e aprovar os PR e confirmar os semáforos de uso de IA.
+- [ ] Rever o conteúdo e obter aprovação da equipa.
 - [ ] Ensaiar com cronómetro, ajustar os tempos e confirmar quem fala em cada slide.
 - [ ] Abrir o PPTX no computador da apresentação e guardar o PDF como plano B.
