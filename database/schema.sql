@@ -209,8 +209,10 @@ CREATE TABLE enrollments (
                          CHECK (status IN ('not_started', 'in_progress', 'completed')),
     is_favorite          boolean     NOT NULL DEFAULT false,
     enrolled_at          timestamptz NOT NULL DEFAULT now(),
+    content_accessed_at  timestamptz,                             -- recurso sem Levels: quando viu o conteúdo (RF20)
     completed_at         timestamptz,
     UNIQUE (user_id, training_resource_id),
+    UNIQUE (id, training_resource_id),                            -- alvo da FK composta de attempts
     CHECK ((status = 'completed') = (completed_at IS NOT NULL))
 );
 
@@ -234,7 +236,8 @@ CREATE TABLE questionnaires (
     type                 varchar(20) NOT NULL CHECK (type IN ('diagnostic', 'final')),
     max_attempts         smallint    NOT NULL DEFAULT 2 CHECK (max_attempts >= 1),   -- D01, D04
     content_status_id    smallint    NOT NULL REFERENCES content_statuses (id),
-    UNIQUE (training_resource_id, type)
+    UNIQUE (training_resource_id, type),
+    UNIQUE (id, training_resource_id)                             -- alvo da FK composta de attempts
 );
 
 CREATE TABLE questionnaire_translations (
@@ -282,14 +285,21 @@ CREATE TABLE answer_option_translations (
 
 -- Cada submissão completa de um Questionnaire (RF19, RF21). Substitui quiz_user.
 -- Ligada à Enrollment: só responde quem está inscrito no recurso.
+-- training_resource_id repete o recurso da Enrollment e do Questionnaire: as duas
+-- FK compostas garantem que o Questionnaire é do recurso em que o User está inscrito.
 CREATE TABLE attempts (
-    id               bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    enrollment_id    bigint       NOT NULL REFERENCES enrollments (id) ON DELETE CASCADE,
-    questionnaire_id bigint       NOT NULL REFERENCES questionnaires (id),
-    attempt_number   smallint     NOT NULL CHECK (attempt_number >= 1),
-    score            numeric(5,2) NOT NULL CHECK (score BETWEEN 0 AND 100),
-    submitted_at     timestamptz  NOT NULL DEFAULT now(),
-    UNIQUE (enrollment_id, questionnaire_id, attempt_number)
+    id                   bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    enrollment_id        bigint       NOT NULL,
+    questionnaire_id     bigint       NOT NULL,
+    training_resource_id bigint       NOT NULL,
+    attempt_number       smallint     NOT NULL CHECK (attempt_number >= 1),
+    score                numeric(5,2) NOT NULL CHECK (score BETWEEN 0 AND 100),
+    submitted_at         timestamptz  NOT NULL DEFAULT now(),
+    UNIQUE (enrollment_id, questionnaire_id, attempt_number),
+    FOREIGN KEY (enrollment_id, training_resource_id)
+        REFERENCES enrollments (id, training_resource_id) ON DELETE CASCADE,
+    FOREIGN KEY (questionnaire_id, training_resource_id)
+        REFERENCES questionnaires (id, training_resource_id)
 );
 
 -- Answer Option escolhida em cada Question de uma Attempt. Nova face à v1.0,
