@@ -121,7 +121,7 @@ Os detalhes e as decisões estão em [`sprints/SprintA/A012-CI.md`](sprints/Spri
 
 ## Uso de IA generativa
 
-O uso de IA generativa segue o sistema de semáforos definido na especificação do projeto: uso livre (verde), permitido com justificação (amarelo) e proibido (vermelho).
+O uso de IA generativa é declarado nesta secção e sujeito à revisão e validação da equipa.
 
 | Ferramenta | Utilização |
 |---|---|
