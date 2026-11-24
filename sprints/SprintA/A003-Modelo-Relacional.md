@@ -45,6 +45,4 @@ Aproveitando esta branch:
 
 ## Pendente
 
-- Rever o modelo com o João Crasto, para alinhar com o modelo de domínio (US_A004).
-- Dicionário de dados (US_A007), a partir do `schema.sql`.
 - Atualizar o modelo quando o cliente responder às dúvidas D01 a D11.

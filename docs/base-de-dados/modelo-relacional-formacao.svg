@@ -27,8 +27,6 @@
 <path d="M1270,508.0L1280,515.0L1270,522.0"/><circle cx="1285" cy="515.0" r="4" fill="#fff"/><path d="M1382,226.0L1382,240.0"/><path d="M1377,226.0L1377,240.0"/>
 <polyline points="1270,541.0 1302,541.0 1302,133.0 1270,133.0"/>
 <path d="M1270,534.0L1280,541.0L1270,548.0"/><circle cx="1285" cy="541.0" r="4" fill="#fff"/><path d="M1278,126.0L1278,140.0"/><path d="M1283,126.0L1283,140.0"/>
-<polyline points="1840,159.0 1817,159.0 1817,233.0 1720,233.0"/>
-<path d="M1840,152.0L1830,159.0L1840,166.0"/><circle cx="1825" cy="159.0" r="4" fill="#fff"/><path d="M1728,226.0L1728,240.0"/><path d="M1733,226.0L1733,240.0"/>
 <polyline points="2290,159.0 2258,159.0 2258,32 852,32 852,133.0 820,133.0"/>
 <path d="M2290,152.0L2280,159.0L2290,166.0"/><circle cx="2275" cy="159.0" r="4" fill="#fff"/><path d="M828,126.0L828,140.0"/><path d="M833,126.0L833,140.0"/>
 <polyline points="2620,337.0 2634,337.0 2634,133.0 2620,133.0"/>
@@ -41,22 +39,24 @@
 <path d="M2620,838.0L2630,845.0L2620,852.0"/><circle cx="2635" cy="845.0" r="4" fill="#fff"/><path d="M2628,508.0L2628,522.0"/><path d="M2633,508.0L2633,522.0"/>
 <polyline points="2620,997.0 2670,997.0 2670,819.0 2620,819.0"/>
 <path d="M2620,990.0L2630,997.0L2620,1004.0"/><circle cx="2635" cy="997.0" r="4" fill="#fff"/><path d="M2628,812.0L2628,826.0"/><path d="M2633,812.0L2633,826.0"/>
+<polyline points="1840,159.0 1817,159.0 1817,233.0 1720,233.0"/>
+<path d="M1840,152.0L1830,159.0L1840,166.0"/><circle cx="1825" cy="159.0" r="4" fill="#fff"/><path d="M1728,226.0L1728,240.0"/><path d="M1733,226.0L1733,240.0"/>
 <polyline points="2170,185.0 2184,185.0 2184,133.0 2290,133.0"/>
 <path d="M2170,178.0L2180,185.0L2170,192.0"/><circle cx="2185" cy="185.0" r="4" fill="#fff"/><path d="M2282,126.0L2282,140.0"/><path d="M2277,126.0L2277,140.0"/>
-<polyline points="2170,363.0 2193,363.0 2193,133.0 2170,133.0"/>
-<path d="M2170,356.0L2180,363.0L2170,370.0"/><circle cx="2185" cy="363.0" r="4" fill="#fff"/><path d="M2178,126.0L2178,140.0"/><path d="M2183,126.0L2183,140.0"/>
-<polyline points="2170,389.0 2202,389.0 2202,515.0 2290,515.0"/>
-<path d="M2170,382.0L2180,389.0L2170,396.0"/><circle cx="2185" cy="389.0" r="4" fill="#fff"/><path d="M2282,508.0L2282,522.0"/><path d="M2277,508.0L2277,522.0"/>
-<polyline points="2170,415.0 2211,415.0 2211,819.0 2290,819.0"/>
-<path d="M2170,408.0L2180,415.0L2170,422.0"/><circle cx="2185" cy="415.0" r="4" fill="#fff"/><path d="M2282,812.0L2282,826.0"/><path d="M2277,812.0L2277,826.0"/>
-<polyline points="1720,489.0 1752,489.0 1752,233.0 1720,233.0"/>
-<path d="M1728,482.0L1728,496.0"/><circle cx="1737" cy="489.0" r="4" fill="#fff"/><path d="M1728,226.0L1728,240.0"/><path d="M1733,226.0L1733,240.0"/>
-<polyline points="1720,515.0 1761,515.0 1761,133.0 1840,133.0"/>
-<path d="M1728,508.0L1728,522.0"/><circle cx="1737" cy="515.0" r="4" fill="#fff"/><path d="M1832,126.0L1832,140.0"/><path d="M1827,126.0L1827,140.0"/>
-<polyline points="1720,667.0 1770,667.0 1770,233.0 1720,233.0"/>
-<path d="M1728,660.0L1728,674.0"/><circle cx="1737" cy="667.0" r="4" fill="#fff"/><path d="M1728,226.0L1728,240.0"/><path d="M1733,226.0L1733,240.0"/>
-<polyline points="1720,693.0 1779,693.0 1779,133.0 1840,133.0"/>
-<path d="M1728,686.0L1728,700.0"/><circle cx="1737" cy="693.0" r="4" fill="#fff"/><path d="M1832,126.0L1832,140.0"/><path d="M1827,126.0L1827,140.0"/>
+<polyline points="2170,389.0 2193,389.0 2193,133.0 2170,133.0"/>
+<path d="M2170,382.0L2180,389.0L2170,396.0"/><circle cx="2185" cy="389.0" r="4" fill="#fff"/><path d="M2178,126.0L2178,140.0"/><path d="M2183,126.0L2183,140.0"/>
+<polyline points="2170,415.0 2202,415.0 2202,515.0 2290,515.0"/>
+<path d="M2170,408.0L2180,415.0L2170,422.0"/><circle cx="2185" cy="415.0" r="4" fill="#fff"/><path d="M2282,508.0L2282,522.0"/><path d="M2277,508.0L2277,522.0"/>
+<polyline points="2170,441.0 2211,441.0 2211,819.0 2290,819.0"/>
+<path d="M2170,434.0L2180,441.0L2170,448.0"/><circle cx="2185" cy="441.0" r="4" fill="#fff"/><path d="M2282,812.0L2282,826.0"/><path d="M2277,812.0L2277,826.0"/>
+<polyline points="1720,515.0 1752,515.0 1752,233.0 1720,233.0"/>
+<path d="M1728,508.0L1728,522.0"/><circle cx="1737" cy="515.0" r="4" fill="#fff"/><path d="M1728,226.0L1728,240.0"/><path d="M1733,226.0L1733,240.0"/>
+<polyline points="1720,541.0 1761,541.0 1761,133.0 1840,133.0"/>
+<path d="M1728,534.0L1728,548.0"/><circle cx="1737" cy="541.0" r="4" fill="#fff"/><path d="M1832,126.0L1832,140.0"/><path d="M1827,126.0L1827,140.0"/>
+<polyline points="1720,693.0 1770,693.0 1770,233.0 1720,233.0"/>
+<path d="M1728,686.0L1728,700.0"/><circle cx="1737" cy="693.0" r="4" fill="#fff"/><path d="M1728,226.0L1728,240.0"/><path d="M1733,226.0L1733,240.0"/>
+<polyline points="1720,719.0 1779,719.0 1779,133.0 1840,133.0"/>
+<path d="M1728,712.0L1728,726.0"/><circle cx="1737" cy="719.0" r="4" fill="#fff"/><path d="M1832,126.0L1832,140.0"/><path d="M1827,126.0L1827,140.0"/>
 </g>
 <rect x="40" y="90" width="330" height="212" fill="#ffffff" stroke="#6c8ebf"/>
 <rect x="40" y="90" width="330" height="30" fill="#dae8fc" stroke="#6c8ebf"/>
@@ -216,7 +216,7 @@
 <text x="1412" y="137" class="k s">PK</text>
 <text x="1440" y="137" class="p s">id</text>
 <text x="1606" y="137" class="y">bigint</text>
-<rect x="1390" y="190" width="330" height="212" fill="#ffffff" stroke="#6c8ebf"/>
+<rect x="1390" y="190" width="330" height="238" fill="#ffffff" stroke="#6c8ebf"/>
 <rect x="1390" y="190" width="330" height="30" fill="#dae8fc" stroke="#6c8ebf"/>
 <text x="1555.0" y="209" class="h">enrollments</text>
 <line x1="1390" y1="246" x2="1720" y2="246" stroke="#6c8ebf"/>
@@ -235,39 +235,41 @@
 <text x="1606" y="341" class="y">boolean NN</text>
 <text x="1440" y="367">enrolled_at</text>
 <text x="1606" y="367" class="y">timestamptz NN</text>
-<text x="1440" y="393">completed_at</text>
+<text x="1440" y="393">content_accessed_at</text>
 <text x="1606" y="393" class="y">timestamptz</text>
-<rect x="1390" y="446" width="330" height="108" fill="#ffffff" stroke="#9673a6"/>
-<rect x="1390" y="446" width="330" height="30" fill="#e1d5e7" stroke="#9673a6"/>
-<text x="1555.0" y="465" class="h">badges</text>
-<line x1="1390" y1="502" x2="1720" y2="502" stroke="#9673a6"/>
-<text x="1412" y="493" class="k">PK,FK</text>
-<text x="1440" y="493" class="p">enrollment_id</text>
-<text x="1606" y="493" class="y">bigint</text>
-<text x="1412" y="519" class="k">FK,UQ</text>
-<text x="1440" y="519">attempt_id</text>
-<text x="1606" y="519" class="y">bigint NN</text>
-<text x="1440" y="545">awarded_at</text>
-<text x="1606" y="545" class="y">timestamptz NN</text>
-<rect x="1390" y="598" width="330" height="160" fill="#ffffff" stroke="#9673a6"/>
-<rect x="1390" y="598" width="330" height="30" fill="#e1d5e7" stroke="#9673a6"/>
-<text x="1555.0" y="617" class="h">certificates</text>
-<line x1="1390" y1="654" x2="1720" y2="654" stroke="#9673a6"/>
-<text x="1412" y="645" class="k">PK</text>
-<text x="1440" y="645" class="p">id</text>
-<text x="1606" y="645" class="y">bigint</text>
-<text x="1412" y="671" class="k">FK,UQ</text>
-<text x="1440" y="671">enrollment_id</text>
-<text x="1606" y="671" class="y">bigint NN</text>
+<text x="1440" y="419">completed_at</text>
+<text x="1606" y="419" class="y">timestamptz</text>
+<rect x="1390" y="472" width="330" height="108" fill="#ffffff" stroke="#9673a6"/>
+<rect x="1390" y="472" width="330" height="30" fill="#e1d5e7" stroke="#9673a6"/>
+<text x="1555.0" y="491" class="h">badges</text>
+<line x1="1390" y1="528" x2="1720" y2="528" stroke="#9673a6"/>
+<text x="1412" y="519" class="k">PK,FK</text>
+<text x="1440" y="519" class="p">enrollment_id</text>
+<text x="1606" y="519" class="y">bigint</text>
+<text x="1412" y="545" class="k">FK,UQ</text>
+<text x="1440" y="545">attempt_id</text>
+<text x="1606" y="545" class="y">bigint NN</text>
+<text x="1440" y="571">awarded_at</text>
+<text x="1606" y="571" class="y">timestamptz NN</text>
+<rect x="1390" y="624" width="330" height="160" fill="#ffffff" stroke="#9673a6"/>
+<rect x="1390" y="624" width="330" height="30" fill="#e1d5e7" stroke="#9673a6"/>
+<text x="1555.0" y="643" class="h">certificates</text>
+<line x1="1390" y1="680" x2="1720" y2="680" stroke="#9673a6"/>
+<text x="1412" y="671" class="k">PK</text>
+<text x="1440" y="671" class="p">id</text>
+<text x="1606" y="671" class="y">bigint</text>
 <text x="1412" y="697" class="k">FK,UQ</text>
-<text x="1440" y="697">attempt_id</text>
+<text x="1440" y="697">enrollment_id</text>
 <text x="1606" y="697" class="y">bigint NN</text>
-<text x="1412" y="723" class="k">UQ</text>
-<text x="1440" y="723">verification_code</text>
-<text x="1606" y="723" class="y">varchar(40) NN</text>
-<text x="1440" y="749">issued_at</text>
-<text x="1606" y="749" class="y">timestamptz NN</text>
-<rect x="1840" y="90" width="330" height="186" fill="#ffffff" stroke="#d6b656"/>
+<text x="1412" y="723" class="k">FK,UQ</text>
+<text x="1440" y="723">attempt_id</text>
+<text x="1606" y="723" class="y">bigint NN</text>
+<text x="1412" y="749" class="k">UQ</text>
+<text x="1440" y="749">verification_code</text>
+<text x="1606" y="749" class="y">varchar(40) NN</text>
+<text x="1440" y="775">issued_at</text>
+<text x="1606" y="775" class="y">timestamptz NN</text>
+<rect x="1840" y="90" width="330" height="212" fill="#ffffff" stroke="#d6b656"/>
 <rect x="1840" y="90" width="330" height="30" fill="#fff2cc" stroke="#d6b656"/>
 <text x="2005.0" y="109" class="h">attempts</text>
 <line x1="1840" y1="146" x2="2170" y2="146" stroke="#d6b656"/>
@@ -280,25 +282,28 @@
 <text x="1862" y="189" class="k">FK</text>
 <text x="1890" y="189">questionnaire_id</text>
 <text x="2056" y="189" class="y">bigint NN</text>
-<text x="1890" y="215">attempt_number</text>
-<text x="2056" y="215" class="y">smallint NN</text>
-<text x="1890" y="241">score</text>
-<text x="2056" y="241" class="y">numeric(5,2) NN</text>
-<text x="1890" y="267">submitted_at</text>
-<text x="2056" y="267" class="y">timestamptz NN</text>
-<rect x="1840" y="320" width="330" height="108" fill="#ffffff" stroke="#d6b656"/>
-<rect x="1840" y="320" width="330" height="30" fill="#fff2cc" stroke="#d6b656"/>
-<text x="2005.0" y="339" class="h">attempt_answers</text>
-<text x="1862" y="367" class="k">PK,FK</text>
-<text x="1890" y="367" class="p">attempt_id</text>
-<text x="2056" y="367" class="y">bigint</text>
-<line x1="1840" y1="402" x2="2170" y2="402" stroke="#d6b656"/>
+<text x="1862" y="215" class="k">FK</text>
+<text x="1890" y="215">training_resource_id</text>
+<text x="2056" y="215" class="y">bigint NN</text>
+<text x="1890" y="241">attempt_number</text>
+<text x="2056" y="241" class="y">smallint NN</text>
+<text x="1890" y="267">score</text>
+<text x="2056" y="267" class="y">numeric(5,2) NN</text>
+<text x="1890" y="293">submitted_at</text>
+<text x="2056" y="293" class="y">timestamptz NN</text>
+<rect x="1840" y="346" width="330" height="108" fill="#ffffff" stroke="#d6b656"/>
+<rect x="1840" y="346" width="330" height="30" fill="#fff2cc" stroke="#d6b656"/>
+<text x="2005.0" y="365" class="h">attempt_answers</text>
 <text x="1862" y="393" class="k">PK,FK</text>
-<text x="1890" y="393" class="p">question_id</text>
+<text x="1890" y="393" class="p">attempt_id</text>
 <text x="2056" y="393" class="y">bigint</text>
-<text x="1862" y="419" class="k">FK</text>
-<text x="1890" y="419">answer_option_id</text>
-<text x="2056" y="419" class="y">bigint NN</text>
+<line x1="1840" y1="428" x2="2170" y2="428" stroke="#d6b656"/>
+<text x="1862" y="419" class="k">PK,FK</text>
+<text x="1890" y="419" class="p">question_id</text>
+<text x="2056" y="419" class="y">bigint</text>
+<text x="1862" y="445" class="k">FK</text>
+<text x="1890" y="445">answer_option_id</text>
+<text x="2056" y="445" class="y">bigint NN</text>
 <rect x="2290" y="90" width="330" height="160" fill="#ffffff" stroke="#d6b656"/>
 <rect x="2290" y="90" width="330" height="30" fill="#fff2cc" stroke="#d6b656"/>
 <text x="2455.0" y="109" class="h">questionnaires</text>
