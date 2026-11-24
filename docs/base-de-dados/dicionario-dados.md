@@ -282,11 +282,13 @@ Inscrição de um User num Training Resource (glossário: Enrollment, RF14, RF15
 | `status` | varchar | 20 | Não | `'not_started'` | — | CHECK: `not_started`, `in_progress`, `completed` | Estado da inscrição (RF15). | `in_progress` |
 | `is_favorite` | boolean | — | Não | `false` | — | — | Indica se o User marcou o recurso como favorito (v1.0). | `false` |
 | `enrolled_at` | timestamptz | — | Não | `now()` | — | — | Data e hora da inscrição. | `2026-11-17 19:00:00+00` |
+| `content_accessed_at` | timestamptz | — | Sim | — | — | — | Num recurso sem Levels, data e hora em que o User viu o conteúdo pela primeira vez. É condição para responder ao Final (RF20). Nos recursos com Levels, o progresso fica em `level_progress`. | `2026-11-18 20:10:00+00` |
 | `completed_at` | timestamptz | — | Sim | — | — | — | Data e hora da conclusão: submissão do Final, seja qual for o Score. | — |
 
 Restrições da tabela:
 
 - `UNIQUE (user_id, training_resource_id)`
+- `UNIQUE (id, training_resource_id)`: alvo da chave estrangeira composta de `attempts`
 - `completed_at` preenchida se e só se `status` = `completed`
 
 #### `level_progress`
@@ -317,6 +319,7 @@ Questionário de diagnóstico ou final de um recurso (glossário: Questionnaire,
 Restrições da tabela:
 
 - `UNIQUE (training_resource_id, type)`
+- `UNIQUE (id, training_resource_id)`: alvo da chave estrangeira composta de `attempts`
 
 #### `questionnaire_translations`
 
@@ -386,8 +389,9 @@ Cada submissão completa de um Questionnaire (glossário: Attempt, RF19, RF21). 
 | Coluna | Tipo | Tamanho | Nulo? | Valor por omissão | Chave | Restrições | Descrição | Exemplo |
 |---|---|---|---|---|---|---|---|---|
 | `id` | bigint | — | Não | gerado (identity) | PK | — | Identificador gerado pela base de dados. | `1` |
-| `enrollment_id` | bigint | — | Não | — | FK → enrollments.id (ON DELETE CASCADE) | — | **DP-M** Inscrição de quem respondeu (identifica o User). | `7` |
-| `questionnaire_id` | bigint | — | Não | — | FK → questionnaires.id | — | Questionário respondido. | `5` |
+| `enrollment_id` | bigint | — | Não | — | FK composta (enrollment_id, training_resource_id) → enrollments(id, training_resource_id) (ON DELETE CASCADE) | — | **DP-M** Inscrição de quem respondeu (identifica o User). | `7` |
+| `questionnaire_id` | bigint | — | Não | — | FK composta (questionnaire_id, training_resource_id) → questionnaires(id, training_resource_id) | — | Questionário respondido. | `5` |
+| `training_resource_id` | bigint | — | Não | — | FK composta → enrollments(id, training_resource_id)<br>FK composta → questionnaires(id, training_resource_id) | — | Recurso da inscrição e do questionário. Repete um valor que já existe noutras tabelas, para as duas chaves compostas garantirem que o questionário é do recurso em que o User está inscrito. | `12` |
 | `attempt_number` | smallint | — | Não | — | — | CHECK ≥ 1 | Número da tentativa, a começar em 1. Único por inscrição e questionário. | `1` |
 | `score` | numeric | 5,2 | Não | — | — | CHECK entre 0 e 100 | **DP-M** Score em percentagem de respostas corretas, calculado no servidor (RF21). | `70.00` |
 | `submitted_at` | timestamptz | — | Não | `now()` | — | — | Data e hora da submissão. | `2026-11-18 21:30:00+00` |
@@ -395,6 +399,8 @@ Cada submissão completa de um Questionnaire (glossário: Attempt, RF19, RF21). 
 Restrições da tabela:
 
 - `UNIQUE (enrollment_id, questionnaire_id, attempt_number)`
+- `FOREIGN KEY (enrollment_id, training_resource_id) REFERENCES enrollments (id, training_resource_id) ON DELETE CASCADE`
+- `FOREIGN KEY (questionnaire_id, training_resource_id) REFERENCES questionnaires (id, training_resource_id)`
 
 #### `attempt_answers`
 
