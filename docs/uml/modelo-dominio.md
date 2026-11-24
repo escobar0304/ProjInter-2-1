@@ -234,7 +234,7 @@ São diferenças esperadas entre um modelo conceptual e um relacional, sem conce
 | Badge como value object, no máximo um por Enrollment | Tabela `badges` com chave primária `enrollment_id` | A chave primária garante a multiplicidade 0..1. |
 | HighlightedContent (`kind` e `contentId`) | Quatro chaves estrangeiras opcionais com `CHECK (num_nonnulls(...) = 1)` | O modelo de domínio diz que é um só conteúdo; a base de dados mantém as chaves estrangeiras reais. |
 | SecureToken (hash, criação e validade) | Colunas `token_hash`, `created_at` / `requested_at` e `expires_at` | Value object desdobrado em colunas. O token de revogação não tem validade (`expiresAt [0..1]`). |
-| Attempt dentro do Enrollment | `attempts.enrollment_id` | Já era assim no modelo relacional, que liga as Attempts à Enrollment. |
+| Attempt dentro do Enrollment | `attempts.enrollment_id`, com `attempts.training_resource_id` nas chaves estrangeiras compostas | Já era assim no modelo relacional, que liga as Attempts à Enrollment. A regra «a Attempt é de um Questionnaire do mesmo TrainingResource da Enrollment» é garantida pelas duas chaves compostas. |
 | Regras do Questionnaire (2 ou mais opções, exatamente uma correta, sem alterações depois da primeira Attempt) | Índice único parcial `answer_options_one_correct` (no máximo uma correta) e regras do backend | A base de dados garante no máximo uma opção correta por pergunta; as restantes regras são verificadas pelo backend. |
 
 ## 9. Pressupostos
