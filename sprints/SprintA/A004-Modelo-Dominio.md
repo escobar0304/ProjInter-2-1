@@ -55,5 +55,4 @@ Seguem os pressupostos do glossário para as dúvidas D01 a D11. Os efeitos no m
 
 ## Pendente
 
-- Rever com o Diogo Escobar (US_A003) a comparação com o modelo relacional e acrescentar às regras do backend do modelo relacional o mínimo de 2 Answer Options por Question.
 - Atualizar o modelo quando o cliente responder às dúvidas D01 a D11.
