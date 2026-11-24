@@ -3,12 +3,14 @@
 | | |
 |---|---|
 | User Story | US_A004 ([issue #4](https://github.com/escobar0304/ProjInter-2-1/issues/4)), 1.ª parte |
-| Versão | 1.0 (Sprint A) |
+| Versão | 1.1 (Sprint A) |
 | Estado | Em revisão pela equipa |
 
 ## 1. Âmbito
 
 Este glossário define a linguagem ubíqua da Plataforma de Literacia em Saúde para Jovens: um só termo para cada conceito do domínio, usado da mesma forma nos requisitos, nos use cases, no modelo de domínio, no modelo relacional e no código.
+
+O [modelo de domínio](modelo-dominio.md) (US_A004, 2.ª parte) usa estes termos para os agregados, as entidades e os value objects, e tem a tabela `| Agregado | Raiz | Entidades | Value objects |`.
 
 ### Fontes
 
@@ -53,6 +55,7 @@ Este glossário define a linguagem ubíqua da Plataforma de Literacia em Saúde 
 | **User Profile** (página de perfil) | Página do User com os Personal Data, os Badges e os Certificates. | Profile (no sentido de Role), Dashboard | §C; RF24 |
 | **Role** (perfil de acesso) | Conjunto de Permissions atribuído a um User: Registered User, Manager ou Administrator. | Access Profile, Profile, User Type | §C, §C.1; RF33; MR v1.0 (`roles`) |
 | **Permission** (permissão) | Autorização para executar uma operação (ex.: gerir Questionnaires). É atribuída a Roles e verificada no backend em todos os pedidos. | Privilege, Right | §C.1; RF34; RNF24 |
+| **Token** (código do link) | Valor secreto e aleatório enviado num link por email: na Email Verification, na recuperação da palavra-passe e no pedido e na revogação do Parental Consent. Só se guarda o hash. Tem validade e, quando é de uso único, fica marcado como usado. | Code, Key, Remember Token | RF02, RF03, RF06, RF45; MR v1.0 (`remember_token`) |
 | **Parental Consent** (consentimento parental) | Decisão do Guardian sobre a Registration de um Minor. Guarda o email do Guardian, o estado (Pending, Accepted, Refused, Revoked ou Expired) e as datas do pedido, da decisão e da revogação. O pedido é enviado por email, com um link único que expira. Se for Revoked, a conta do Minor fica Suspended. | Authorization, Consent (sozinho), Consent Email | §C; RF03, RF04, RF45; D11 |
 
 ### C. Formação
@@ -62,6 +65,7 @@ Este glossário define a linguagem ubíqua da Plataforma de Literacia em Saúde 
 | **Training Resource** (recurso formativo) | Workshop ou webinar disponibilizado em vídeo, com Support Materials, uma Health Area, eventualmente organizado em Levels, e com um Diagnostic Questionnaire e um Final Questionnaire. Define a imagem do Badge. | Resource (sozinho), Course, Content | §B, §D.1; RF13, RF26; MR v1.0 (`resources`) |
 | **Resource Type** (tipo de recurso) | Workshop (sessão prática) ou Webinar (sessão expositiva). Os dois são disponibilizados em vídeo, sem emissão em direto. | Format, Category, Live | §B; RF13; W01; MR v1.0 (`resourcetypes`) |
 | **Level** (nível) | Parte sequencial de um Training Resource, com título, descrição, Recording e Support Materials. O User acede a cada Level em separado. | Module, Lesson, Step | §D.1; RF17; MR v1.0 (`resourcelevels`) |
+| **Level Progress** (progresso no nível) | Percentagem (0 a 100%) de um Level que o User já viu, numa Enrollment. | Level Completion, Level Status | §D.1; RF17; MR v1.0 (`resourcelevel_user`) |
 | **Recording** (gravação) | Vídeo de um Training Resource ou de um Level. | Live, Stream | §C; RF16 |
 | **Support Material** (material de apoio) | Ficheiro (ex.: PDF) que acompanha um Training Resource ou um Level. | Attachment, Document | §C; RF16 |
 | **Health Area** (área de saúde) | Tema de saúde (ex.: nutrição, saúde mental) que agrupa Training Resources, News Items, Activities e Publications. Tem uma página informativa pública. | Topic, Theme, Category | §B, §C.1; RF08, RF27; MR v1.0 (`healthareas`) |
