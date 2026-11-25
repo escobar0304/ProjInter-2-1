@@ -102,7 +102,9 @@ As variáveis do catálogo existem no schema atual. Os ajustes ao modelo relacio
 - Registered User consulta apenas os próprios resultados, badges e certificados (UC23, UC29, UC30).
 - Manager e Administrator consultam indicadores com `indicator.view` e exportam com `result.export` (UC42 a UC45). O backend verifica as permissões em cada pedido.
 - Mostrar unidade, período, filtros, N de observações e exclusões em cada gráfico. Grupos sem dados distinguem-se de valores zero.
-- Para a review, usar apenas dados fictícios claramente identificados. O formato de exportação de dados reais e a política para pequenos grupos aguardam a análise de privacidade #15; não incluir nomes, emails, datas de nascimento, hashes ou tokens no protótipo exportado.
+- **Pequenos grupos (RNF45):** um indicador ou uma exportação por grupo (recurso, área, ano de escolaridade, pergunta) com menos de 5 Users não mostra os valores, só a indicação «grupo demasiado pequeno». Assim não é possível deduzir o resultado de um menor a partir de um grupo com 1 ou 2 pessoas.
+- **Exportação CSV (RF44, RNF45):** cada User é identificado só por um código pseudónimo, estável dentro da exportação, sem nome, email, data de nascimento, hashes nem tokens. A correspondência entre o código e a conta fica só na base de dados. A [análise de privacidade e segurança](../seguranca/README.md) justifica estas regras.
+- Para a review, usar apenas dados fictícios claramente identificados.
 - Os indicadores são calculados no backend a partir da BD (RNF14); erros técnicos ficam no log e o utilizador recebe uma mensagem compreensível.
 
 ## 8. Dependências e validação
