@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Estado | Proposta |
+| Estado | Aceite |
 | Data | Sprint A (novembro de 2026) |
 | Requisitos | RF05, RF35, RF45, RNF23, RNF24, RNF25 |
 

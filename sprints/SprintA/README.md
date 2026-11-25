@@ -22,12 +22,12 @@
 | US_A002 | Diagrama de use cases (frontoffice e backoffice) | P1 | [#2](https://github.com/escobar0304/ProjInter-2-1/issues/2) | João Crasto | [A002-Use-Cases](A002-Use-Cases.md) |
 | US_A003 | Modelo relacional de dados | P1 | [#3](https://github.com/escobar0304/ProjInter-2-1/issues/3) | Diogo Escobar | [A003-Modelo-Relacional](A003-Modelo-Relacional.md), [A003-Ajustes-Modelo](A003-Ajustes-Modelo.md) |
 | US_A004 | Glossário e modelo de domínio (DDD) | P1 | [#4](https://github.com/escobar0304/ProjInter-2-1/issues/4) | João Crasto | [A004-Glossario](A004-Glossario.md), [A004-Modelo-Dominio](A004-Modelo-Dominio.md) |
-| US_A005 | Descrição estruturada do UC «Responder a Questionário Final» | P4 | [#5](https://github.com/escobar0304/ProjInter-2-1/issues/5) | a definir | — |
+| US_A005 | Descrição estruturada do UC «Responder a Questionário Final» | P4 | [#5](https://github.com/escobar0304/ProjInter-2-1/issues/5) | Pedro Vale | [A005-Questionario-Final](A005-Questionario-Final.md) |
 | US_A006 | Configuração do repositório | P2 | [#6](https://github.com/escobar0304/ProjInter-2-1/issues/6) | Diogo Escobar | [A006-Repo-Config](A006-Repo-Config.md) |
 | US_A007 | Dicionário de dados | P3 | [#7](https://github.com/escobar0304/ProjInter-2-1/issues/7) | Diogo Escobar | [A007-Dicionario-Dados](A007-Dicionario-Dados.md) |
 | US_A008 | Fluxograma do UC «Registar Utilizador» | P4 | [#8](https://github.com/escobar0304/ProjInter-2-1/issues/8) | João Crasto | [A008-Fluxograma-Registo](A008-Fluxograma-Registo.md) |
-| US_A009 | Métricas do progresso de aprendizagem | P3 | [#9](https://github.com/escobar0304/ProjInter-2-1/issues/9) | a definir | — |
-| US_A010 | Sprint review (pitch de 10 minutos) | P2 | [#10](https://github.com/escobar0304/ProjInter-2-1/issues/10) | Pedro Vale | [A010-Sprint-Review](A010-Sprint-Review.md) |
+| US_A009 | Métricas do progresso de aprendizagem | P3 | [#9](https://github.com/escobar0304/ProjInter-2-1/issues/9) | Pedro Vale | [A009-Metricas-Aprendizagem](A009-Metricas-Aprendizagem.md) |
+| US_A010 | Sprint review (pitch de 10 minutos) | P2 | [#10](https://github.com/escobar0304/ProjInter-2-1/issues/10) | a definir | — |
 | US_A011 | GitHub Projects, User Stories e issues | P1 | [#11](https://github.com/escobar0304/ProjInter-2-1/issues/11) | Diogo Escobar | — |
 | US_A012 | GitHub Actions (CI) | P3 | [#12](https://github.com/escobar0304/ProjInter-2-1/issues/12) | Diogo Escobar | [A012-CI](A012-CI.md) |
 | US_A013 | Relatório técnico | P3 | [#13](https://github.com/escobar0304/ProjInter-2-1/issues/13) | a definir | — |

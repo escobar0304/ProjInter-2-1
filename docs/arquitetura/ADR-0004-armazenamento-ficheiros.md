@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Estado | Proposta |
+| Estado | Aceite |
 | Data | Sprint A (novembro de 2026) |
 | Requisitos | RF12, RF16, RF25, RF26, RNF10, RNF22 |
 

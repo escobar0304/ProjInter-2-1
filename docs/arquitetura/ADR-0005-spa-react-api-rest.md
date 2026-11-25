@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Estado | Proposta |
+| Estado | Aceite |
 | Data | Sprint A (novembro de 2026) |
 | Requisitos | RNF17, RNF18, RNF19 (e RNF06, RNF07) |
 
