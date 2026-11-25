@@ -603,7 +603,7 @@ def load_seed(dsn: str) -> dict[str, int]:
                             """,
                             (content_accessed_at, final_at, enrollment_id),
                         )
-                        insert_attempt(
+                        final_attempt_id = insert_attempt(
                             cursor,
                             enrollment_id=enrollment_id,
                             questionnaire_id=final_id,
@@ -618,6 +618,29 @@ def load_seed(dsn: str) -> dict[str, int]:
                         counts["tentativas"] += 1
                         counts["respostas"] += QUESTIONS_PER_QUESTIONNAIRE
                         counts["conclusões"] += 1
+                        if 100 * final_correct >= 85 * QUESTIONS_PER_QUESTIONNAIRE:
+                            cursor.execute(
+                                """
+                                INSERT INTO badges (enrollment_id, attempt_id, awarded_at)
+                                VALUES (%s, %s, %s)
+                                """,
+                                (enrollment_id, final_attempt_id, final_at),
+                            )
+                            cursor.execute(
+                                """
+                                INSERT INTO certificates (
+                                    enrollment_id, attempt_id, verification_code, issued_at
+                                ) VALUES (%s, %s, %s, %s)
+                                """,
+                                (
+                                    enrollment_id,
+                                    final_attempt_id,
+                                    f"LSJ-A016-{user_number + 1:03d}-{resource_index + 1:02d}",
+                                    final_at,
+                                ),
+                            )
+                            counts["badges"] += 1
+                            counts["certificados"] += 1
 
     return dict(counts)
 

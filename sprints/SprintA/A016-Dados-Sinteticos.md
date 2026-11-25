@@ -12,7 +12,7 @@ Gerar dados fictícios que respeitam `database/schema.sql` e calcular, a partir 
 
 ## Dados sintéticos
 
-O script `database/seed/gerar_dados.py` usa uma seed fixa (`2026`) e pode ser executado novamente sem acumular os registos que cria. Gera 144 Users fictícios, três Health Areas, quatro Training Resources e inscrições distribuídas pelos anos 7.º a 12.º. Cada recurso tem Questionnaires de diagnóstico e final, dez Questions com quatro Answer Options cada, e Attempts com respostas completas. Há Users sem início, inscrições sem Final e segundas Attempts de diagnóstico.
+O script `database/seed/gerar_dados.py` usa uma seed fixa (`2026`) e pode ser executado novamente sem acumular os registos que cria. Gera 144 Users fictícios, três Health Areas, quatro Training Resources e inscrições distribuídas pelos anos 7.º a 12.º. Cada recurso tem Questionnaires de diagnóstico e final, dez Questions com quatro Answer Options cada, e Attempts com respostas completas. Há Users sem início, inscrições sem Final e segundas Attempts de diagnóstico. As primeiras Attempts do Final com Score igual ou superior a 85% recebem um Badge e um registo de Certificate com código de verificação fictício.
 
 Os emails usam o domínio reservado `.invalid`; os dados não correspondem a contas ou contactos reais. As contas sintéticas têm Parental Consent aceite, email verificado e hash Argon2id determinístico. A carga usa IDs consultados às tabelas de referência e as duas chaves estrangeiras compostas de `attempts`.
 
