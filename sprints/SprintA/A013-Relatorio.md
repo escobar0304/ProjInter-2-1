@@ -19,8 +19,9 @@ Compilar o trabalho da Sprint A no modelo de relatório fornecido pelo docente, 
   - capítulo 2, Desenvolvimento: 2.1 Planeamento do Projeto (metodologia, cronograma, recursos, gestão do trabalho e repositório) e 2.2 Análise de Sistemas, com uma secção por artefacto;
   - capítulo 3, Conclusão, com as limitações e a secção 3.2 do modelo;
   - referências.
-- Todas as US da Sprint A, incluindo as extra (US_A014 e US_A015), com a secção de cada uma indicada na tabela das User Stories. A secção 2.2.12 fica reservada para a US_A016.
-- 12 figuras, a partir das imagens de `docs/` (SVG e PNG), e 6 tabelas, numeradas com legenda automática e referidas no texto por referências cruzadas.
+- Todas as US da Sprint A, incluindo as extra (US_A014, US_A015 e US_A016), com a secção de cada uma indicada na tabela das User Stories.
+- 13 figuras e 6 tabelas, numeradas com legenda automática e referidas no texto por referências cruzadas. Os diagramas são os SVG de `docs/` e ficam vetoriais no PDF; a figura 13 é um gráfico do [protótipo das métricas](../../docs/metricas/prototipo-metricas.ipynb), identificado como dados fictícios.
+- Os diagramas de use cases e o fluxograma do registo passam a ter também a imagem em SVG, ao lado do PNG: [`casos-de-uso-frontoffice.svg`](../../docs/uml/casos-de-uso-frontoffice.svg), [`casos-de-uso-backoffice.svg`](../../docs/uml/casos-de-uso-backoffice.svg) e [`registo-utilizador.svg`](../../docs/bpmn/registo-utilizador.svg).
 - Os diagramas largos (BPMN, modelo de domínio, modelo relacional e C4) estão em páginas na horizontal.
 
 ## Decisões
@@ -33,13 +34,12 @@ Compilar o trabalho da Sprint A no modelo de relatório fornecido pelo docente, 
 ## Como verificar
 
 - Abrir o `.docx` no Word e atualizar os campos (Ctrl+A, F9): os índices e as referências não mudam e não aparece nenhum erro de referência.
-- No PDF, as figuras 1 a 12 e as tabelas 1 a 6 aparecem nos índices com a página certa, e cada uma é referida no texto antes de aparecer.
+- No PDF, as figuras 1 a 13 e as tabelas 1 a 6 aparecem nos índices com a página certa, e cada uma é referida no texto antes de aparecer.
 - Os números das secções citados no texto e na tabela das User Stories correspondem ao índice.
 
 ## Pendente
 
 - Escrever o desenvolvimento de cada secção e as conclusões (texto a amarelo) e gerar de novo o PDF.
-- Exportar os diagramas de use cases e o BPMN também em SVG no draw.io e trocá-los no `.docx`: o Word reduz a resolução das imagens PNG ao gerar o PDF (no PDF atual foram repostas as imagens originais).
-- Acrescentar o cronograma (mapa de Gantt) e a US_A016 quando entrar no `main`.
+- Acrescentar o cronograma (mapa de Gantt).
 - Revisão por pelo menos 2 elementos da equipa.
 - Entrega no Moodle e tag `sprint-a`.
