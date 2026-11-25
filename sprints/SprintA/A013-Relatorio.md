@@ -4,6 +4,7 @@
 |---|---|
 | User Story | US_A013 ([issue #13](https://github.com/escobar0304/ProjInter-2-1/issues/13)) |
 | Branch | `feature/A013-Relatorio` |
+| Responsável | João Crasto |
 
 ## Objetivo
 
