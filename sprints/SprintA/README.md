@@ -32,7 +32,7 @@
 | US_A012 | GitHub Actions (CI) | P3 | [#12](https://github.com/escobar0304/ProjInter-2-1/issues/12) | Diogo Escobar | [A012-CI](A012-CI.md) |
 | US_A013 | Relatório técnico | P3 | [#13](https://github.com/escobar0304/ProjInter-2-1/issues/13) | a definir | — |
 | US_A014 (extra) | Decisões de arquitetura (ADR) e modelo C4 | P2 | [#14](https://github.com/escobar0304/ProjInter-2-1/issues/14) | Diogo Escobar | [A014-Arquitetura-ADR-C4](A014-Arquitetura-ADR-C4.md) |
-| US_A015 (extra) | Privacidade e segurança | P2 | [#15](https://github.com/escobar0304/ProjInter-2-1/issues/15) | a definir | — |
+| US_A015 (extra) | Privacidade e segurança | P2 | [#15](https://github.com/escobar0304/ProjInter-2-1/issues/15) | João Crasto | [A015-Privacidade-Seguranca](A015-Privacidade-Seguranca.md) |
 | US_A016 (extra) | Dados sintéticos e protótipo das métricas | P3 | [#16](https://github.com/escobar0304/ProjInter-2-1/issues/16) | a definir | — |
 
 Cada feature concluída fica documentada nesta pasta, num ficheiro com o nome da branch sem o prefixo `feature/`.
