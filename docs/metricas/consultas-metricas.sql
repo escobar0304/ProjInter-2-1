@@ -23,7 +23,7 @@ ORDER BY enrollment_id;
 
 -- Aplicar os mesmos filtros de população em cada indicador comparado.
 SELECT e.training_resource_id, r.health_area_id, sy.year AS school_year,
-       q.type, COUNT(*) AS n,
+       q.type, COUNT(*) AS n, COUNT(DISTINCT e.user_id) AS n_users,
        AVG(a.score) AS mean_score,
        percentile_cont(0.5) WITHIN GROUP (ORDER BY a.score) AS median_score,
        stddev_samp(a.score) AS sample_stddev,
@@ -41,13 +41,14 @@ ORDER BY e.training_resource_id, sy.year NULLS LAST, q.type;
 
 -- LEFT JOIN preserva perguntas sem respostas: proporção NULL e n = 0.
 SELECT qn.id AS questionnaire_id, qn.type, qu.id AS question_id,
-       COUNT(a.id) AS n,
+       COUNT(a.id) AS n, COUNT(DISTINCT e.user_id) AS n_users,
        AVG(CASE WHEN a.id IS NOT NULL THEN ao.is_correct::int END) AS correct_proportion
 FROM questionnaires qn
 JOIN questions qu ON qu.questionnaire_id = qn.id
 LEFT JOIN attempt_answers aa ON aa.question_id = qu.id
 LEFT JOIN attempts a ON a.id = aa.attempt_id
     AND a.questionnaire_id = qn.id AND a.attempt_number = 1
+LEFT JOIN enrollments e ON e.id = a.enrollment_id
 LEFT JOIN answer_options ao ON ao.id = aa.answer_option_id AND ao.question_id = qu.id
 GROUP BY qn.id, qn.type, qu.id
 ORDER BY qn.id, qu.id;

@@ -33,6 +33,6 @@
 | US_A013 | Relatório técnico | P3 | [#13](https://github.com/escobar0304/ProjInter-2-1/issues/13) | João Crasto | [A013-Relatorio](A013-Relatorio.md) |
 | US_A014 (extra) | Decisões de arquitetura (ADR) e modelo C4 | P2 | [#14](https://github.com/escobar0304/ProjInter-2-1/issues/14) | Diogo Escobar | [A014-Arquitetura-ADR-C4](A014-Arquitetura-ADR-C4.md) |
 | US_A015 (extra) | Privacidade e segurança | P2 | [#15](https://github.com/escobar0304/ProjInter-2-1/issues/15) | João Crasto | [A015-Privacidade-Seguranca](A015-Privacidade-Seguranca.md) |
-| US_A016 (extra) | Dados sintéticos e protótipo das métricas | P3 | [#16](https://github.com/escobar0304/ProjInter-2-1/issues/16) | a definir | — |
+| US_A016 (extra) | Dados sintéticos e protótipo das métricas | P3 | [#16](https://github.com/escobar0304/ProjInter-2-1/issues/16) | Pedro Vale | [A016-Dados-Sinteticos](A016-Dados-Sinteticos.md), [`database/seed/`](../../database/seed/), [protótipo](../../docs/metricas/prototipo-metricas.ipynb) |
 
 Cada feature concluída fica documentada nesta pasta, num ficheiro com o nome da branch sem o prefixo `feature/`.
