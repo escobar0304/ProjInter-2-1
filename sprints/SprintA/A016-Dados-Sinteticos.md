@@ -36,7 +36,7 @@ O script apaga apenas os Users com o prefixo de email `seed-a016-` e os recursos
 
 ## Métricas e gráficos
 
-O notebook `docs/metricas/prototipo-metricas.ipynb` executa as quatro consultas de `docs/metricas/consultas-metricas.sql`. Apresenta ganhos absoluto e normalizado, estatísticas por Training Resource, Health Area e School Year atual, proporções corretas por Question, indicadores de utilização e comparação entre dois anos por recurso, com bootstrap percentil de 95% e teste por permutação. O endereço da base pode ser definido pela variável `DATABASE_URL`.
+O notebook `docs/metricas/prototipo-metricas.ipynb` executa as quatro consultas de `docs/metricas/consultas-metricas.sql`. Apresenta ganhos absoluto e normalizado, estatísticas por Training Resource, Health Area e School Year atual, proporções corretas por Question, indicadores de utilização e comparação entre dois anos por recurso, com bootstrap percentil de 95% e teste por permutação. A contagem de Users por grupo aplica o RNF45: grupos com menos de cinco não mostram contagens nem métricas, apenas a indicação «grupo demasiado pequeno»; grupos de cinco a nove são assinalados como pequenos. O endereço da base pode ser definido pela variável `DATABASE_URL`.
 
 Para executar todas as células e guardar os resultados no notebook:
 
