@@ -49,13 +49,14 @@ Os componentes são os contentores do [modelo C4](../arquitetura/c4.md): a aplic
 
 | Ameaça | Categoria | Componente | Impacto | Mitigação | Requisito |
 |---|---|---|---|---|---|
-| **T06** Ataque de força bruta ou com listas de palavras-passe roubadas noutros sites. | Spoofing | API | Alto | Bloqueio temporário depois de 5 falhas em 15 minutos, por conta e por IP. Palavras-passe com 8 ou mais caracteres e recusadas se forem comuns. Hash com Argon2. | RNF29, RNF30, RNF23 |
+| **T06** Ataque de força bruta ou com listas de palavras-passe roubadas noutros sites. | Spoofing | API | Alto | Bloqueio de 15 minutos depois de 5 falhas em 15 minutos na mesma conta a partir do mesmo IP; limite de falhas por IP em qualquer conta; atraso crescente entre falhas na mesma conta vindas de vários IPs. Palavras-passe com 8 ou mais caracteres e recusadas se forem comuns. Hash com Argon2. | RNF29, RNF30, RNF23 |
 | **T07** Roubo do cookie da sessão por XSS ou na rede. | Spoofing | SPA, servidor web | Alto | Cookie `HttpOnly`, `Secure` e `SameSite=Lax` (ADR-0003); HTTPS em produção; Content-Security-Policy e texto sempre escapado. | RNF25, RNF33, RNF39 |
 | **T08** Fixação da sessão: o atacante leva a vítima a usar um identificador de sessão que ele conhece. | Spoofing | API | Médio | O identificador da sessão é renovado no início de sessão. | RNF33 |
 | **T09** Pedido forjado a partir de outro site (CSRF), com a sessão da vítima. | Tampering | SPA, API | Médio | `SameSite=Lax` e token CSRF nos pedidos que alteram dados (ADR-0003). | RNF33 |
 | **T10** O link de recuperação da palavra-passe é adivinhado, reutilizado ou intercetado. | Spoofing | API, Email Service | Alto | Token aleatório de 128 bits, guardado em hash, de uso único e válido 1 hora. Mudar a palavra-passe termina as outras sessões. | RNF31, RNF33 |
 | **T11** As mensagens de início de sessão ou de recuperação revelam se o email tem conta. | Information disclosure | API | Baixo | Mensagem igual para email inexistente e palavra-passe errada; a recuperação responde sempre «se o email existir, receberá um link». | RNF32 |
 | **T12** Uma sessão esquecida aberta num computador partilhado (ex.: na escola) é usada por outra pessoa. | Spoofing | API | Médio | A sessão expira depois de 30 minutos sem atividade e ao fim de 12 horas. | RNF33 |
+| **T34** Alguém erra de propósito a palavra-passe de outro User para lhe bloquear a conta (ex.: um colega de turma antes de um questionário). | Denial of service | API | Médio | O bloqueio é por conta e IP em conjunto, por isso o atacante só se bloqueia a si próprio; vindas de vários IPs, as falhas só atrasam a resposta até 30 segundos, sem impedir o início de sessão. A recuperação da palavra-passe continua disponível. | RNF29 |
 
 ### Consentimento parental
 
@@ -101,7 +102,7 @@ Os componentes são os contentores do [modelo C4](../arquitetura/c4.md): a aplic
 | Tampering | T09, T14, T24, T25, T26, T27 | 6 |
 | Repudiation | T15, T28 | 2 |
 | Information disclosure | T04, T11, T16, T18, T21, T22, T23, T29, T30, T33 | 10 |
-| Denial of service | T03, T31, T32 | 3 |
+| Denial of service | T03, T31, T32, T34 | 4 |
 | Elevation of privilege | T05, T17, T19, T20 | 4 |
 
 Todas as categorias têm ameaças relevantes, por isso nenhuma foi excluída. Os ataques de negação de serviço distribuídos (DDoS) em grande escala não se resolvem na aplicação: dependem do fornecedor de alojamento, escolhido na Sprint B.
