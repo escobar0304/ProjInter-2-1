@@ -17,7 +17,7 @@ A apresentação resume o percurso de aprendizagem, requisitos, use cases, model
 
 O mapa regista responsáveis, estados e percentagens declaradas para cada User Story. Os 100% assinalam uma issue fechada; N/D indica que não há percentagem registada. A referência do mapa é 25/11/2026.
 
-Os exemplos e gráficos de métricas identificados como dados fictícios usam a base sintética da US_A016. Não representam utilizadores da plataforma.
+O exemplo de métricas do slide 8 (40% → 85%) é fictício e não representa utilizadores da plataforma.
 
 ## Fontes
 
