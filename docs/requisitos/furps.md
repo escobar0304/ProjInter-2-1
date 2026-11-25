@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | User Story | US_A001 ([issue #1](https://github.com/escobar0304/ProjInter-2-1/issues/1)) |
-| Versão | 1.1 (Sprint A) |
+| Versão | 1.2 (Sprint A) |
 | Estado | Em revisão pela equipa |
 
 ## 1. Âmbito
@@ -98,6 +98,9 @@ Este documento organiza pelo método FURPS+ os requisitos da Plataforma de Liter
 | RF44 | EST | O Manager e o Administrador exportam os registos de respostas e classificações em CSV. | M | §D.3 |
 | RF45 | AUT | O encarregado de educação pode revogar o consentimento; nesse caso, a conta do menor fica suspensa. | S | Equipa (US_A015) |
 | RF46 | AUT | O utilizador pode pedir a exportação e a eliminação dos seus dados pessoais. | C | Equipa (US_A015, RGPD) |
+| RF47 | ADM | O Administrador não pode alterar o próprio perfil nem o estado da própria conta, e o sistema mantém sempre pelo menos uma conta de Administrador ativa. | S | Equipa (US_A015) |
+| RF48 | AUT | A data de nascimento só pode ser alterada pelo Administrador. Se a nova data fizer do utilizador um menor sem consentimento aceite, a conta passa a pendente de consentimento e é enviado o pedido ao encarregado de educação. | S | Equipa (US_A015) |
+| RF49 | AUT | Quando o consentimento é revogado, os dados do menor são eliminados ao fim de 30 dias, se não houver um novo consentimento; a partir do link de revogação, o encarregado de educação pode pedir a eliminação imediata (ver dúvida D12). | C | Equipa (US_A015, RGPD) |
 
 ## 4. Requisitos não funcionais
 
@@ -153,6 +156,24 @@ Este documento organiza pelo método FURPS+ os requisitos da Plataforma de Liter
 | RNF26 | Interface | Os emails de confirmação, de consentimento e de recuperação da palavra-passe são enviados através de um serviço de email externo (SMTP). | M | UC v1.0 |
 | RNF27 | Interface | O CSV exportado usa a codificação UTF-8 e tem na primeira linha o nome de cada coluna. | S | §D.3 |
 | RNF28 | Física | A aplicação funciona nas versões atuais do Chrome, Firefox, Edge e Safari, sem instalação. | S | Equipa |
+| RNF29 | Segurança | Depois de 5 tentativas falhadas de início de sessão na mesma conta e a partir do mesmo endereço IP em 15 minutos, o início de sessão nessa conta fica bloqueado durante 15 minutos só para esse IP. Cada IP tem também um limite de 20 tentativas falhadas em 15 minutos, em qualquer conta. Uma conta nunca fica bloqueada para todos os IPs: as falhas seguidas na mesma conta, vindas de vários IPs, só atrasam a resposta seguinte (1, 2, 4… segundos, até 30 segundos), e uma tentativa com sucesso põe o atraso a zero. | M | Equipa (US_A015) |
+| RNF30 | Segurança | As palavras-passe têm entre 8 e 128 caracteres e são recusadas se estiverem numa lista de palavras-passe comuns. Não há regras obrigatórias de composição. | S | Equipa (US_A015) |
+| RNF31 | Segurança | Os tokens dos links enviados por email têm pelo menos 128 bits gerados por um gerador aleatório criptográfico, guardam-se só em hash e são de uso único. Validade: verificação do email 24 horas, recuperação da palavra-passe 1 hora, pedido de consentimento 7 dias; o link de revogação não expira. | M | Equipa (US_A015) |
+| RNF32 | Segurança | As respostas do início de sessão e da recuperação da palavra-passe não revelam se o email está registado. | S | Equipa (US_A015) |
+| RNF33 | Segurança | O identificador da sessão é renovado no início de sessão; a sessão expira depois de 30 minutos sem atividade e ao fim de 12 horas; os pedidos que alteram dados exigem um token CSRF; alterar ou recuperar a palavra-passe termina as outras sessões do utilizador. | M | Equipa (US_A015, ADR-0003) |
+| RNF34 | Segurança | O sistema regista, com data e hora, autor, ação e alvo: os inícios de sessão (com e sem sucesso), as decisões e revogações de consentimento, as alterações de estado de conta, de perfil e de permissões, as alterações de estado de conteúdo, as exportações CSV e os pedidos de exportação e de eliminação de dados. O registo não contém palavras-passe, tokens nem respostas, só é lido pelo Administrador e é conservado 1 ano. | S | Equipa (US_A015) |
+| RNF35 | Legal | Para cada decisão de consentimento, o sistema guarda a versão do texto informativo apresentado ao encarregado de educação, além do email e das datas do pedido e da decisão. A aceitação da política de privacidade guarda também a versão aceite. | M | Equipa (US_A015, RGPD) |
+| RNF36 | Segurança | Em cada pedido a dados de um utilizador (dados pessoais, inscrições, tentativas, resultados, badges e certificados), o backend confirma que pertencem ao utilizador da sessão ou que este tem a permissão necessária. | M | Equipa (US_A015) |
+| RNF37 | Segurança | A API aceita e devolve só os campos previstos em cada pedido: ignora campos a mais (ex.: perfil ou estado no registo) e nunca devolve o hash da palavra-passe nem tokens. As opções corretas de um questionário só são enviadas depois da submissão da tentativa. | M | Equipa (US_A015) |
+| RNF38 | Segurança | Os ficheiros carregados só são aceites nos tipos previstos (JPEG, PNG, WebP, PDF e MP4), verificados pelo conteúdo e não só pela extensão, e até um tamanho máximo. São guardados com um nome gerado pelo servidor, e os ficheiros reservados só são enviados depois da verificação de acesso (ADR-0004). | M | Equipa (US_A015, ADR-0004) |
+| RNF39 | Segurança | Os textos introduzidos pelos utilizadores são mostrados escapados, e o HTML dos conteúdos, se existir, é filtrado por uma lista de elementos permitidos. As respostas têm os cabeçalhos Content-Security-Policy, X-Content-Type-Options e Referrer-Policy e, em produção, Strict-Transport-Security. | M | Equipa (US_A015) |
+| RNF40 | Segurança | O backend acede à base de dados só com consultas parametrizadas (ou ORM), nunca juntando dados do utilizador ao texto SQL, e liga-se com um utilizador da base de dados sem privilégios de administração. | M | Equipa (US_A015) |
+| RNF41 | Segurança | Os pedidos que enviam emails (registo, reenvios e recuperação da palavra-passe) têm um limite por endereço IP e por email (ex.: 5 por hora), e o tamanho dos pedidos à API é limitado. | S | Equipa (US_A015) |
+| RNF42 | Segurança | Os segredos (chave da sessão e credenciais da base de dados e do serviço de email) ficam em variáveis de ambiente, fora do repositório, e são diferentes em desenvolvimento e em produção. | M | Equipa (US_A015) |
+| RNF43 | Legal | Os prazos de conservação do [inventário de dados pessoais](../seguranca/inventario-dados-pessoais.md) são aplicados por uma tarefa agendada diária, que elimina os registos fora de prazo e os ficheiros associados. | S | Equipa (US_A015, RGPD) |
+| RNF44 | Segurança | As cópias de segurança da base de dados e dos ficheiros são cifradas, só o Administrador lhes acede e são conservadas no máximo 30 dias. | C | Equipa (US_A015) |
+| RNF45 | Legal | A exportação CSV identifica cada utilizador só por um código pseudónimo, sem nome, email nem data de nascimento. Os indicadores e as exportações por grupo com menos de 5 utilizadores não mostram os valores. | M | Equipa (US_A015, RGPD) |
+| RNF46 | Legal | Os emails ao encarregado de educação contêm só os dados necessários: o nome próprio do menor, o email de registo, a finalidade e os dados tratados e a ligação à política de privacidade, sem data de nascimento, ano de escolaridade nem resultados. | S | Equipa (US_A015, RGPD) |
 
 ## 5. Fora de âmbito nesta versão (W)
 
@@ -179,6 +200,7 @@ Enquanto não houver resposta do cliente, a equipa usa os pressupostos registado
 | D09 | Há só um badge por recurso, ou também outros (ex.: por área de saúde)? | RF23 |
 | D10 | Os destaques da semana são escolhidos pelo Manager ou calculados automaticamente? | RF10, RF28 |
 | D11 | O encarregado de educação precisa de conta própria, ou basta responder pelo link do email? | §2, RF04, RF45 |
+| D12 | O que acontece aos dados de um menor quando o consentimento é revogado, e quando o menor faz 18 anos? | RF45, RF49 |
 
 ## 7. Alterações face ao levantamento fornecido (§C)
 
@@ -187,7 +209,7 @@ Enquanto não houver resposta do cliente, a equipa usa os pressupostos registado
 - As funcionalidades por ator (§C.1) e as do diagrama de use cases v1.0 passaram a requisitos (ex.: RF05 a RF07, RF15, RF17).
 - O percurso de aprendizagem, as métricas e os resultados (§D.1 a §D.3) passaram a requisitos (RF18 a RF25 e RF36 a RF44).
 - O SGBD passou a ser o PostgreSQL, em vez de MySQL ou SQL Server (RNF20), com validação do orientador.
-- Foram acrescentados requisitos da equipa: Docker (RNF21), segurança e RGPD (RF45, RF46, RNF24, RNF25), acessibilidade (RNF04), fiabilidade (RNF08, RNF09), desempenho (RNF10 a RNF12) e qualidade (RNF15, RNF16).
+- Foram acrescentados requisitos da equipa: Docker (RNF21), segurança e RGPD (RF45 a RF49, RNF24, RNF25 e RNF29 a RNF46, a partir da [análise de privacidade e segurança](../seguranca/README.md)), acessibilidade (RNF04), fiabilidade (RNF08, RNF09), desempenho (RNF10 a RNF12) e qualidade (RNF15, RNF16).
 - Ficaram explícitos os limites de âmbito (W01 a W03).
 
 ## 8. Ligação às US extra
@@ -195,5 +217,5 @@ Enquanto não houver resposta do cliente, a equipa usa os pressupostos registado
 | US extra | Requisitos relacionados |
 |---|---|
 | US_A014: decisões de arquitetura (ADR) e modelo C4 | RNF17 a RNF21 |
-| US_A015: privacidade e segurança | RF03, RF04, RF45, RF46, RNF22 a RNF25 |
+| US_A015: privacidade e segurança | RF03, RF04, RF45 a RF49, RNF22 a RNF25, RNF29 a RNF46 |
 | US_A016: dados sintéticos e protótipo das métricas | RF36 a RF44, RNF14 |
