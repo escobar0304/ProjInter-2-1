@@ -41,7 +41,7 @@ Cada recurso formativo é acompanhado por um questionário de diagnóstico, resp
 
 | Sprint | Período | Peso | Objetivos |
 |---|---|---|---|
-| [A](sprints/SprintA/README.md) | 31/10/2026 – 21/11/2026 | 25% | Engenharia de requisitos, modelos UML e planeamento do projeto |
+| [A](sprints/SprintA/README.md) | 31/10/2026 – 28/11/2026 | 25% | Engenharia de requisitos, modelos UML e planeamento do projeto |
 | B | 21/11/2026 – 19/12/2026 | 25% | Estudo de UI/UX, estrutura base do frontend e implementação da base de dados |
 | C | 19/12/2026 – 16/01/2027 | 50% | Funcionalidades gerais da plataforma, validação e testes |
 
@@ -126,6 +126,4 @@ O uso de IA generativa é declarado nesta secção e sujeito à revisão e valid
 | Ferramenta | Utilização |
 |---|---|
 | Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore`, template de Pull Request e pipeline de CI). |
-| Codex (OpenAI) | Apoio às US de Pedro Vale: métricas (US_A009), UC27 (US_A005) e apresentação da Sprint Review (US_A010), com revisão e validação pela equipa. |
-
-Esta secção é atualizada à medida que o projeto avança.
+| Codex (OpenAI) | Apoio às US de Pedro Vale: métricas (US_A009), UC27 (US_A005), dados sintéticos e protótipo das métricas (US_A016) e apresentação da Sprint Review (US_A010), com revisão e validação pela equipa. |
