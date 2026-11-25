@@ -1,35 +1,24 @@
-# Sprint Review A — Apresentação de trabalho
+# Sprint Review A — Apresentação
 
 | | |
 |---|---|
 | User Story | US_A010 ([#10](https://github.com/escobar0304/ProjInter-2-1/issues/10)) |
-| Responsável | Pedro Vale (`QuakeXIV`) |
-| Estado | Rascunho para revisão da equipa; depende da consolidação do relatório #13 |
+| Responsável | Pedro Vale (QuakeXIV) |
 
 ## Ficheiros
 
-- [Apresentação editável em PowerPoint](sprint-review-a.pptx): 12 slides, texto e tabelas editáveis, notas do apresentador e fontes.
-- [PDF de segurança](sprint-review-a.pdf): as mesmas 12 páginas renderizadas.
-- [Guião, tempos e questões de defesa](roteiro.md).
+- [Apresentação editável em PowerPoint](sprint-review-a.pptx), com 12 slides, tabelas e notas do apresentador.
+- [PDF](sprint-review-a.pdf), com as mesmas 12 páginas.
+- [Guião](roteiro.md), com sequência, tempos e perguntas de defesa.
 
-## Conteúdo e limites
+## Conteúdo
 
-A apresentação cobre capa, trabalho desenvolvido, mudanças nos use cases e no modelo relacional, arquitetura, consentimento, métricas, mapa das 16 US, justificação das US extra, próximos passos e autoavaliação.
+A apresentação resume o percurso de aprendizagem, requisitos, use cases, modelos de domínio e relacional, arquitetura, consentimento, métricas, mapa das 16 User Stories, próximas etapas e balanço da Sprint A.
 
-Os tempos previstos totalizam dez minutos. Isto não substitui um ensaio com a equipa. O relatório #13 continua aberto, as percentagens das US abertas não foram fornecidas e a autoavaliação numérica tem de ser decidida pela equipa. Esses pontos estão identificados, sem inventar percentagens ou notas. Os 100% do mapa representam issues fechadas, não uma auditoria independente dos critérios de aceitação.
+O mapa regista responsáveis, estados e percentagens declaradas para cada User Story. Os 100% assinalam uma issue fechada; N/D indica que não há percentagem registada. A referência do mapa é 25/11/2026.
 
-O [modelo de domínio](../../uml/modelo-dominio.md) define os agregados e o serviço Questionnaire Submission. O modelo relacional inclui o acesso ao conteúdo sem Levels e a integridade entre recursos e tentativas. A #16 não tem resultados apresentados como concluídos. As métricas e UC27 são referenciados pelos respetivos entregáveis, sem os duplicar nesta pasta.
+Os exemplos e gráficos de métricas identificados como dados fictícios usam a base sintética da US_A016. Não representam utilizadores da plataforma.
 
-O [README da Sprint A](../../../sprints/SprintA/README.md) indica entrega em 28/11/2026 e apresentação a confirmar; as datas antigas nas issues e no README principal divergem. Confirmar o calendário com o docente antes de fechar a versão para apresentação.
+## Fontes
 
-## Edição
-
-O PPTX é a fonte editável: abrir no PowerPoint para alterar texto, tabelas e notas. Depois de rever o conteúdo, exportar novamente para PDF e confirmar a sequência e os tempos no guião. O PDF disponibilizado conserva o aspeto das páginas; a edição faz-se no PPTX.
-
-## Validação realizada
-
-- 12 slides renderizados e inspecionados visualmente, com revisão do cabeçalho da tabela de gestão.
-- Integridade do pacote PPTX, geometria, dimensões 16:9, fonte Arial e presença das duas tabelas nativas no slide 9: verificadas sem erros.
-- Reabertura do pacote PPTX e verificação dos objetos editáveis: sem erros.
-- PDF com 12 páginas, gerado das imagens renderizadas; guião com orçamento total de 600 segundos.
-- O ensaio, as percentagens em falta, a autoavaliação e a consolidação com #13 continuam pendentes.
+A apresentação referencia os requisitos, o glossário, os use cases, os modelos de domínio e relacional, os ADR, o processo de registo e as issues do projeto.

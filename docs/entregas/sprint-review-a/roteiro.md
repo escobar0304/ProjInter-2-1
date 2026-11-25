@@ -1,29 +1,29 @@
 # Guião da Sprint Review A
 
-Proposta de apresentação de dez minutos para revisão da equipa. Os tempos são um orçamento, não a medição de um ensaio já realizado. O debate com o cliente acontece depois do pitch.
+Proposta de apresentação de dez minutos. Os tempos atribuídos aos slides somam 600 segundos.
 
 ## Sequência e tempos
 
 | Slide | Tema | Tempo | Tempo acumulado | Intervenção proposta |
-|---|---|---|---|---|
+|---|---|---:|---:|---|
 | 1 | Capa e objetivo da Sprint A | 20 s | 0:20 | Diogo apresenta a equipa e o problema. |
 | 2 | Percurso de aprendizagem | 40 s | 1:00 | Diogo liga o público-alvo ao diagnóstico, conteúdo e Final. |
-| 3 | Requisitos e linguagem comum | 50 s | 1:50 | Diogo explica IDs, prioridades e origem; João distingue os termos ambíguos. |
-| 4 | Alterações nos use cases | 60 s | 2:50 | João explica herança, Guardian e relações; Pedro enquadra UC27 em revisão. |
+| 3 | Requisitos e linguagem comum | 50 s | 1:50 | Diogo explica IDs, prioridades e origem; João distingue termos ambíguos. |
+| 4 | Alterações nos use cases | 60 s | 2:50 | João explica herança e consentimento; Pedro apresenta UC27 e UC28. |
 | 5 | Modelos de domínio e relacional | 60 s | 3:50 | Diogo explica Enrollment, Attempt, respostas e traduções. |
-| 6 | Arquitetura | 45 s | 4:35 | Diogo distingue decisões aceites e propostas. |
-| 7 | Registo e consentimento | 50 s | 5:25 | João descreve os dois ramos e a ativação da conta. |
-| 8 | Métricas | 65 s | 6:30 | Pedro apresenta as primeiras tentativas, o exemplo fictício e os casos-limite. |
-| 9 | Mapa das 16 US | 80 s | 7:50 | Diogo apresenta o estado global e cada membro confirma os seus dados. |
-| 10 | Justificação das US extra | 45 s | 8:35 | A equipa justifica A014, A015 e A016, distinguindo os estados. |
-| 11 | Próximos passos e dependências | 45 s | 9:20 | Diogo identifica a consolidação do relatório e a passagem à Sprint B. |
-| 12 | Balanço e autoavaliação | 40 s | 10:00 | A equipa apresenta a avaliação que ainda tem de acordar. |
+| 6 | Arquitetura | 45 s | 4:35 | Diogo apresenta as cinco decisões aceites. |
+| 7 | Registo e consentimento | 50 s | 5:25 | João descreve verificação, consentimento e ativação da conta. |
+| 8 | Métricas | 65 s | 6:30 | Pedro apresenta os resultados sintéticos e os casos-limite. |
+| 9 | Mapa das 16 User Stories | 80 s | 7:50 | Diogo apresenta o mapa; cada membro enquadra as suas entregas. |
+| 10 | User Stories extra | 45 s | 8:35 | A equipa explica os objetivos de A014, A015 e A016. |
+| 11 | Próximas etapas | 45 s | 9:20 | Diogo enquadra o relatório A013 e a Sprint B. |
+| 12 | Balanço da sprint | 40 s | 10:00 | A equipa resume evidências e oportunidades de melhoria. |
 
 ## Pontos de fala
 
 ### 1. Objetivo
 
-«Estamos a preparar uma plataforma de literacia em saúde para jovens do 3.º ciclo e do secundário. Nesta sprint trabalhámos sobretudo os requisitos, os modelos e as regras que vão orientar a implementação.» Confirmar os nomes e o calendário antes da apresentação.
+«Estamos a preparar uma plataforma de literacia em saúde para jovens do 3.º ciclo e do secundário. Nesta sprint trabalhámos sobretudo os requisitos, os modelos e as regras que vão orientar a implementação.»
 
 ### 2. Percurso
 
@@ -31,66 +31,54 @@ O diagnóstico mede o conhecimento inicial, o conteúdo dá acesso à formação
 
 ### 3. Requisitos
 
-O levantamento contém 46 RF e 28 RNF. Cada requisito tem ID, prioridade e origem. O glossário resolve ambiguidades: Registration é o registo na plataforma e Enrollment é a inscrição num recurso; Role é o perfil de acesso e User Profile é a página pessoal.
+O levantamento contém 46 requisitos funcionais e 28 não funcionais. Cada requisito tem ID, prioridade e origem. O glossário distingue Registration, Enrollment, Role e User Profile. O Guardian decide por email e não precisa de conta.
 
 ### 4. Use cases
 
-Apresentar duas ou três alterações da v1.1 e o seu motivo: herança completa, consentimento do Guardian e separação entre biblioteca pública e formação reservada. UC27 tem associação direta ao Registered User; UC28 estende-o com condição de Score ≥ 85%. A descrição estruturada de UC27 ainda está em revisão no [PR #29](https://github.com/escobar0304/ProjInter-2-1/pull/29).
+A versão 1.1 completa a herança dos atores, clarifica o consentimento do Guardian e separa biblioteca pública de formação reservada. UC27 está associado diretamente ao Registered User; UC28 estende-o quando o Score é pelo menos 85%. A descrição de UC27 está integrada.
 
 ### 5. Dados
 
-Uma Attempt guarda classificação, número e data; `attempt_answers` regista a opção escolhida em cada pergunta. O consentimento precisa de estados, email do Guardian e datas, em vez de um booleano. As 40 tabelas incluem seis de referência e dez de traduções; não são 40 agregados de domínio. O modelo de domínio define 11 agregados. Enrollment contém Attempt, Badge e Certificate; Questionnaire contém Question e AnswerOption. Questionnaire Submission coordena a submissão entre ambos. `enrollments.content_accessed_at` regista o acesso sem Levels e `attempts.training_resource_id` garante a coerência do recurso pelas chaves compostas.
+Uma Attempt guarda classificação, número e data; attempt_answers regista a opção escolhida em cada pergunta. O consentimento guarda estados, email do Guardian e datas. As 40 tabelas incluem seis de referência e dez de traduções; o modelo de domínio define 11 agregados. Enrollment contém Attempt, Badge e Certificate. Questionnaire contém Question e AnswerOption. Questionnaire Submission coordena a submissão. enrollments.content_accessed_at regista o acesso sem Levels e attempts.training_resource_id reforça a coerência pelas chaves compostas.
 
 ### 6. Arquitetura
 
-React, Flask e PostgreSQL separam a apresentação, as regras e os dados. PostgreSQL e Docker têm ADR aceites. Os documentos ainda marcam os ADR de autenticação, ficheiros e API como propostas. A Sprint A não demonstra a aplicação já implementada.
+Os ADR-0001 a ADR-0005 estão aceites: PostgreSQL, Docker Compose, sessão em cookie, ficheiros num volume com controlo de acesso e SPA React com API REST Flask na mesma origem. A apresentação descreve decisões arquiteturais; não afirma que a aplicação esteja implementada.
 
 ### 7. Consentimento
 
-O email pode ser verificado antes ou depois do consentimento, mas um menor só fica ativo quando ambos se verificam. O Guardian não precisa de conta. Recusa, expiração e revogação têm caminhos definidos no BPMN. A análise de privacidade e ameaças de #15 ainda está pendente.
+O email pode ser verificado antes ou depois do consentimento, mas um menor só fica ativo quando ambas as condições se verificam. O Guardian não precisa de conta. Recusa, expiração e revogação têm caminhos definidos no BPMN.
 
 ### 8. Métricas
 
-Usar o exemplo fictício 40%/85%: ganho absoluto de 45 p.p. e normalizado 0,75. As primeiras tentativas contam para a comparação; a melhor tentativa pode gerar uma recompensa, mas não substitui a medição inicial. Pré = 100 deixa o ganho normalizado sem valor. Uma inscrição sem Final não recebe um pós de zero. A definição está no [PR #28](https://github.com/escobar0304/ProjInter-2-1/pull/28); o protótipo #16 continua adiado.
+A US_A009 define a comparação pela primeira tentativa de diagnóstico e pela primeira tentativa final. A US_A016 aplica as consultas de referência a uma base sintética e apresenta os resultados e gráficos como dados fictícios. Um pré-score de 100 não produz ganho normalizado; uma inscrição sem Final não recebe um pós-score zero.
 
-### 9. Gestão
+### 9. Mapa
 
-O mapa identifica as 16 US e os responsáveis. Os 100% assinalam issues fechadas; as restantes percentagens precisam de confirmação. Atualizar os estados e validar os artefactos antes da versão final. Não apresentar N/D como zero nem inventar percentagens de progresso.
+O mapa regista responsáveis, estados e percentagens declaradas. Os 100% assinalam uma issue fechada; N/D significa percentagem não registada. A005 e A009 estão fechadas; A010, A013 e A016 estão em curso; A015 está em revisão.
 
-### 10. US extra
+### 10. User Stories extra
 
-A014 permite justificar decisões e alterações futuras. A015 reduz o risco de implementar tarde regras para dados de menores e permissões. A016 permitirá testar se o modelo suporta as métricas. Justificar a utilidade não significa afirmar que as três já estão concluídas.
+A014 documenta decisões e contexto arquitetural. A015 trata privacidade de menores, permissões e ameaças. A016 permite explorar as métricas sobre dados fictícios antes de existirem utilizadores reais.
 
-### 11. Próximos passos
+### 11. Próximas etapas
 
-A apresentação depende da consolidação do relatório #13. Consolidar o relatório com os modelos de domínio e relacional atualizados, confirmar percentagens e datas e só depois fechar a entrega. A Sprint B prevê UI/UX, frontend, BD e Docker, com organização interna do backend por decidir.
+Consolidar o relatório A013 com os modelos de domínio e relacional. A Sprint B inclui UI/UX, frontend, base de dados e Docker, com a organização interna do backend por definir.
 
-### 12. Avaliação
+### 12. Balanço
 
-A equipa deve acordar a autoavaliação e a contribuição de cada membro, com evidências. Há documentação rastreável e validação do schema em CI. Melhorias: alinhar estados e artefactos, confirmar pressupostos com o cliente e ensaiar a apresentação. A autoavaliação numérica será acordada pela equipa.
+A Sprint A produziu requisitos rastreáveis, modelos relacionais e de domínio, decisões arquiteturais e percursos de consentimento. O trabalho seguinte inclui integração das entregas, validação dos pressupostos com o cliente e preparação da implementação.
 
-## Perguntas prováveis para a defesa
+## Perguntas de defesa
 
 | Pergunta | Base para a resposta |
 |---|---|
-| Porquê PostgreSQL em vez do SGBD inicial? | ADR-0001, validado pelo orientador; permite os índices únicos parciais e as restrições usadas no modelo. |
-| Como impedem uma conta de menor sem consentimento? | Só ativar depois de email verificado e consentimento aceite; validar o estado no backend em cada pedido. |
-| O recurso só fica concluído com 85%? | Não. Completion resulta da submissão final. O limiar aplica-se às recompensas. |
-| Que tentativa conta para o ganho? | A primeira Diagnostic e a primeira Final, conforme os pressupostos D01 e D04. |
-| E se pré for 100%? | Mostrar ganho absoluto e deixar o normalizado sem valor, evitando a divisão por zero. |
-| A proporção correta mede discriminação? | Mede facilidade/dificuldade nessa amostra. A proposta de #9 distingue a correlação item-resto. |
-| O modelo suporta comparar anos no passado? | Guarda o ano atual do User, sem snapshot por Attempt. O limite está registado na proposta das métricas. |
-| As US extra já estão concluídas? | A014 está fechada. A015 continua pendente e A016 adiada. Explicar os respetivos benefícios e estados. |
-| O modelo de domínio está completo? | O diagrama e a tabela de 11 agregados estão em docs/uml/modelo-dominio.md. Enrollment e Questionnaire são coordenados por Questionnaire Submission na submissão das respostas. |
-| Que uso fizeram de IA? | O README principal, na secção «Uso de IA generativa», declara Claude e Codex. A equipa revê e valida os resultados; cada membro deve conseguir explicar o seu trabalho. |
-
-## Lista de fecho antes da apresentação
-
-- [ ] Integrar o relatório #13 e confirmar que a apresentação corresponde à versão entregue.
-- [ ] Integrar o resultado da análise de privacidade #15 quando estiver disponível.
-- [ ] Atualizar o estado de cada US e obter da equipa as percentagens em falta.
-- [ ] Acordar e justificar a autoavaliação e os contributos individuais.
-- [ ] Confirmar as datas com o docente.
-- [ ] Rever o conteúdo e obter aprovação da equipa.
-- [ ] Ensaiar com cronómetro, ajustar os tempos e confirmar quem fala em cada slide.
-- [ ] Abrir o PPTX no computador da apresentação e guardar o PDF como plano B.
+| Porque escolheram PostgreSQL? | ADR-0001; suporta os índices parciais e as restrições do modelo. |
+| Como impedem uma conta de menor sem consentimento? | A conta só fica ativa depois da verificação do email e do consentimento aceite; o backend verifica o estado. |
+| O recurso só fica concluído com 85%? | Não. A conclusão resulta da submissão final; o limiar aplica-se às recompensas. |
+| Que tentativas contam para o ganho? | A primeira Diagnostic e a primeira Final, segundo os pressupostos D01 e D04. |
+| E se o pré-score for 100%? | Apresentar o ganho absoluto e deixar o normalizado sem valor, evitando divisão por zero. |
+| O acerto por pergunta mede discriminação? | Não. Descreve facilidade ou dificuldade nesta amostra; a correlação item-resto é uma análise distinta. |
+| O modelo permite comparar anos passados? | Guarda o ano atual do User, sem snapshot associado a cada Attempt. |
+| Como interpretar os gráficos da A016? | São resultados de dados fictícios e não descrevem utilizadores reais. |
+| Como se relacionam Enrollment e Questionnaire na submissão? | Questionnaire Submission coordena a submissão; os agregados permanecem separados. |
