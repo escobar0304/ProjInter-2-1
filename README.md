@@ -41,7 +41,7 @@ Cada recurso formativo é acompanhado por um questionário de diagnóstico, resp
 
 | Sprint | Período | Peso | Objetivos |
 |---|---|---|---|
-| [A](sprints/SprintA/README.md) | 31/10/2026 – 21/11/2026 | 25% | Engenharia de requisitos, modelos UML e planeamento do projeto |
+| [A](sprints/SprintA/README.md) | 31/10/2026 – 28/11/2026 | 25% | Engenharia de requisitos, modelos UML e planeamento do projeto |
 | B | 21/11/2026 – 19/12/2026 | 25% | Estudo de UI/UX, estrutura base do frontend e implementação da base de dados |
 | C | 19/12/2026 – 16/01/2027 | 50% | Funcionalidades gerais da plataforma, validação e testes |
 
