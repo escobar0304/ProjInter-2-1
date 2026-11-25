@@ -87,3 +87,75 @@ jobs:
         env:
           PGPASSWORD: ci
         run: psql -h localhost -U ci -d ci -v ON_ERROR_STOP=1 -f database/schema.sql
+
+  dados-sinteticos:
+    name: Dados sintéticos e métricas
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18-alpine
+        env:
+          POSTGRES_USER: ci
+          POSTGRES_PASSWORD: ci
+          POSTGRES_DB: ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U ci -d ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Criar a base de dados a partir do schema
+        env:
+          PGPASSWORD: ci
+        run: psql -h localhost -U ci -d ci -v ON_ERROR_STOP=1 -f database/schema.sql
+      - name: Instalar dependências Python
+        run: |
+          python3 -m venv "$RUNNER_TEMP/a016-venv"
+          "$RUNNER_TEMP/a016-venv/bin/python" -m pip install -r database/seed/requirements.txt
+      - name: Verificar a carga e os prémios
+        run: |
+          "$RUNNER_TEMP/a016-venv/bin/python" database/seed/gerar_dados.py
+          "$RUNNER_TEMP/a016-venv/bin/python" database/seed/gerar_dados.py
+          "$RUNNER_TEMP/a016-venv/bin/python" - <<'PY'
+          import os
+          import psycopg
+
+          with psycopg.connect(os.environ["DATABASE_URL"]) as connection:
+              with connection.cursor() as cursor:
+                  cursor.execute("""
+                      SELECT
+                          (SELECT count(*) FROM badges),
+                          (SELECT count(*) FROM certificates),
+                          (SELECT count(*) FROM attempts AS attempt
+                           JOIN questionnaires AS questionnaire
+                             ON questionnaire.id = attempt.questionnaire_id
+                           WHERE questionnaire.type = 'final'
+                             AND attempt.attempt_number = 1 AND attempt.score >= 85),
+                          (SELECT count(*) FROM attempts AS attempt
+                           JOIN questionnaires AS questionnaire
+                             ON questionnaire.id = attempt.questionnaire_id
+                           LEFT JOIN badges AS badge
+                             ON badge.enrollment_id = attempt.enrollment_id
+                            AND badge.attempt_id = attempt.id
+                           LEFT JOIN certificates AS certificate
+                             ON certificate.enrollment_id = attempt.enrollment_id
+                            AND certificate.attempt_id = attempt.id
+                           WHERE questionnaire.type = 'final'
+                             AND attempt.attempt_number = 1 AND attempt.score >= 85
+                             AND (badge.enrollment_id IS NULL
+                                  OR certificate.enrollment_id IS NULL))
+                  """)
+                  counts = cursor.fetchone()
+          assert counts == (67, 67, 67, 0), counts
+          print("67 badges e 67 certificados válidos após duas cargas.")
+          PY
+      - name: Executar o protótipo das métricas
+        run: >-
+          "$RUNNER_TEMP/a016-venv/bin/jupyter" nbconvert --to notebook
+          --execute --output "$RUNNER_TEMP/prototipo-metricas.ipynb"
+          docs/metricas/prototipo-metricas.ipynb

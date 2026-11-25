@@ -126,6 +126,4 @@ O uso de IA generativa é declarado nesta secção e sujeito à revisão e valid
 | Ferramenta | Utilização |
 |---|---|
 | Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore`, template de Pull Request e pipeline de CI). |
-| Codex (OpenAI) | Apoio às US de Pedro Vale: métricas (US_A009), UC27 (US_A005) e apresentação da Sprint Review (US_A010), com revisão e validação pela equipa. |
-
-Esta secção é atualizada à medida que o projeto avança.
+| Codex (OpenAI) | Apoio às US de Pedro Vale: métricas (US_A009), UC27 (US_A005), dados sintéticos e protótipo das métricas (US_A016) e apresentação da Sprint Review (US_A010), com revisão e validação pela equipa. |
