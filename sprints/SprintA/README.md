@@ -30,7 +30,7 @@
 | US_A010 | Sprint review (pitch de 10 minutos) | P2 | [#10](https://github.com/escobar0304/ProjInter-2-1/issues/10) | a definir | — |
 | US_A011 | GitHub Projects, User Stories e issues | P1 | [#11](https://github.com/escobar0304/ProjInter-2-1/issues/11) | Diogo Escobar | — |
 | US_A012 | GitHub Actions (CI) | P3 | [#12](https://github.com/escobar0304/ProjInter-2-1/issues/12) | Diogo Escobar | [A012-CI](A012-CI.md) |
-| US_A013 | Relatório técnico | P3 | [#13](https://github.com/escobar0304/ProjInter-2-1/issues/13) | a definir | — |
+| US_A013 | Relatório técnico | P3 | [#13](https://github.com/escobar0304/ProjInter-2-1/issues/13) | a definir | [A013-Relatorio](A013-Relatorio.md) |
 | US_A014 (extra) | Decisões de arquitetura (ADR) e modelo C4 | P2 | [#14](https://github.com/escobar0304/ProjInter-2-1/issues/14) | Diogo Escobar | [A014-Arquitetura-ADR-C4](A014-Arquitetura-ADR-C4.md) |
 | US_A015 (extra) | Privacidade e segurança | P2 | [#15](https://github.com/escobar0304/ProjInter-2-1/issues/15) | João Crasto | [A015-Privacidade-Seguranca](A015-Privacidade-Seguranca.md) |
 | US_A016 (extra) | Dados sintéticos e protótipo das métricas | P3 | [#16](https://github.com/escobar0304/ProjInter-2-1/issues/16) | a definir | — |
