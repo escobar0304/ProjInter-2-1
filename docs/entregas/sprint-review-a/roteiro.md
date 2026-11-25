@@ -15,7 +15,7 @@ Proposta de apresentação de dez minutos. Os tempos atribuídos aos slides soma
 | 7 | Registo e consentimento | 50 s | 5:25 | João descreve verificação, consentimento e ativação da conta. |
 | 8 | Métricas | 65 s | 6:30 | Pedro apresenta o exemplo fictício de 40% no diagnóstico e 85% no Final, o ganho absoluto de 45 p.p. e o ganho normalizado de 0,75. |
 | 9 | Mapa das 16 User Stories | 80 s | 7:50 | Diogo apresenta o mapa; cada membro enquadra as suas entregas. |
-| 10 | User Stories extra | 45 s | 8:35 | A equipa explica os objetivos de A014, A015 e A016; A015 está fechada. |
+| 10 | User Stories extra | 45 s | 8:35 | A equipa explica os objetivos de A014, A015 e A016; as três estão fechadas. |
 | 11 | Próximas etapas | 45 s | 9:20 | Diogo enquadra o relatório A013 e a Sprint B. |
 | 12 | Balanço da sprint | 40 s | 10:00 | A equipa resume evidências e oportunidades de melhoria. |
 
@@ -55,15 +55,15 @@ A US_A009 define a comparação pela primeira tentativa de diagnóstico e pela p
 
 ### 9. Mapa
 
-O mapa regista responsáveis, estados e percentagens declaradas. Os 100% assinalam uma issue fechada; N/D significa percentagem não registada. A005, A009 e A015 estão fechadas; A010, A013 e A016 estão em curso.
+O mapa regista responsáveis, estados e percentagens declaradas. Os 100% assinalam uma issue fechada; N/D significa percentagem não registada. A005, A009, A015 e A016 estão fechadas; A010 e A013 estão em curso.
 
 ### 10. User Stories extra
 
-A014 documenta decisões e contexto arquitetural. A015 trata privacidade de menores, permissões e ameaças. A016 permite explorar as métricas sobre dados fictícios antes de existirem utilizadores reais.
+A014 documenta decisões e contexto arquitetural. A015 trata privacidade de menores, permissões e ameaças. A016 permite explorar as métricas sobre dados fictícios antes de existirem utilizadores reais. As três estão fechadas.
 
 ### 11. Próximas etapas
 
-Consolidar o relatório A013 com os modelos de domínio e relacional. A Sprint B inclui UI/UX, frontend, base de dados e Docker, com a organização interna do backend por definir.
+Alinhar os slides com o relatório A013, confirmar a distribuição das falas e ensaiar a apresentação cronometrada. A Sprint B inclui UI/UX, frontend, base de dados e Docker, com a organização interna do backend por definir.
 
 ### 12. Balanço
 

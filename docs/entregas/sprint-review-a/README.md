@@ -15,7 +15,7 @@
 
 A apresentação resume o percurso de aprendizagem, requisitos, use cases, modelos de domínio e relacional, arquitetura, consentimento, métricas, mapa das 16 User Stories, próximas etapas e balanço da Sprint A.
 
-O mapa regista responsáveis, estados e percentagens declaradas para cada User Story. Os 100% assinalam uma issue fechada; N/D indica que não há percentagem registada. A referência do mapa é 25/11/2026.
+O mapa regista responsáveis, estados e percentagens declaradas para cada User Story. Os 100% assinalam uma issue fechada; N/D indica que não há percentagem registada. A A016 está fechada. A referência do mapa é 25/11/2026.
 
 O exemplo de métricas do slide 8 (40% → 85%) é fictício e não representa utilizadores da plataforma.
 
