@@ -121,10 +121,11 @@ Os detalhes e as decisões estão em [`sprints/SprintA/A012-CI.md`](sprints/Spri
 
 ## Uso de IA generativa
 
-O uso de IA generativa segue o sistema de semáforos definido na especificação do projeto: uso livre (verde), permitido com justificação (amarelo) e proibido (vermelho).
+O uso de IA generativa é declarado nesta secção e sujeito à revisão e validação da equipa.
 
 | Ferramenta | Utilização |
 |---|---|
 | Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore`, template de Pull Request e pipeline de CI). |
+| Codex (OpenAI) | Apoio às US atribuídas a Pedro Vale: definição e mapeamento das métricas (US_A009), com revisão e validação pela equipa. |
 
 Esta secção é atualizada à medida que o projeto avança.
