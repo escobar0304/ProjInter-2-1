@@ -29,7 +29,7 @@ Compilar o trabalho da Sprint A no modelo de relatório fornecido pelo docente, 
 - **Fonte em Word, a partir do modelo.** Mantém os estilos, a paginação e as legendas automáticas pedidos no modelo, e os índices atualizam-se com *Atualizar campo*. O modelo em branco não entra no repositório.
 - **Só os capítulos da Sprint A.** O Estudo UI/UX (Sprint B) e o Desenvolvimento do Projeto e os Resultados (Sprints B e C) entram nas sprints seguintes. O capítulo «Revisão de Literatura/Estado da Arte», que aparece no índice do modelo mas não no corpo, não foi incluído.
 - **Texto a escrever marcado a amarelo**, como as instruções do modelo: o desenvolvimento de cada secção e as conclusões.
-- **Cronograma a partir do histórico do GitHub.** O [mapa de Gantt](../../docs/planeamento/gantt-sprint-a.svg) usa as datas do primeiro commit e do merge dos Pull Requests de cada User Story, por isso mostra o trabalho real e não um plano feito depois.
+- **Cronograma a partir do histórico do GitHub.** O [mapa de Gantt](../../docs/planeamento/gantt-sprint-a.png) usa as datas do primeiro commit e do merge dos Pull Requests de cada User Story, por isso mostra o trabalho real e não um plano feito depois.
 - **Nome dos ficheiros** no formato do enunciado: `LEI-SMUL1-PI-SA-R-NOME-NOME-NOME`.
 
 ## Como verificar
