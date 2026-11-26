@@ -29,17 +29,17 @@ Compilar o trabalho da Sprint A no modelo de relatório fornecido pelo docente, 
 - **Fonte em Word, a partir do modelo.** Mantém os estilos, a paginação e as legendas automáticas pedidos no modelo, e os índices atualizam-se com *Atualizar campo*. O modelo em branco não entra no repositório.
 - **Só os capítulos da Sprint A.** O Estudo UI/UX (Sprint B) e o Desenvolvimento do Projeto e os Resultados (Sprints B e C) entram nas sprints seguintes. O capítulo «Revisão de Literatura/Estado da Arte», que aparece no índice do modelo mas não no corpo, não foi incluído.
 - **Texto a escrever marcado a amarelo**, como as instruções do modelo: o desenvolvimento de cada secção e as conclusões.
+- **Cronograma a partir do histórico do GitHub.** O [mapa de Gantt](../../docs/planeamento/gantt-sprint-a.svg) usa as datas do primeiro commit e do merge dos Pull Requests de cada User Story, por isso mostra o trabalho real e não um plano feito depois.
 - **Nome dos ficheiros** no formato do enunciado: `LEI-SMUL1-PI-SA-R-NOME-NOME-NOME`.
 
 ## Como verificar
 
 - Abrir o `.docx` no Word e atualizar os campos (Ctrl+A, F9): os índices e as referências não mudam e não aparece nenhum erro de referência.
-- No PDF, as figuras 1 a 13 e as tabelas 1 a 6 aparecem nos índices com a página certa, e cada uma é referida no texto antes de aparecer.
+- No PDF, as figuras 1 a 14 e as tabelas 1 a 6 aparecem nos índices com a página certa, e cada uma é referida no texto antes de aparecer.
 - Os números das secções citados no texto e na tabela das User Stories correspondem ao índice.
 
 ## Pendente
 
-- Escrever o desenvolvimento de cada secção e as conclusões (texto a amarelo) e gerar de novo o PDF.
-- Acrescentar o cronograma (mapa de Gantt).
+- Acrescentar a motivação da equipa (1.1), se a equipa quiser. O resto do texto a amarelo (conclusões) fica para a Sprint C.
 - Revisão por pelo menos 2 elementos da equipa.
 - Entrega no Moodle e tag `sprint-a`.
