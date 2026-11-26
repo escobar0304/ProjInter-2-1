@@ -125,5 +125,5 @@ O uso de IA generativa é declarado nesta secção e sujeito à revisão e valid
 
 | Ferramenta | Utilização |
 |---|---|
-| Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore`, template de Pull Request e pipeline de CI). Apoio à estrutura, à introdução, aos resumos, à revisão ortográfica e à coerência entre capítulos do relatório da Sprint A (US_A013), e redação das secções 2.1.1 a 2.1.4, do desenvolvimento das secções 2.2.1 a 2.2.12 e da secção 3.2 do relatório, a partir dos documentos das User Stories e do histórico do GitHub, com revisão dos responsáveis. Mapa de Gantt da Sprint A ([`docs/planeamento/`](docs/planeamento/)) gerado a partir das datas dos Pull Requests. |
+| Claude (Anthropic) | Apoio à organização do projeto: descrição das User Stories e configuração do repositório (README, `.gitignore`, template de Pull Request e pipeline de CI). Apoio à redação do relatório da Sprint A (US_A013) e do cronograma, a partir dos documentos de cada User Story, com revisão de toda a equipa. |
 | Codex (OpenAI) | Apoio às US de Pedro Vale: métricas (US_A009), UC27 (US_A005), dados sintéticos e protótipo das métricas (US_A016) e apresentação da Sprint Review (US_A010), com revisão e validação pela equipa. |
