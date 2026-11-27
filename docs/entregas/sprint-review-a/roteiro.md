@@ -13,10 +13,10 @@ Proposta de apresentação de dez minutos. Os tempos atribuídos aos slides soma
 | 5 | Modelos de domínio e relacional | 60 s | 3:50 | Diogo explica Enrollment, Attempt, respostas e traduções. |
 | 6 | Arquitetura | 45 s | 4:35 | Diogo apresenta as cinco decisões aceites. |
 | 7 | Registo e consentimento | 50 s | 5:25 | João descreve verificação, consentimento e ativação da conta. |
-| 8 | Métricas | 65 s | 6:30 | Pedro apresenta o exemplo fictício de 40% no diagnóstico e 85% no Final, o ganho absoluto de 45 p.p. e o ganho normalizado de 0,75. |
+| 8 | Métricas | 65 s | 6:30 | Pedro apresenta os dados fictícios da A016: médias de 52,6% no diagnóstico e 73,3% no Final, ganho absoluto médio de 20,6 p.p. e normalizado médio de 0,37. |
 | 9 | Mapa das 16 User Stories | 80 s | 7:50 | Diogo apresenta o mapa; cada membro enquadra as suas entregas. |
 | 10 | User Stories extra | 45 s | 8:35 | A equipa explica os objetivos de A014, A015 e A016; as três estão fechadas. |
-| 11 | Próximas etapas | 45 s | 9:20 | Diogo enquadra o relatório A013 e a Sprint B. |
+| 11 | Próximas etapas | 45 s | 9:20 | Diogo confirma o relatório integrado, os materiais de entrega e a transição para a Sprint B. |
 | 12 | Balanço da sprint | 40 s | 10:00 | A equipa resume evidências e oportunidades de melhoria. |
 
 ## Pontos de fala
@@ -51,11 +51,11 @@ O email pode ser verificado antes ou depois do consentimento, mas um menor só f
 
 ### 8. Métricas
 
-A US_A009 define a comparação pela primeira tentativa de diagnóstico e pela primeira tentativa final. O exemplo fictício passa de 40% no diagnóstico para 85% no Final: ganho absoluto de 45 p.p. e ganho normalizado de 0,75. Um pré-score de 100 não produz ganho normalizado; uma inscrição sem Final não recebe um pós-score zero.
+A US_A009 define a comparação pela primeira tentativa de diagnóstico e pela primeira tentativa final. Nos 240 pares completos dos dados fictícios da A016, a média passa de 52,625% no diagnóstico para 73,25% no Final. O ganho absoluto médio é 20,625 p.p. e o normalizado médio é 0,372 nos 239 pares válidos. O slide mostra estes valores arredondados. O ganho normalizado médio é calculado por inscrição, não a partir das médias dos Scores. Os dados não representam aprendizagem real.
 
 ### 9. Mapa
 
-O mapa regista responsáveis, estados e percentagens declaradas. Os 100% assinalam uma issue fechada; N/D significa percentagem não registada. A005, A009, A015 e A016 estão fechadas; A010 e A013 estão em curso.
+O mapa regista responsáveis, estados e percentagens declaradas. Os 100% assinalam uma issue fechada; N/D significa percentagem não registada. A005, A009, A013, A015 e A016 estão fechadas; A010 está em curso.
 
 ### 10. User Stories extra
 
@@ -63,7 +63,7 @@ A014 documenta decisões e contexto arquitetural. A015 trata privacidade de meno
 
 ### 11. Próximas etapas
 
-Alinhar os slides com o relatório A013, confirmar a distribuição das falas e ensaiar a apresentação cronometrada. A Sprint B inclui UI/UX, frontend, base de dados e Docker, com a organização interna do backend por definir.
+Confirmar o relatório e o ZIP para entrega, distribuir as falas e ensaiar a apresentação cronometrada. A Sprint B inclui UI/UX, frontend, base de dados e Docker, com a organização interna do backend por definir.
 
 ### 12. Balanço
 

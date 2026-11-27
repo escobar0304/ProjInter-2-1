@@ -16,8 +16,8 @@
 
 A apresentação sintetiza as entregas da Sprint A, incluindo requisitos, use cases, modelos, arquitetura, consentimento, métricas e mapa das 16 User Stories. O orçamento dos slides totaliza 600 segundos.
 
-Os ADR-0001 a ADR-0005 registam decisões aceites. As métricas da US_A009 e o use case UC27 da US_A005 estão integrados. O protótipo da US_A016 apresenta métricas e gráficos baseados em dados fictícios.
+Os ADR-0001 a ADR-0005 registam decisões aceites. As métricas da US_A009 e o use case UC27 da US_A005 estão integrados. O slide 8 usa as médias dos dados fictícios da US_A016, coerentes com o relatório da US_A013: diagnóstico de 52,6%, Final de 73,3%, ganho absoluto médio de 20,6 p.p. e ganho normalizado médio de 0,37.
 
 ## Referências
 
-A apresentação usa os documentos de requisitos, glossário, use cases, modelos de domínio e relacional, arquitetura e registo de utilizador.
+A apresentação usa os documentos de requisitos, glossário, use cases, modelos de domínio e relacional, arquitetura, registo de utilizador e o relatório da Sprint A.
