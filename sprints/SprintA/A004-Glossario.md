@@ -14,7 +14,7 @@ Definir a linguagem ubíqua do sistema: os termos do domínio, cada um com uma d
 
 - Documento [`docs/uml/glossario.md`](../../docs/uml/glossario.md), com:
   - âmbito, fontes e convenções;
-  - 52 termos, agrupados em 7 áreas: atores, conta e acesso, formação, questionários, gamificação, biblioteca e conteúdos, plataforma e estatística;
+  - 54 termos, agrupados em 7 áreas: atores, conta e acesso, formação, questionários, gamificação, biblioteca e conteúdos, plataforma e estatística (52 na versão 1.0; a versão 1.1 acrescentou Token e Level Progress, usados no [modelo de domínio](A004-Modelo-Dominio.md));
   - os pressupostos sobre as dúvidas D01, D02 e D04 a D11 e os pressupostos da equipa;
   - a correspondência entre os nomes da v1.0 (use cases e modelo relacional) e os termos do glossário.
 - Cada termo tem o formato `| Termo | Definição | Evitar | Fonte |`, com a fonte na especificação ou no levantamento de requisitos.
